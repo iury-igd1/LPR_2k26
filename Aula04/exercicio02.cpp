@@ -7,7 +7,7 @@ int main()
 {
     int A, B;
 
-    cout << "Digite dois numeros inteiros (separados por espaço): ";
+    cout << "Digite dois numeros inteiros (separados por espaco): ";
 
     cin >> A >> B;
 

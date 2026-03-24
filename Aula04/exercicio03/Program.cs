@@ -1,6 +1,6 @@
 ﻿using System.Diagnostics;
 
-string classe;
+string? classe;
 
 Console.Write("Escolha sua Classe (Guerreira, Mago ou Arqueira): ");
 classe = Console.ReadLine();
