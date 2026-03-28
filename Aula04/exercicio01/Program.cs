@@ -1,12 +1,23 @@
-﻿using System.Diagnostics;
+﻿/* 
+Exercício 01:
+    Faça um programa para ler um número inteiro, e depois dizer 
+    se este número é par ou não.
+
+    EXEMPLO:
+        Entrada:    10
+        Saída:      Este número é PAR
+*/
+
+using System.Diagnostics;
 
 int num;
 
 Console.Write("Digite um número inteiro: ");
-num = Convert.ToInt32(Console.ReadLine());
+string entrada = Console.ReadLine()!;
+int.TryParse(entrada, out num);
 
 if (num % 2 == 0) {
-    Console.WriteLine("PAR");
+    Console.WriteLine("Este número é PAR");
 } else {
-    Console.WriteLine("ÍMPAR");
+    Console.WriteLine("Este número é ÍMPAR");
 }
