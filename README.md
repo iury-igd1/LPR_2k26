@@ -2,10 +2,10 @@
 
 Repositório com exercícios e códigos desenvolvidos durante as aulas de **Linguagem de Programação** no ano de 2026.
 
-**Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC)**
-Curso Técnico em **Desenvolvimento de Sistemas**
+**Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC)**  
+Curso Técnico em **Desenvolvimento de Sistemas** (DS)
 
-**Professor:** José Andery
+**Professor:** José Andery  
 **Aluno:** Iury Gonçalves de Souza
 
 ---
@@ -35,3 +35,7 @@ Os exercícios estão organizados de acordo com as aulas em que foram propostos.
 ### Aula 05 - Estruturas de repetição
 
 * Implementação das lógicas "while", "do while" e "for".
+
+### Aula 06 - Funções
+
+* Apresentação do paradigma funcional como uma maneira de programar de forma mais eficiente.
