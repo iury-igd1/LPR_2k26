@@ -1,10 +1,9 @@
 /* 
 Exercício 02:
-    Construa um algoritmo que agrupe em funções os exercícios 1, 3 
-    e 4 da tarefa de estruturas de repetições (Aula 5). Cada 
-    exercício deve estar contido em uma função separada. Defina os 
-    parâmetros de modo eficiente e generalista. Construa um menu
-    na função main. 
+    Construa um algoritmo que agrupe em funções os exercícios 1, 3 e 4 da tarefa 
+    de estruturas de repetições (Aula 5). Cada exercício deve estar contido em 
+    uma função separada. Defina os parâmetros de modo eficiente e generalista. 
+    Construa um menu na função main. 
 
     EXEMPLO:
         Entrada:    0
@@ -33,10 +32,9 @@ Exercício 02:
 using namespace std;
 
 void exercicio01() {
-    int n;
-    int soma = 0, qtd = 0;
+    int n, soma = 0, qtd = 0;
 
-    cout << "> Digite a quantidade de números e os números: ";
+    cout << "> Digite a quantidade de números e os números (separados por espaço): ";
     cin >> n;
 
     for (int i = 0; i < n; i++) {

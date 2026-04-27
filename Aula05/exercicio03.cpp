@@ -1,8 +1,7 @@
 /* 
 Exercício 03:
-    Elabore um algoritmo que calcule a soma de todos os números 
-    ímpares múltiplos de 3 que se encontrem no conjunto dos 
-    números de 50 a 500.
+    Elabore um algoritmo que calcule a soma de todos os números ímpares 
+    múltiplos de 3 que se encontrem no conjunto dos números de 50 a 500.
 
         Saída:      Soma dos números: 20475
 */

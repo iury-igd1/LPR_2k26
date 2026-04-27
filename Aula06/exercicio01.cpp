@@ -1,7 +1,6 @@
 /* 
 Exercício 01:
-    Construa uma função em que retorne o reverso de um número 
-    inteiro.
+    Construa uma função em que retorne o reverso de um número inteiro.
 
     EXEMPLO:
         Entrada:    1234

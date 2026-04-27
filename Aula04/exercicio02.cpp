@@ -1,11 +1,9 @@
 /* 
 Exercício 02:
-    Faça um programa que leia 2 valores inteiros (A e B). Após, 
-    o programa deve mostrar uma mensagem "São Múltiplos" ou "Não 
-    são Múltiplos", indicando se os valores lidos são múltiplos 
-    entre si. 
-    Atenção: os números podem ser digitados em ordem crescente 
-    ou decrescente.
+    Faça um programa que leia 2 valores inteiros (A e B). Após, o programa deve 
+    mostrar uma mensagem "São Múltiplos" ou "Não são Múltiplos", indicando se 
+    os valores lidos são múltiplos entre si. 
+    Atenção: os números podem ser digitados em ordem crescente ou decrescente.
 
     EXEMPLO:
         Entrada:    36 6
@@ -24,7 +22,7 @@ int main()
 
     int A, B;
 
-    cout << "Digite dois números inteiros: ";
+    cout << "Digite dois números inteiros (separados por espaço): ";
 
     cin >> A >> B;
 

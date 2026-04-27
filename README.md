@@ -1,11 +1,11 @@
 # LPR 2k26
 
-Repositório com exercícios e códigos desenvolvidos durante as aulas de **Linguagem de Programação** no ano de 2026.
+Repositório destinado aos exercícios e códigos desenvolvidos durante as aulas de **Linguagem de Programação** no ano de 2026.
 
 **Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC)**  
 Curso Técnico em **Desenvolvimento de Sistemas** (DS)
 
-**Professor:** José Andery  
+**Professor:** José Andery Carneiro  
 **Aluno:** Iury Gonçalves de Souza
 
 ---
@@ -21,11 +21,14 @@ Os exercícios estão organizados de acordo com as aulas em que foram propostos.
 
 ### Aula 02 - Introdução à lógica de programação
 
-* Tipos de dados, constantes e variáveis, expressões aritméticas e lógicas, comandos de atribuição, de entrada e de saída.
+* Tipos de dados;
+* Constantes e variáveis;
+* Expressões aritméticas e lógicas;
+* Comandos de atribuição, de entrada e de saída.
 
 ### Aula 03 - GitHub e controle de versionamento
 
-* Apresentação da teoria sobre controle de versionamento, o sistema GIT e a plataforma GitHub;
+* Teoria sobre controle de versionamento, o sistema GIT e a plataforma GitHub;
 * Criação e trabalho com repositórios remotos e locais.
 
 ### Aula 04 - Estruturas de seleção
@@ -38,4 +41,4 @@ Os exercícios estão organizados de acordo com as aulas em que foram propostos.
 
 ### Aula 06 - Funções
 
-* Apresentação do paradigma funcional como uma maneira de programar de forma mais eficiente.
+* Paradigma funcional como uma maneira de programar de forma mais eficiente.

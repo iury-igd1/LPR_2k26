@@ -1,9 +1,8 @@
 ﻿/* 
 Exercício 04:
-     Faça um programa para ler o código de uma peça 1, o número 
-     de peças 1, o valor unitário de cada peça 1, o código de 
-     uma peça 2, o número de peças 2 e o valor unitário de cada 
-     peça 2. Calcule e mostre o valor a ser pago.
+    Faça um programa para ler o código de uma peça 1, o número de peças 1, o 
+    valor unitário de cada peça 1, o código de uma peça 2, o número de peças 2 
+    e o valor unitário de cada peça 2. Calcule e mostre o valor a ser pago.
     
     EXEMPLO:
         Entrada:    12 1 5.30
@@ -11,9 +10,9 @@ Exercício 04:
         Saída:      Valor a pagar: R$ 15.50
 */
 
-Console.Write("Código, número de peças e valor unitário da peça 1: ");
+Console.Write("Código, número de peças e valor unitário da peça 1 (separados por espaço): ");
 string[] entrada1 = Console.ReadLine()!.Split(' ');
-Console.Write("Código, número de peças e valor unitário da peça 2: ");
+Console.Write("Código, número de peças e valor unitário da peça 2 (separados por espaço): ");
 string[] entrada2 = Console.ReadLine()!.Split(' ');
 
 int.TryParse(entrada1[1], out int numero1);

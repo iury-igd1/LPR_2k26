@@ -1,51 +1,40 @@
 ﻿/* 
 Exercício 03:
-    Desenvolva um programa que simule um sistema de seleção de 
-    heróis da Marvel para uma equipe. O programa deve ter as 
-    seguintes funcionalidades:
+    Desenvolva um programa que simule um sistema de seleção de heróis da Marvel 
+    para uma equipe. O programa deve ter as seguintes funcionalidades:
 
     a) Cadastro de Heróis:
-    Crie uma função chamada cadastrarHeroi que permita ao usuário
-    inserir o nome, poder e pontuação de um herói da Marvel. A 
-    função deve solicitar essas informações ao usuário e 
-    armazená-las em variáveis. Não é necessário armazenar os heróis 
-    em uma lista ou vetor. O programa deve permitir o cadastro de 
-    até 5 heróis.
+    Crie uma função chamada cadastrarHeroi que permita ao usuário inserir o nome,
+    o poder e a pontuação de um herói. A função deve solicitar essas informações 
+    ao usuário e armazená-las em variáveis. Não é necessário armazenar os heróis 
+    em uma lista ou vetor. O programa deve permitir o cadastro de até 5 heróis.
 
     b) Seleção de Equipe:
-    Crie uma função chamada selecionarEquipe que permita ao usuário
-    selecionar heróis para formar sua equipe. A função deve exibir 
-    os heróis cadastrados e permitir que o usuário selecione quais 
-    heróis deseja incluir em sua equipe. O usuário deve ser capaz 
-    de selecionar três heróis para sua equipe.
+    Crie uma função chamada selecionarEquipe que permita ao usuário selecionar 
+    heróis para formar sua equipe. A função deve exibir os heróis cadastrados e 
+    permitir que o usuário selecione quais heróis deseja incluir em sua equipe. 
+    O usuário deve ser capaz de selecionar três heróis para sua equipe.
 
     c) Pontuação Total da Equipe:
-    Crie uma função chamada calcularPontuacaoTotal que calcule a
-    pontuação total da equipe com base nos heróis selecionados. A
-    pontuação total da equipe deve ser a soma das pontuações 
-    individuais de cada herói selecionado.
+    Crie uma função chamada calcularPontuacaoTotal que calcule a pontuação total 
+    da equipe com base nos heróis selecionados. A pontuação total da equipe deve 
+    ser a soma das pontuações individuais de cada herói selecionado.
 
     d) Exibição da Equipe:
-    Crie uma função chamada exibirEquipe que exiba os heróis
-    selecionados para a equipe, seu poder e a pontuação total 
-    da equipe.
+    Crie uma função chamada exibirEquipe que exiba os heróis selecionados para a 
+    equipe, seu poder e a pontuação total da equipe.
 
     e) Menu:
-    Crie uma função chamada menuPrincipal que exiba um menu com as
-    opções disponíveis para o usuário (cadastro de heróis, seleção 
-    de equipe, exibição da equipe e sair do programa). O usuário 
-    deve poder escolher uma das opções do menu e o programa deve 
-    executar a funcionalidade correspondente.
+    Crie uma função chamada menuPrincipal que exiba um menu com as opções 
+    disponíveis para o usuário (cadastro de heróis, seleção de equipe, exibição 
+    da equipe e sair do programa). O usuário deve poder escolher uma das opções 
+    do menu e o programa deve executar a funcionalidade correspondente.
 
     Requisitos Adicionais:
-    - O programa deve continuar em execução até que o usuário 
-    escolha a opção de sair.
-    - Utilize variáveis locais para armazenar as informações dos 
-    heróis e da equipe.
+    - O programa deve continuar em execução até que o usuário escolha a opção de sair.
+    - Utilize variáveis locais para armazenar as informações dos heróis e da equipe.
     - Não utilize classes, vetores ou listas.
 */
-
-using System;
 
 class Program {
 
@@ -120,31 +109,37 @@ class Program {
             Console.WriteLine($"5. {nome5} | Poder: {poder5} | {pts5} pts");
         }
 
+        int temp1, temp2, temp3;
+
         Console.Write("\n> Escolha o primeiro herói da equipe: ");
-        equipe1 = int.Parse(Console.ReadLine() ?? "1");
-        if (equipe1 > totalHerois || equipe1 < 1) {
+        temp1 = int.Parse(Console.ReadLine() ?? "1");
+        if (temp1 > totalHerois || temp1 < 1) {
             Console.WriteLine("Herói inválido.");
             return;
         }
 
         Console.Write("> Escolha o segundo herói da equipe: ");
-        equipe2 = int.Parse(Console.ReadLine() ?? "2");
-        if (equipe2 > totalHerois || equipe2 < 1) {
+        temp2 = int.Parse(Console.ReadLine() ?? "2");
+        if (temp2 > totalHerois || temp2 < 1) {
             Console.WriteLine("Herói inválido.");
             return;
         }
 
         Console.Write("> Escolha o terceiro herói da equipe: ");
-        equipe3 = int.Parse(Console.ReadLine() ?? "3");
-        if (equipe3 > totalHerois || equipe3 < 1) {
+        temp3 = int.Parse(Console.ReadLine() ?? "3");
+        if (temp3 > totalHerois || temp3 < 1) {
             Console.WriteLine("Herói inválido.");
             return;
         }
 
-        if (equipe1 == equipe2 || equipe1 == equipe3 || equipe2 == equipe3) {
+        if (temp1 == temp2 || temp1 == temp3 || temp2 == temp3) {
             Console.WriteLine("\nVocê não pode escolher o mesmo herói mais de uma vez.");
             return;
         }
+
+        equipe1 = temp1;
+        equipe2 = temp2;
+        equipe3 = temp3;
 
         Console.WriteLine("\nEquipe cadastrada com sucesso!");
     }

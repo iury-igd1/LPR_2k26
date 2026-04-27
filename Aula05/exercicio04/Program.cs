@@ -1,20 +1,18 @@
 ﻿/* 
 Exercício 04:
-    Solicite ao usuário para inserir um número e calcule a soma 
-    dos dígitos do quadrado desse número. 
+    Solicite ao usuário para inserir um número e calcule a soma dos dígitos 
+    do quadrado desse número. 
 
     EXEMPLO:
         Entrada:    123
         Saída:      Soma dos dígitos: 18
 */
 
-using System.Diagnostics;
-
-int numero, quadrado, soma = 0;
+int quadrado, soma = 0;
 
 Console.Write("Digite um número inteiro: ");
 string entrada = Console.ReadLine()!;
-int.TryParse(entrada, out numero);
+int.TryParse(entrada, out int numero);
 
 quadrado = numero * numero;
 string quad = Convert.ToString(quadrado);

@@ -1,0 +1,19 @@
+### C++ ###
+*.exe
+*.o
+*.obj
+*.out
+.vscode/
+
+### C# / .NET ###
+bin/
+obj/
+*.user
+*.suo
+*.log
+*.userprefs
+*.sln.docstates
+
+### Sistema / Desktop ###
+.DS_Store
+Thumbs.db
