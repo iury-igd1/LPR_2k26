@@ -1,9 +1,8 @@
 /* 
 Exercício 03:
-     Faça um programa que leia o número de um funcionário, seu número de horas 
-     trabalhadas, o valor que recebe por hora e calcule o salário desse 
-     funcionário. A seguir, mostre o número e o salário do funcionário, 
-     com duas casas decimais.
+     Faça um programa que leia o número de um funcionário, seu número de horas trabalhadas, o valor que 
+     recebe por hora e calcule o salário desse funcionário. A seguir, mostre o número e o salário do 
+     funcionário, com duas casas decimais.
     
     EXEMPLO:
         Entrada:    1
@@ -26,15 +25,20 @@ int main()
      int numero, horas;
      float valor_hora, salario;
 
-     cout << "Número do funcionário: ";
+     cout << "===========================================" << endl;
+     cout << "   CALCULADORA DE SALÁRIO DE FUNCIONÁRIO   " << endl;
+     cout << "===========================================\n" << endl;
+     cout << "Informe os dados do funcionário:\n" << endl;
+
+     cout << "> Número: ";
      cin >> numero;
-     cout << "Horas trabalhadas: ";
+     cout << "> Horas trabalhadas: ";
      cin >> horas;
-     cout << "Valor por hora: ";
+     cout << "> Valor por hora: ";
      cin >> valor_hora;
 
      salario = horas * valor_hora;
 
-     cout << "Número = " << numero << endl;
+     cout << "\nNúmero = " << numero << endl;
      cout << "Salário = R$ " << fixed << setprecision(2) << salario << endl;
 } 

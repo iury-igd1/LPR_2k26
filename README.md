@@ -1,44 +1,57 @@
-# LPR 2k26
+# 📚 LPR 2k26
 
-Repositório destinado aos exercícios e códigos desenvolvidos durante as aulas de **Linguagem de Programação** no ano de 2026.
+Repositório destinado aos exercícios desenvolvidos durante as aulas de **Linguagem de Programação** ao longo de 2026.
 
-**Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC)**  
-Curso Técnico em **Desenvolvimento de Sistemas** (DS)
+## 👨‍💻 Informações
 
-**Professor:** José Andery Carneiro  
-**Aluno:** Iury Gonçalves de Souza
+| Item        | Informação                                                        |
+| ----------- | ----------------------------------------------------------------- |
+| Instituição | Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC) |
+| Curso       | Técnico em Desenvolvimento de Sistemas                            |
+| Disciplina  | Linguagem de Programação (LPR)                                    |
+| Professor   | José Andery Carneiro                                              |
+| Aluno       | Iury Gonçalves de Souza                                           |
 
 ---
 
-## Conteúdo
+## 🎯 Objetivo
 
-Os exercícios estão organizados de acordo com as aulas em que foram propostos.
+Este repositório tem como objetivo registrar a evolução dos estudos em programação durante o curso técnico, reunindo exercícios práticos, exemplos desenvolvidos em sala e aplicações dos principais conceitos estudados na disciplina.
 
-### Aula 01 - Conceitos básicos da computação
+---
 
-* Termos e conceitos importantes da computação;
-* Criação dos primeiros códigos C# e C++.
+## 📖 Conteúdo das Aulas
 
-### Aula 02 - Introdução à lógica de programação
+| Aula | Conteúdo |
+|-------|-----------|
+| Aula 01 | Conceitos básicos da computação e da programação |
+| Aula 02 | Lógica de programação e tipos de dados |
+| Aula 03 | Git, GitHub e versionamento |
+| Aula 04 | Estruturas de seleção (`if` e `switch`) |
+| Aula 05 | Estruturas de repetição (`while`, `do while` e `for`) |
+| Aula 06 | Funções e modularização |
+| Aula 07 | Vetores e matrizes |
 
-* Tipos de dados;
-* Constantes e variáveis;
-* Expressões aritméticas e lógicas;
-* Comandos de atribuição, de entrada e de saída.
+---
 
-### Aula 03 - GitHub e controle de versionamento
+## 📌 Competências Desenvolvidas
 
-* Teoria sobre controle de versionamento, o sistema GIT e a plataforma GitHub;
-* Criação e trabalho com repositórios remotos e locais.
+Ao longo das atividades deste repositório foram trabalhados conceitos como:
 
-### Aula 04 - Estruturas de seleção
+* Lógica de programação;
+* Programação estruturada;
+* Resolução de problemas;
+* Organização de código;
+* Modularização através de funções;
+* Manipulação de vetores e matrizes;
+* Estruturas condicionais e de repetição;
+* Controle de versão com Git e GitHub;
+* Boas práticas de desenvolvimento.
 
-* Implementação das lógicas "if" e "switch".
+---
 
-### Aula 05 - Estruturas de repetição
+## 📈 Status do Repositório
 
-* Implementação das lógicas "while", "do while" e "for".
+✅ Em desenvolvimento contínuo.
 
-### Aula 06 - Funções
-
-* Paradigma funcional como uma maneira de programar de forma mais eficiente.
+Novos exercícios e conteúdos serão adicionados conforme o avanço da disciplina durante o ano letivo de 2026.

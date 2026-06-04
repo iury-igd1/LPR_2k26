@@ -1,8 +1,7 @@
 /* 
 Exercício 02:
-    Faça um programa que leia 2 valores inteiros (A e B). Após, o programa deve 
-    mostrar uma mensagem "São Múltiplos" ou "Não são Múltiplos", indicando se 
-    os valores lidos são múltiplos entre si. 
+    Faça um programa que leia 2 valores inteiros (A e B). Após, o programa deve mostrar uma mensagem "São 
+    Múltiplos" ou "Não são Múltiplos", indicando se os valores lidos são múltiplos entre si. 
     Atenção: os números podem ser digitados em ordem crescente ou decrescente.
 
     EXEMPLO:
@@ -22,13 +21,21 @@ int main()
 
     int A, B;
 
-    cout << "Digite dois números inteiros (separados por espaço): ";
+    cout << "=============================" << endl;
+    cout << "   ANALISADOR DE MÚLTIPLOS   " << endl;
+    cout << "=============================\n" << endl;
+
+    cout << "> Digite dois números inteiros (separados por espaço): ";
 
     cin >> A >> B;
 
-    if (A % B == 0 || B % A == 0) {
-        cout << "São Múltiplos" << endl;
-    } else {
-        cout << "Não são Múltiplos" << endl;
+    if (A == 0 || B == 0) {
+        cout << "\nZero não é um número válido para análise de múltiplos." << endl;
+    } 
+    else if (A % B == 0 || B % A == 0) {
+        cout << "\nSão Múltiplos" << endl;
+    } 
+    else {
+        cout << "\nNão são Múltiplos" << endl;
     }
 }

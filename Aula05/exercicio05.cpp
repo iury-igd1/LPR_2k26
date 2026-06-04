@@ -1,16 +1,15 @@
 /* 
 Exercício 05:
-    Crie um programa que simula o treinamento de um Jedi. O usuário deve inserir 
-    o número de horas de treinamento por dia. O programa deve calcular o total 
-    de horas de treinamento em uma semana, desconsiderando sábados e domingos, e 
-    informar quantos dias, semanas e meses seriam necessários para alcançar o 
-    total de 1000 horas de treinamento. 
+    Crie um programa que simula o treinamento de um Jedi. O usuário deve inserir o número de horas de 
+    treinamento por dia. O programa deve calcular o total de horas de treinamento em uma semana, 
+    desconsiderando sábados e domingos, e informar quantos dias, semanas e meses seriam necessários para 
+    alcançar o total de 1000 horas de treinamento. 
     Considerar 1 mês = 4,5 semanas.
 
     EXEMPLO:
         Entrada:    8 
-        Saída:      Serão necessários 5 meses, 2 semana(s) e 3 dia(s) para alcançar 
-                    1000 horas de treinamento.
+        Saída:      Horas treinadas por semana: 40h
+                    Serão necessários 5 meses, 2 semana(s) e 3 dia(s) para alcançar 1000h de treinamento.
 */
 
 #include <iostream>
@@ -27,7 +26,12 @@ int main()
     double horas, diasTotal, diasRestantes;
     int semanas, meses;
 
-    cout << "Digite o número de horas de treinamento por dia: ";
+    cout << "==================================" << endl;
+    cout << "   SIMULADOR DE TREINAMENTO JEDI  " << endl;
+    cout << "==================================\n" << endl;
+    cout << "Meta: 1000 horas\n" << endl;
+
+    cout << "> Digite o número de horas de treinamento por dia: ";
     cin >> horas;
     
     if (horas <= 0) {
@@ -49,7 +53,7 @@ int main()
             diasFinal = 0;
         }
 
-        cout << " " << endl;
-        cout << "Serão necessários " << meses << " meses, " << semanas << " semana(s) e " << diasFinal << " dia(s) para alcançar 1000 horas de treinamento." << endl;
+        cout << "\nHoras treinadas por semana: " << horas * 5 << "h" << endl;
+        cout << "Serão necessários " << meses << " meses, " << semanas << " semana(s) e " << diasFinal << " dia(s) para alcançar 1000h de treinamento." << endl;
     }
 }

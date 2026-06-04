@@ -1,8 +1,7 @@
 /* 
 Exercício 02:
-    Construa um algoritmo que agrupe em funções os exercícios 1, 3 e 4 da tarefa 
-    de estruturas de repetições (Aula 5). Cada exercício deve estar contido em 
-    uma função separada. Defina os parâmetros de modo eficiente e generalista. 
+    Construa um algoritmo que agrupe em funções os exercícios 1, 3 e 4 da Aula 5. Cada exercício deve estar 
+    contido em uma função separada. Defina os parâmetros de modo eficiente e generalista. 
     Construa um menu na função main. 
 
     EXEMPLO:
@@ -34,7 +33,7 @@ using namespace std;
 void exercicio01() {
     int n, soma = 0, qtd = 0;
 
-    cout << "> Digite a quantidade de números e os números (separados por espaço): ";
+    cout << "\n> Digite a quantidade de números e os números (separados por espaço): ";
     cin >> n;
 
     for (int i = 0; i < n; i++) {
@@ -47,7 +46,7 @@ void exercicio01() {
         }
     }
 
-    cout << "Média dos números: " << fixed << setprecision(2) << (double)soma / qtd << endl;
+    cout << "\nMédia dos números: " << fixed << setprecision(2) << (double)soma / qtd << endl;
 }
 
 void exercicio03() {
@@ -59,12 +58,12 @@ void exercicio03() {
         }
     }
 
-    cout << "Soma dos números: " << soma << endl;
+    cout << "\nSoma dos números: " << soma << endl;
 }
 
 void exercicio04() {
     int numero, soma = 0;
-    cout << "> Digite um número inteiro: ";
+    cout << "\n> Digite um número inteiro: ";
     cin >> numero;
 
     int quadrado = numero * numero;
@@ -75,18 +74,21 @@ void exercicio04() {
         soma += digito;
     }
 
-    cout << "Soma dos dígitos: " << soma << endl;
+    cout << "\nSoma dos dígitos: " << soma << endl;
 }
 
 int main()
 {
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
-    cout << "--- Menu de opções ---" << endl;
-    cout << "1. Ex1: Média de números pares" << endl;
-    cout << "3. Ex3: Soma dos ímpares múltiplos de 3 de 50 a 500" << endl;
-    cout << "4. Ex4: Soma dos dígitos do quadrado" << endl;
-    cout << "0. Sair" << endl;
+    cout << "===========================" << endl;
+    cout << "   CENTRAL DE EXERCÍCIOS   " << endl;
+    cout << "===========================\n" << endl;
+
+    cout << "1 - Média de números pares" << endl;
+    cout << "3 - Soma dos ímpares múltiplos de 3 entre 50 a 500" << endl;
+    cout << "4 - Soma dos dígitos do quadrado" << endl;
+    cout << "0 - Sair" << endl;
     
     int opcao;
     cout << "\n> Digite a opção desejada: ";
@@ -103,9 +105,9 @@ int main()
             exercicio04();
             break;
         case 0:
-            cout << "Encerrando programa." << endl;
+            cout << "\nEncerrando programa." << endl;
             break;
         default:
-            cout << "Opção inválida." << endl;
+            cout << "\nOpção inválida." << endl;
     }
 }

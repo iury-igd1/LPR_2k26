@@ -1,6 +1,6 @@
 /* 
 Exercício 01:
-    Construa uma função em que retorne o reverso de um número inteiro.
+    Construa uma função que retorne o reverso de um número inteiro.
 
     EXEMPLO:
         Entrada:    1234
@@ -14,7 +14,7 @@ Exercício 01:
 
 using namespace std;
 
-void inversoNumero (int numero) {
+string inversoNumero (int numero) {
     string num = to_string(numero);
     string resultado = "";
 
@@ -23,7 +23,7 @@ void inversoNumero (int numero) {
         resultado += digito;
     }
 
-    cout << "O inverso desse número é: " << resultado << endl;
+    return resultado;
 }
 
 int main()
@@ -32,8 +32,13 @@ int main()
 
     int numero_usuario;
 
-    cout << "Digite um número inteiro: ";
+    cout << "=========================" << endl;
+    cout << "   INVERSOR DE NÚMEROS   " << endl;
+    cout << "=========================\n" << endl;
+
+    cout << "> Digite um número inteiro: ";
     cin >> numero_usuario;
 
-    inversoNumero(numero_usuario);
+    string resultado = inversoNumero(numero_usuario);
+    cout << "\nO inverso desse número é: " << resultado << endl;
 }

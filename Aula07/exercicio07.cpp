@@ -1,5 +1,5 @@
 /* 
-Exercício 04:
+Exercício 07:
     Crie um algoritmo que leia duas matrizes A e B, de tamanho 3x3, e calcule A * B.
 
     EXEMPLO:
@@ -25,11 +25,15 @@ int main()
 
     int a, b, c, d, e, f, g, h, i;
 
-    cout << "Digite os 9 elementos da primeira matriz (3x3): ";
+    cout << "===============================" << endl;
+    cout << "   MULTIPLICAÇÃO DE MATRIZES   " << endl;
+    cout << "===============================\n" << endl;
+
+    cout << "> Digite os 9 elementos da primeira matriz 3x3 (separados por espaço): ";
     cin >> a >> b >> c >> d >> e >> f >> g >> h >> i;
     int matrizA[3][3] = {{a, b, c}, {d, e, f}, {g, h, i}};
 
-    cout << "Digite os 9 elementos da segunda matriz (3x3): ";
+    cout << "> Digite os 9 elementos da segunda matriz 3x3 (separados por espaço): ";
     cin >> a >> b >> c >> d >> e >> f >> g >> h >> i;
     int matrizB[3][3] = {{a, b, c}, {d, e, f}, {g, h, i}};
 
@@ -45,7 +49,7 @@ int main()
     matrizMultiplicacao[2][1] = matrizA[2][0] * matrizB[0][1] + matrizA[2][1] * matrizB[1][1] + matrizA[2][2] * matrizB[2][1];
     matrizMultiplicacao[2][2] = matrizA[2][0] * matrizB[0][2] + matrizA[2][1] * matrizB[1][2] + matrizA[2][2] * matrizB[2][2];
    
-    cout << " " << endl;
+    cout << endl;
     cout << "Matriz A * B =" << endl;
     for (int i = 0; i < 3; i++) {
         for (int j = 0; j < 3; j++) {

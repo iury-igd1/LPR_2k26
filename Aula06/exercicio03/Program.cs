@@ -1,38 +1,34 @@
 ﻿/* 
 Exercício 03:
-    Desenvolva um programa que simule um sistema de seleção de heróis da Marvel 
-    para uma equipe. O programa deve ter as seguintes funcionalidades:
+    Desenvolva um programa que simule um sistema de seleção de heróis da Marvel para uma equipe. 
+    O programa deve ter as seguintes funcionalidades:
 
     a) Cadastro de Heróis:
-    Crie uma função chamada cadastrarHeroi que permita ao usuário inserir o nome,
-    o poder e a pontuação de um herói. A função deve solicitar essas informações 
-    ao usuário e armazená-las em variáveis. Não é necessário armazenar os heróis 
-    em uma lista ou vetor. O programa deve permitir o cadastro de até 5 heróis.
+    Crie uma função chamada cadastrarHeroi que permita ao usuário inserir o nome, o poder e a pontuação de 
+    um herói. A função deve solicitar essas informações ao usuário e armazená-las em variáveis. Não é 
+    necessário armazenar os heróis em uma lista ou vetor. O programa deve permitir o cadastro de até 5 heróis.
 
     b) Seleção de Equipe:
-    Crie uma função chamada selecionarEquipe que permita ao usuário selecionar 
-    heróis para formar sua equipe. A função deve exibir os heróis cadastrados e 
-    permitir que o usuário selecione quais heróis deseja incluir em sua equipe. 
-    O usuário deve ser capaz de selecionar três heróis para sua equipe.
+    Crie uma função chamada selecionarEquipe que permita ao usuário selecionar heróis para formar sua equipe. 
+    A função deve exibir os heróis cadastrados e permitir que o usuário selecione quais heróis deseja incluir 
+    em sua equipe. O usuário deve ser capaz de selecionar três heróis para sua equipe.
 
     c) Pontuação Total da Equipe:
-    Crie uma função chamada calcularPontuacaoTotal que calcule a pontuação total 
-    da equipe com base nos heróis selecionados. A pontuação total da equipe deve 
-    ser a soma das pontuações individuais de cada herói selecionado.
+    Crie uma função chamada calcularPontuacaoTotal que calcule a pontuação total da equipe com base nos 
+    heróis selecionados. A pontuação total da equipe deve ser a soma das pontuações individuais de cada herói.
 
     d) Exibição da Equipe:
-    Crie uma função chamada exibirEquipe que exiba os heróis selecionados para a 
-    equipe, seu poder e a pontuação total da equipe.
+    Crie uma função chamada exibirEquipe que exiba os heróis selecionados para a equipe, seu poder e a 
+    pontuação total da equipe.
 
     e) Menu:
-    Crie uma função chamada menuPrincipal que exiba um menu com as opções 
-    disponíveis para o usuário (cadastro de heróis, seleção de equipe, exibição 
-    da equipe e sair do programa). O usuário deve poder escolher uma das opções 
-    do menu e o programa deve executar a funcionalidade correspondente.
+    Crie uma função chamada menuPrincipal que exiba um menu com as opções disponíveis para o usuário 
+    (cadastro de heróis, seleção de equipe, exibição da equipe e sair do programa). O usuário deve poder 
+    escolher uma das opções do menu e o programa deve executar a funcionalidade correspondente.
 
     Requisitos Adicionais:
-    - O programa deve continuar em execução até que o usuário escolha a opção de sair.
-    - Utilize variáveis locais para armazenar as informações dos heróis e da equipe.
+    - O programa deve continuar em execução até que o usuário escolha a opção de sair;
+    - Utilize variáveis locais para armazenar as informações dos heróis e da equipe;
     - Não utilize classes, vetores ou listas.
 */
 
@@ -44,10 +40,17 @@ class Program {
 
         if (totalHerois >= 5) {
             Console.WriteLine("\nLimite de heróis cadastrados atingido.");
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
             return;
         }
 
-        Console.Write("\n> Nome do herói: ");
+        Console.WriteLine("\n-------------------------------------------");
+        Console.WriteLine("             CADASTRO DE HERÓI             ");
+        Console.WriteLine("-------------------------------------------\n");
+        Console.WriteLine($"Vagas disponíveis: {5 - totalHerois}\n");
+
+        Console.Write("> Nome do herói: ");
         string nome = Console.ReadLine() ?? "N/A";
 
         Console.Write("> Poder do herói: ");
@@ -84,7 +87,10 @@ class Program {
                 break;
         }
         totalHerois++;
-        Console.WriteLine("\nHerói cadastrado com sucesso!");
+        Console.WriteLine($"\nHerói cadastrado com sucesso! ({totalHerois}/5)");
+
+        Console.WriteLine("\nPressione ENTER para continuar...");
+        Console.ReadLine();
     }
 
     static void selecionarEquipe(string nome1, string nome2, string nome3, string nome4, string nome5,
@@ -94,19 +100,28 @@ class Program {
         
         if (totalHerois < 3) {
             Console.WriteLine("\nCadastre pelo menos 3 heróis antes de montar a equipe.");
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
             return;
         }
+
+        Console.WriteLine("\n-------------------------------------------");
+        Console.WriteLine("              SELEÇÃO DE EQUIPE            ");
+        Console.WriteLine("-------------------------------------------\n");
+        Console.WriteLine("Escolha 3 heróis para sua equipe.\n");
         
-        Console.WriteLine("\nHeróis cadastrados:");
-        Console.WriteLine($"1. {nome1} | Poder: {poder1} | {pts1} pts");
-        Console.WriteLine($"2. {nome2} | Poder: {poder2} | {pts2} pts");
-        Console.WriteLine($"3. {nome3} | Poder: {poder3} | {pts3} pts");
-        
+        Console.WriteLine("-------------------------------------------");
+        Console.WriteLine("ID  HERÓI           PODER           PONTOS");
+        Console.WriteLine("-------------------------------------------");
+        Console.WriteLine($"1   {nome1,-15} {poder1,-15} {pts1,-6}");
+        Console.WriteLine($"2   {nome2,-15} {poder2,-15} {pts2,-6}");
+        Console.WriteLine($"3   {nome3,-15} {poder3,-15} {pts3,-6}");
+
         if (totalHerois > 3) {
-            Console.WriteLine($"4. {nome4} | Poder: {poder4} | {pts4} pts");
+            Console.WriteLine($"4   {nome4,-15} {poder4,-15} {pts4,-6}");
         }
         if (totalHerois > 4) {
-            Console.WriteLine($"5. {nome5} | Poder: {poder5} | {pts5} pts");
+            Console.WriteLine($"5   {nome5,-15} {poder5,-15} {pts5,-6}");
         }
 
         int temp1, temp2, temp3;
@@ -114,21 +129,27 @@ class Program {
         Console.Write("\n> Escolha o primeiro herói da equipe: ");
         temp1 = int.Parse(Console.ReadLine() ?? "1");
         if (temp1 > totalHerois || temp1 < 1) {
-            Console.WriteLine("Herói inválido.");
+            Console.WriteLine("\nHerói inválido.");
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
             return;
         }
 
         Console.Write("> Escolha o segundo herói da equipe: ");
         temp2 = int.Parse(Console.ReadLine() ?? "2");
         if (temp2 > totalHerois || temp2 < 1) {
-            Console.WriteLine("Herói inválido.");
+            Console.WriteLine("\nHerói inválido.");
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
             return;
         }
 
         Console.Write("> Escolha o terceiro herói da equipe: ");
         temp3 = int.Parse(Console.ReadLine() ?? "3");
         if (temp3 > totalHerois || temp3 < 1) {
-            Console.WriteLine("Herói inválido.");
+            Console.WriteLine("\nHerói inválido.");
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
             return;
         }
 
@@ -142,6 +163,9 @@ class Program {
         equipe3 = temp3;
 
         Console.WriteLine("\nEquipe cadastrada com sucesso!");
+
+        Console.WriteLine("\nPressione ENTER para continuar...");
+        Console.ReadLine();
     }
 
     static int pontuacao(int heroi, int pts1, int pts2, int pts3, int pts4, int pts5)
@@ -164,6 +188,13 @@ class Program {
 
     static void calcularPontuacaoTotal(int equipe1, int equipe2, int equipe3,
         int pts1, int pts2, int pts3, int pts4, int pts5) {
+
+        if (equipe1 == 0 || equipe2 == 0 || equipe3 == 0) {
+            Console.WriteLine("\nNenhuma equipe foi selecionada.");
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
+            return;
+        }
         
         int total = 0;
 
@@ -172,6 +203,9 @@ class Program {
         total += pontuacao(equipe3, pts1, pts2, pts3, pts4, pts5);
 
         Console.WriteLine($"\nPontuação total da equipe: {total} pts");
+
+        Console.WriteLine("\nPressione ENTER para continuar...");
+        Console.ReadLine();
     }
 
     static void heroi(int heroi, string nome1, string nome2, string nome3, string nome4, string nome5,
@@ -180,19 +214,29 @@ class Program {
         
         switch (heroi) {
             case 1:
-                Console.WriteLine($"{nome1} | Poder: {poder1} | {pts1} pts");
+                Console.WriteLine("[1] " + nome1);
+                Console.WriteLine("    Poder: " + poder1);
+                Console.WriteLine("    Pontuação: " + pts1 + " pts\n");
                 break;
             case 2:
-                Console.WriteLine($"{nome2} | Poder: {poder2} | {pts2} pts");
+                Console.WriteLine("[2] " + nome2);
+                Console.WriteLine("    Poder: " + poder2);
+                Console.WriteLine("    Pontuação: " + pts2 + " pts\n");
                 break;
             case 3:
-                Console.WriteLine($"{nome3} | Poder: {poder3} | {pts3} pts");
+                Console.WriteLine("[3] " + nome3);
+                Console.WriteLine("    Poder: " + poder3);
+                Console.WriteLine("    Pontuação: " + pts3 + " pts\n");
                 break;
             case 4:
-                Console.WriteLine($"{nome4} | Poder: {poder4} | {pts4} pts");
+                Console.WriteLine("[4] " + nome4);
+                Console.WriteLine("    Poder: " + poder4);
+                Console.WriteLine("    Pontuação: " + pts4 + " pts\n");
                 break;
             case 5:
-                Console.WriteLine($"{nome5} | Poder: {poder5} | {pts5} pts");
+                Console.WriteLine("[5] " + nome5);
+                Console.WriteLine("    Poder: " + poder5);
+                Console.WriteLine("    Pontuação: " + pts5 + " pts\n");
                 break;
         }
     }
@@ -203,13 +247,18 @@ class Program {
         
         if (equipe1 == 0 || equipe2 == 0 || equipe3 == 0) {
             Console.WriteLine("\nEquipe não selecionada.");
+            Console.WriteLine("\nPressione ENTER para continuar...");
+            Console.ReadLine();
             return;
         }
         
-        Console.WriteLine("\n--- Equipe selecionada: ---");
+        Console.WriteLine("\n-------------------------------------------");
+        Console.WriteLine("            EQUIPE SELECIONADA            ");
+        Console.WriteLine("-------------------------------------------\n");
         heroi(equipe1, nome1, nome2, nome3, nome4, nome5, poder1, poder2, poder3, poder4, poder5, pts1, pts2, pts3, pts4, pts5);
         heroi(equipe2, nome1, nome2, nome3, nome4, nome5, poder1, poder2, poder3, poder4, poder5, pts1, pts2, pts3, pts4, pts5);
         heroi(equipe3, nome1, nome2, nome3, nome4, nome5, poder1, poder2, poder3, poder4, poder5, pts1, pts2, pts3, pts4, pts5);
+        Console.WriteLine("-------------------------------------------");
         calcularPontuacaoTotal(equipe1, equipe2, equipe3, pts1, pts2, pts3, pts4, pts5);
     }
 
@@ -221,13 +270,20 @@ class Program {
         int opcao = 0;
         
         while (opcao != 5) {
-            Console.WriteLine("\n--- Menu Principal ---");
-            Console.WriteLine("1. Cadastrar Herói");
-            Console.WriteLine("2. Selecionar Equipe");
-            Console.WriteLine("3. Calcular Pontuação Total");
-            Console.WriteLine("4. Exibir Equipe");
-            Console.WriteLine("5. Sair\n");
+            Console.Clear();
+            Console.WriteLine("===========================================");
+            Console.WriteLine("   SISTEMA DE FORMAÇÃO DE EQUIPES MARVEL   ");
+            Console.WriteLine("===========================================\n");
+            Console.WriteLine($"Heróis cadastrados: {totalHerois}/5\n");
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("1 - Cadastrar Herói");
+            Console.WriteLine("2 - Selecionar Equipe");
+            Console.WriteLine("3 - Calcular Pontuação");
+            Console.WriteLine("4 - Exibir Equipe");
+            Console.WriteLine("5 - Sair");
+            Console.WriteLine("-------------------------------------------");
             Console.Write("> Escolha uma opção: ");
+
             opcao = int.Parse(Console.ReadLine() ?? "5");
 
             switch (opcao) {
@@ -256,6 +312,8 @@ class Program {
                     break;
                 default:
                     Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Console.WriteLine("\nPressione ENTER para continuar...");
+                    Console.ReadLine();
                     break;
             }
         }

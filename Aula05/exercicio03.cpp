@@ -1,9 +1,9 @@
 /* 
 Exercício 03:
-    Elabore um algoritmo que calcule a soma de todos os números ímpares 
-    múltiplos de 3 que se encontrem no conjunto dos números de 50 a 500.
+    Elabore um algoritmo que calcule a soma de todos os números ímpares múltiplos de 3 que se encontrem no 
+    conjunto dos números de 50 a 500.
 
-        Saída:      Soma dos números: 20475
+        Saída:      Soma dos números = 20475
 */
 
 #include <iostream>
@@ -24,5 +24,9 @@ int main()
         }
     }
 
-    cout << "Soma dos números: " << soma << endl;
+    cout << "=============================" << endl;
+    cout << "   SOMA DOS MÚLTIPLOS DE 3   " << endl;
+    cout << "=============================\n" << endl;
+
+    cout << "Soma dos números = " << soma << endl;
 }
