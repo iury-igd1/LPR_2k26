@@ -17,9 +17,9 @@ Console.WriteLine("   CALCULADORA DE ÁREA DE CÍRCULO   ");
 Console.WriteLine("====================================\n");
 
 Console.Write("> Digite o valor do raio: ");
-string entrada = Console.ReadLine()!;
+string entrada = Console.ReadLine()!; // Lê o raio informado pelo usuário
 float.TryParse(entrada, out float raio);
 
-area = pi * raio * raio;
+area = pi * raio * raio; // Calcula a área do círculo (área = π * raio²)
 
-Console.WriteLine($"\nÁrea = {area:F4}");
+Console.WriteLine($"\nÁrea = {area:F4}"); // Exibe o resultado com 4 casas decimais

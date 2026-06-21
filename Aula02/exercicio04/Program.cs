@@ -14,8 +14,10 @@ Console.WriteLine("   CALCULADORA DE VALOR A PAGAR   ");
 Console.WriteLine("==================================\n");
 Console.WriteLine("Informe os dados das peças para calcular o valor a pagar.\n");   
 
+// Lê código, quantidade e valor unitário da peça 1
 Console.Write("> Código, número de peças e valor unitário da peça 1 (separados por espaço): ");
 string[] entrada1 = Console.ReadLine()!.Split(' ');
+// Lê código, quantidade e valor unitário da peça 2
 Console.Write("> Código, número de peças e valor unitário da peça 2 (separados por espaço): ");
 string[] entrada2 = Console.ReadLine()!.Split(' ');
 
@@ -24,6 +26,6 @@ float.TryParse(entrada1[2], out float valor1);
 int.TryParse(entrada2[1], out int numero2);
 float.TryParse(entrada2[2], out float valor2);
 
-float valor = (numero1 * valor1) + (numero2 * valor2);
+float valor = (numero1 * valor1) + (numero2 * valor2); // Calcula o valor total a pagar pelas duas peças
 
 Console.WriteLine($"\nValor a pagar = R$ {valor:F2}");

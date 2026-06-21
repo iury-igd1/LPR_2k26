@@ -30,6 +30,7 @@ int main()
      cout << "===========================================\n" << endl;
      cout << "Informe os dados do funcionário:\n" << endl;
 
+     // Lê os dados do funcionário
      cout << "> Número: ";
      cin >> numero;
      cout << "> Horas trabalhadas: ";
@@ -37,7 +38,7 @@ int main()
      cout << "> Valor por hora: ";
      cin >> valor_hora;
 
-     salario = horas * valor_hora;
+     salario = horas * valor_hora; // Calcula o salário (horas trabalhadas * valor por hora)
 
      cout << "\nNúmero = " << numero << endl;
      cout << "Salário = R$ " << fixed << setprecision(2) << salario << endl;

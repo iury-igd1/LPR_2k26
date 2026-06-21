@@ -19,26 +19,27 @@ using namespace std;
 
 int main()
 {
-     setlocale(LC_ALL, "pt_BR.UTF-8");
+    setlocale(LC_ALL, "pt_BR.UTF-8");
 
-     int A, B, C, D;
+    int A, B, C, D;
 
-     cout << "==========================================" << endl;
-     cout << "   CALCULADORA DE DIFERENÇA DE PRODUTOS   " << endl;
-     cout << "==========================================\n" << endl;
-     cout << "Diferença = (A * B) - (C * D)\n" << endl;
-     cout << "Informe os valores:\n" << endl;
+    cout << "==========================================" << endl;
+    cout << "   CALCULADORA DE DIFERENÇA DE PRODUTOS   " << endl;
+    cout << "==========================================\n" << endl;
+    cout << "Diferença = (A * B) - (C * D)\n" << endl;
+    cout << "Informe os valores:\n" << endl;
 
-     cout << "> Valor de A: ";
-     cin >> A;
-     cout << "> Valor de B: ";
-     cin >> B;
-     cout << "> Valor de C: ";
-     cin >> C;
-     cout << "> Valor de D: ";
-     cin >> D;
+    // Lê os quatro valores informados pelo usuário
+    cout << "> Valor de A: ";
+    cin >> A;
+    cout << "> Valor de B: ";
+    cin >> B;
+    cout << "> Valor de C: ";
+    cin >> C;
+    cout << "> Valor de D: ";
+    cin >> D;
 
-     int diferenca = (A * B) - (C * D);
+    int diferenca = (A * B) - (C * D); // Calcula a diferença entre os dois produtos
 
-     cout << "\nDiferença = " << diferenca << endl;
+    cout << "\nDiferença = " << diferenca << endl;
 } 
