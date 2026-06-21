@@ -9,5 +9,5 @@ using namespace std;
 
 int main()
 {
-    cout << "Hello, World!" << endl;
+    cout << "Hello, World!" << endl; // Imprime a mensagem clássica no console
 }
