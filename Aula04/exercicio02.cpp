@@ -25,14 +25,14 @@ int main()
     cout << "   ANALISADOR DE MÚLTIPLOS   " << endl;
     cout << "=============================\n" << endl;
 
+    // Lê os dois números informados pelo usuário
     cout << "> Digite dois números inteiros (separados por espaço): ";
-
     cin >> A >> B;
 
-    if (A == 0 || B == 0) {
+    if (A == 0 || B == 0) { // Zero não pode ser divisor
         cout << "\nZero não é um número válido para análise de múltiplos." << endl;
     } 
-    else if (A % B == 0 || B % A == 0) {
+    else if (A % B == 0 || B % A == 0) { // Um é múltiplo do outro se a divisão entre eles tiver resto zero
         cout << "\nSão Múltiplos" << endl;
     } 
     else {

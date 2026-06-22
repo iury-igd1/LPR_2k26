@@ -11,11 +11,12 @@ Console.WriteLine("============================");
 Console.WriteLine("   ANALISADOR DE PARIDADE   ");
 Console.WriteLine("============================\n");
 
+// Lê o número informado pelo usuário
 Console.Write("> Digite um número inteiro: ");
 string entrada = Console.ReadLine()!;
 int.TryParse(entrada, out int num);
 
-if (num % 2 == 0) {
+if (num % 2 == 0) { // Um número é par quando o resto da divisão por 2 é zero
     Console.WriteLine("\nO número informado é PAR");
 } 
 else {

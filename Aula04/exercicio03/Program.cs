@@ -17,10 +17,11 @@ Console.WriteLine("   SISTEMA DE CLASSES RPG   ");
 Console.WriteLine("============================\n");
 
 Console.WriteLine("1 - Guerreira\n2 - Mago\n3 - Arqueira\n");
-Console.Write("> Escolha sua Classe: ");
-classe = Console.ReadLine()!;
+// Lê a classe escolhida pelo jogador
+Console.Write("> Escolha sua Classe: "); 
+classe = Console.ReadLine() ?? "";
 
-switch (classe) {
+switch (classe) { // Cada classe possui um conjunto fixo de duas habilidades especiais
     case "1":
         Console.WriteLine("\nSuas habilidades: Ataque pesado e Defesa total.");
         break;
