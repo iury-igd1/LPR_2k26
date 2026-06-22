@@ -29,16 +29,18 @@ int main()
     cout << "   MULTIPLICAÇÃO DE MATRIZES   " << endl;
     cout << "===============================\n" << endl;
 
+    // Lê os 9 elementos da primeira matriz
     cout << "> Digite os 9 elementos da primeira matriz 3x3 (separados por espaço): ";
     cin >> a >> b >> c >> d >> e >> f >> g >> h >> i;
     int matrizA[3][3] = {{a, b, c}, {d, e, f}, {g, h, i}};
 
-    cout << "> Digite os 9 elementos da segunda matriz 3x3 (separados por espaço): ";
+    // Lê os 9 elementos da segunda matriz
+    cout << "> Digite os 9 elementos da segunda matriz 3x3 (separados por espaço):  ";
     cin >> a >> b >> c >> d >> e >> f >> g >> h >> i;
     int matrizB[3][3] = {{a, b, c}, {d, e, f}, {g, h, i}};
 
+    // Calcula cada elemento da matriz resultante: linha de A * coluna de B
     int matrizMultiplicacao[3][3];
-
     matrizMultiplicacao[0][0] = matrizA[0][0] * matrizB[0][0] + matrizA[0][1] * matrizB[1][0] + matrizA[0][2] * matrizB[2][0];
     matrizMultiplicacao[0][1] = matrizA[0][0] * matrizB[0][1] + matrizA[0][1] * matrizB[1][1] + matrizA[0][2] * matrizB[2][1];
     matrizMultiplicacao[0][2] = matrizA[0][0] * matrizB[0][2] + matrizA[0][1] * matrizB[1][2] + matrizA[0][2] * matrizB[2][2];

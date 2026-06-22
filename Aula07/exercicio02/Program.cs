@@ -5,7 +5,7 @@ Exercício 02:
     números ímpares digitados. 
 
     EXEMPLO:
-        Entrada:    5 8 7 9 6 4 10 8 10 9 
+        Entrada:    5 8 7 9 6 4 10 8 10 9
         Saída:      Números pares   = 8 6 4 10 8 10
                     Números ímpares = 5 7 9 9
 */
@@ -18,6 +18,7 @@ Console.WriteLine("==========================");
 Console.WriteLine("   SEPARADOR DE NÚMEROS   ");
 Console.WriteLine("==========================\n");
 
+// Lê os 10 números e já conta quantos são pares e quantos são ímpares
 Console.Write("> Digite 10 números inteiros (separados por espaço): ");
 string[] entrada = (Console.ReadLine() ?? "").Split(' ');
 
@@ -32,13 +33,14 @@ for (int i = 0; i < 10; i++) {
     }
 }
 
+// Cria os vetores de pares e ímpares já com o tamanho exato necessário
 int[] pares = new int[contPares];
 int[] impares = new int[contImpares];
 
 int iPares = 0;
 int iImpares = 0;
 
-for (int i = 0; i < numeros.Length; i++) {
+for (int i = 0; i < numeros.Length; i++) { // Distribui cada número lido no vetor de pares ou de ímpares
     if (numeros[i] % 2 == 0) {
         pares[iPares] = numeros[i];
         iPares++;

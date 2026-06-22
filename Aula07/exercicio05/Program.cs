@@ -16,6 +16,7 @@ Console.WriteLine("===========================");
 Console.WriteLine("   LEITURA DE MATRIZ 3X3   ");
 Console.WriteLine("===========================\n");
 
+// Lê os 9 elementos da matriz 3x3
 Console.Write("> Digite os elementos da matriz 3x3 (9 números inteiros separados por espaço): ");
 string[] entrada = (Console.ReadLine() ?? "").Split(' ');
 
@@ -28,6 +29,7 @@ for (int i = 0; i < 3; i++) {
 
 int soma = 0;
 
+// Exibe a matriz e soma todos os elementos ao mesmo tempo
 Console.WriteLine("\nMatriz informada:");
 for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {

@@ -20,6 +20,7 @@ Exercício 08:
 
 using namespace std;
 
+// Reserva o assento informado, se ele estiver livre
 string ReservarAssento(int sala[6][8], int linha, int coluna) {
     if (sala[linha][coluna] == 0) {
         sala[linha][coluna] = 1;
@@ -30,6 +31,7 @@ string ReservarAssento(int sala[6][8], int linha, int coluna) {
     }
 }
 
+// Cancela a reserva do assento informado, se ele estiver ocupado
 string CancelarReserva(int sala[6][8], int linha, int coluna) {
     if (sala[linha][coluna] == 1) {
         sala[linha][coluna] = 0;
@@ -40,6 +42,7 @@ string CancelarReserva(int sala[6][8], int linha, int coluna) {
     }
 }
 
+// Retorna "Livre" ou "Ocupado" de acordo com o status do assento
 string VerificarAssento(int sala[6][8], int linha, int coluna) {
     if (sala[linha][coluna] == 0) {
         return "Livre";
@@ -49,6 +52,7 @@ string VerificarAssento(int sala[6][8], int linha, int coluna) {
     }
 }
 
+// Monta uma representação em texto do mapa de assentos da sala
 string MostrarMapa(int sala[6][8]) {
     string mapa = "";
     mapa += "-----------------------------\n";
@@ -80,7 +84,7 @@ int main()
     bool executando = true;
     string retorno;
 
-    while (executando) {
+    while (executando) { // Loop principal do menu, repete até o usuário escolher "Sair"
         cout << "=========================" << endl;
         cout << "   SISTEMA DE RESERVAS   " << endl;
         cout << "=========================\n" << endl;

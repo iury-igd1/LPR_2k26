@@ -7,7 +7,7 @@ Exercício 01:
         Entrada:    8 3 12 7 5
         Saída:      Vetor = 8 3 12 7 5
                     Maior valor = 12
-                    Posição = 2
+                    Posição = 3
 */
 
 #include <iostream>
@@ -27,17 +27,17 @@ int main()
     cout << "   ANÁLISE DE VETOR   " << endl;
     cout << "======================\n" << endl;
 
+    // Lê os 5 números informados pelo usuário e armazena no vetor
     cout << "> Digite 5 números inteiros (separados por espaço): ";
     for (int i = 0; i < 5; i++) {
         cin >> numeros[i];
     }
 
     int maior = numeros[0], posicao = 0;
-
-    for (int i = 1; i < 5; i++) {
+    for (int i = 1; i < 5; i++) { // Percorre o vetor para encontrar o maior valor e sua posição
         if (numeros[i] > maior) {
             maior = numeros[i];
-            posicao = i;
+            posicao = i + 1;
         }
     }
 

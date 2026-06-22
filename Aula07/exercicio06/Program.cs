@@ -17,6 +17,7 @@ Exercício 06:
         Saída:      A distância entre RJ e SP é de 429 km.
 */
 
+// Converte qualquer forma de digitar a cidade para o nome padrão
 string parametroCidade (string cidade) {
     if (cidade == "0" || cidade.ToUpper() == "VIT" || cidade.ToUpper() == "VITORIA" || cidade.ToUpper() == "VITÓRIA") {
         return "Vitória";
@@ -32,6 +33,7 @@ string parametroCidade (string cidade) {
     }
 }
 
+// Converte o nome padrão da cidade no índice correspondente da matriz de distâncias
 int indiceCidade (string cidade) {
     switch (cidade) {
         case "Vitória": 
@@ -48,6 +50,7 @@ int indiceCidade (string cidade) {
     }
 }
 
+// Matriz de distâncias (em km) entre as 4 cidades, na ordem: VIT, BH, RJ, SP
 int[,] distancias = new int[4, 4] {
     { 0, 524, 521, 882 },
     { 524, 0, 434, 586 },
@@ -56,10 +59,9 @@ int[,] distancias = new int[4, 4] {
 };
 
 string origem, destino;
-int distancia = 0, iOrigem = -1, iDestino = -1;
+int distancia, iOrigem, iDestino;
 
-while (true)
-{
+while (true) { // Repete a consulta até o usuário informar a mesma cidade como origem e destino
     iOrigem = -1;
     iDestino = -1;
 
@@ -89,6 +91,7 @@ while (true)
         iDestino = indiceCidade(destino);
     }
 
+    // Consulta a distância na matriz usando os índices das cidades
     distancia = distancias[iOrigem, iDestino];
     Console.WriteLine($"\nA distância entre {origem} e {destino} é de {distancia} km.");
     Console.WriteLine("\nPressione ENTER para continuar...");

@@ -5,9 +5,9 @@ Exercício 03:
     aparece e quantas ocorrências foram detectadas. 
 
     EXEMPLO:
-        Entrada:    5 8 7 9 6 4 10 8 10 9 
+        Entrada:    5 8 7 9 6 4 10 8 10 9
                     8 
-        Saída:      O número 8 aparece nas posições: 2, 8 
+        Saída:      O número 8 aparece na(s) posição(ões): 2, 8 
                     Total de ocorrências = 2
 */
 
@@ -30,17 +30,19 @@ int main()
     cout << "   ENCONTRAR NÚMERO NO VETOR   " << endl;
     cout << "===============================\n" << endl;
 
+    // Lê os 10 números informados pelo usuário
     cout << "> Digite 10 números inteiros (separados por espaço): ";
     for (int i = 0; i < 10; i++) {
         cin >> numeros[i];
     }
 
+    // Lê o número a ser pesquisado no vetor
     cout << "> Digite o número que deseja pesquisar: ";
     int numeroPesquisa;
     cin >> numeroPesquisa;
 
     int ocorrencias = 0;
-    for (int i = 0; i < 10; i++) {
+    for (int i = 0; i < 10; i++) { // Percorre o vetor guardando a posição de cada ocorrência encontrada
         if (numeros[i] == numeroPesquisa) {
             posicoes[ocorrencias] = i;
             ocorrencias++;
