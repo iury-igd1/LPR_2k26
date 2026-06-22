@@ -15,6 +15,7 @@ Exercício 02:
 
 int tentativas = 0, palpite;
 
+// Sorteia um número secreto entre 1 e 100
 Random numAleatorio = new Random();
 int valorInteiro = numAleatorio.Next(1, 101);
 
@@ -23,7 +24,7 @@ Console.WriteLine("   JOGO DE ADIVINHAÇÃO   ");
 Console.WriteLine("=========================\n");
 Console.WriteLine("Tente descobrir o número secreto!");
 
-do {
+do { // Repete até o jogador acertar o número sorteado
     Console.Write("\n> Digite um número entre 1 e 100: ");
     string entrada = Console.ReadLine()!;
     int.TryParse(entrada, out palpite);

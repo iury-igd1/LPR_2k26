@@ -18,21 +18,22 @@ Console.WriteLine("============================");
 Console.WriteLine("   MÉDIA DE NÚMEROS PARES   ");
 Console.WriteLine("============================\n");
 
+// O primeiro valor lido é a quantidade de números que serão digitados a seguir
 Console.Write("> Digite a quantidade de números e os números (separados por espaço): ");
 numeros = Console.ReadLine()!.Split();
 int.TryParse(numeros[0], out int contador);
 
-while (contador > 0) {
+while (contador > 0) { // Percorre apenas os números digitados (ignorando a quantidade na posição 0)
     double.TryParse(numeros[contador], out double numero);
 
     if (numero % 2 == 0) {
         soma += numero;
         qnt++;
     }
-    contador--;
+    contador--; // Diminui o contador até que todos os números tenham sido lidos
 }
 
-if (qnt == 0) {
+if (qnt == 0) { // Se nenhum número par foi digitado
     Console.WriteLine("\nNenhum número par foi digitado.");
 } 
 else {      

@@ -18,6 +18,7 @@ int main()
 
     int soma = 0;
 
+    // Começa em 51 (primeiro múltiplo de 3 ímpar acima de 50) e avança de 3 em 3 filtrando apenas os ímpares
     for (int i = 51; i <= 500; i += 3) {
         if ((i % 2 == 1)) {
             soma += i;
