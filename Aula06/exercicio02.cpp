@@ -1,26 +1,19 @@
 /* 
 Exercício 02:
-    Construa um algoritmo que agrupe em funções os exercícios 1, 3 e 4 da Aula 5. Cada exercício deve estar 
+    Construa um algoritmo que agrupe em funções os exercícios 1, 3 e 4 da Aula 05. Cada exercício deve estar 
     contido em uma função separada. Defina os parâmetros de modo eficiente e generalista. 
     Construa um menu na função main. 
 
     EXEMPLO:
-        Entrada:    0
-        Saída:      Encerrando programa.
-    EXEMPLO:
         Entrada:    1
                     5 2 7 8 6 10
-        Saída:      Média dos números: 6.50
-    EXEMPLO:
-        Entrada:    2
-        Saída:      Opção inválida.
+        Saída:      Média dos números = 6.50
     EXEMPLO:
         Entrada:    3
-        Saída:      Soma dos números: 20475
+        Saída:      Soma dos números = 20475
     EXEMPLO:
         Entrada:    4
-                    123
-        Saída:      Soma dos dígitos: 18
+        Saída:      Soma dos dígitos do quadrado = 7
 */
 
 #include <iostream>
@@ -30,7 +23,7 @@ Exercício 02:
 
 using namespace std;
 
-void exercicio01() {
+void exercicio01() { // Média dos números pares informados
     int n, soma = 0, qtd = 0;
 
     cout << "\n> Digite a quantidade de números e os números (separados por espaço): ";
@@ -46,10 +39,10 @@ void exercicio01() {
         }
     }
 
-    cout << "\nMédia dos números: " << fixed << setprecision(2) << (double)soma / qtd << endl;
+    cout << "\nMédia dos números = " << fixed << setprecision(2) << (double)soma / qtd << endl;
 }
 
-void exercicio03() {
+void exercicio03() { // Soma dos ímpares múltiplos de 3 entre 50 e 500
     int soma = 0;
     
     for (int i = 51; i <= 500; i += 3) {
@@ -58,10 +51,10 @@ void exercicio03() {
         }
     }
 
-    cout << "\nSoma dos números: " << soma << endl;
+    cout << "\nSoma dos números = " << soma << endl;
 }
 
-void exercicio04() {
+void exercicio04() { // Soma dos dígitos do quadrado de um número
     int numero, soma = 0;
     cout << "\n> Digite um número inteiro: ";
     cin >> numero;
@@ -74,7 +67,7 @@ void exercicio04() {
         soma += digito;
     }
 
-    cout << "\nSoma dos dígitos: " << soma << endl;
+    cout << "\nSoma dos dígitos do quadrado = " << soma << endl;
 }
 
 int main()
@@ -84,7 +77,6 @@ int main()
     cout << "===========================" << endl;
     cout << "   CENTRAL DE EXERCÍCIOS   " << endl;
     cout << "===========================\n" << endl;
-
     cout << "1 - Média de números pares" << endl;
     cout << "3 - Soma dos ímpares múltiplos de 3 entre 50 a 500" << endl;
     cout << "4 - Soma dos dígitos do quadrado" << endl;
@@ -94,7 +86,7 @@ int main()
     cout << "\n> Digite a opção desejada: ";
     cin >> opcao;
     
-    switch (opcao) {
+    switch (opcao) { // Encaminha para a função correspondente à opção escolhida
         case 1:
             exercicio01();
             break;

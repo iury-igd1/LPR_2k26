@@ -34,6 +34,7 @@ Exercício 03:
 
 class Program {
 
+    // Solicita os dados de um novo herói e armazena nas variáveis da próxima posição livre
     static void cadastrarHeroi(ref string nome1, ref string nome2, ref string nome3, ref string nome4, ref string nome5,
         ref string poder1, ref string poder2, ref string poder3, ref string poder4, ref string poder5,
         ref int pts1, ref int pts2, ref int pts3, ref int pts4, ref int pts5, ref int totalHerois) {
@@ -93,6 +94,7 @@ class Program {
         Console.ReadLine();
     }
 
+    // Exibe os heróis cadastrados e permite escolher 3 deles para formar a equipe
     static void selecionarEquipe(string nome1, string nome2, string nome3, string nome4, string nome5,
         string poder1, string poder2, string poder3, string poder4, string poder5,
         int pts1, int pts2, int pts3, int pts4, int pts5, int totalHerois,
@@ -135,7 +137,7 @@ class Program {
             return;
         }
 
-        Console.Write("> Escolha o segundo herói da equipe: ");
+        Console.Write("> Escolha o segundo herói da equipe:  ");
         temp2 = int.Parse(Console.ReadLine() ?? "2");
         if (temp2 > totalHerois || temp2 < 1) {
             Console.WriteLine("\nHerói inválido.");
@@ -168,6 +170,7 @@ class Program {
         Console.ReadLine();
     }
 
+    // Retorna a pontuação do herói cujo número foi informado
     static int pontuacao(int heroi, int pts1, int pts2, int pts3, int pts4, int pts5)
     {
         switch (heroi) {
@@ -186,6 +189,7 @@ class Program {
         }
     }
 
+    // Soma a pontuação dos 3 heróis da equipe selecionada
     static void calcularPontuacaoTotal(int equipe1, int equipe2, int equipe3,
         int pts1, int pts2, int pts3, int pts4, int pts5) {
 
@@ -208,6 +212,7 @@ class Program {
         Console.ReadLine();
     }
 
+    // Exibe os dados de um herói específico
     static void heroi(int heroi, string nome1, string nome2, string nome3, string nome4, string nome5,
         string poder1, string poder2, string poder3, string poder4, string poder5,
         int pts1, int pts2, int pts3, int pts4, int pts5) {
@@ -240,6 +245,8 @@ class Program {
                 break;
         }
     }
+
+    // Exibe os heróis da equipe selecionada e a pontuação total
     static void exibirEquipe(int equipe1, int equipe2, int equipe3,
         string nome1, string nome2, string nome3, string nome4, string nome5,
         string poder1, string poder2, string poder3, string poder4, string poder5,
@@ -262,6 +269,7 @@ class Program {
         calcularPontuacaoTotal(equipe1, equipe2, equipe3, pts1, pts2, pts3, pts4, pts5);
     }
 
+    // Exibe o menu principal e direciona para a função correspondente até o usuário escolher sair
     static void menuPrincipal(ref string nome1, ref string nome2, ref string nome3, ref string nome4, ref string nome5,
         ref string poder1, ref string poder2, ref string poder3, ref string poder4, ref string poder5,
         ref int pts1, ref int pts2, ref int pts3, ref int pts4, ref int pts5,
@@ -319,6 +327,7 @@ class Program {
         }
     }
 
+    // Ponto de entrada do programa: inicializa as variáveis e chama o menu principal
     static void Main()
     {
         string nome1 = "N/A", nome2 = "N/A", nome3 = "N/A", nome4 = "N/A", nome5 = "N/A";

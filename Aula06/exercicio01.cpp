@@ -18,6 +18,7 @@ string inversoNumero (int numero) {
     string num = to_string(numero);
     string resultado = "";
 
+    // Percorre a string do número de trás para frente, juntando cada dígito em uma string
     for (int i = num.length(); i >= 1; i--) {
         char digito = num[i-1];
         resultado += digito;
@@ -36,6 +37,7 @@ int main()
     cout << "   INVERSOR DE NÚMEROS   " << endl;
     cout << "=========================\n" << endl;
 
+    // Lê o número informado pelo usuário
     cout << "> Digite um número inteiro: ";
     cin >> numero_usuario;
 
