@@ -34,7 +34,7 @@ int main()
     cout << "   CADASTRO DE FILMES   " << endl;
     cout << "========================\n" << endl;
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) { // Lê os dados de cada um dos 3 filmes
         cout << "> Informe o título do Filme " << i+1 << ": ";
         getline(cin, listaFilmes[i].Titulo);
         cout << "> Informe o nome do diretor do Filme " << i+1 << ": ";
@@ -54,6 +54,7 @@ int main()
     cout << "[3] " << listaFilmes[2].Titulo << endl;
     cout << endl;
 
+    // Compara o ano de lançamento dos 3 filmes para descobrir o mais antigo
     int a1 = listaFilmes[0].AnoLancamento;
     int a2 = listaFilmes[1].AnoLancamento;
     int a3 = listaFilmes[2].AnoLancamento;

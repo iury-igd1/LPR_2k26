@@ -20,7 +20,6 @@ Exercício 05:
 #include <iomanip>
 #include <locale>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -35,11 +34,28 @@ struct Chamado {
 
 Chamado listaChamados[10];
 int totalChamados = 0;
-int opcao;
 bool rodando = true;
-string prioridade;
 
-int classificarPrioridade(string prioridade) {
+void pausar() {
+      cout << "Pressione ENTER para continuar...";
+      cin.ignore();
+      cin.get();
+}
+
+// Converte o código numérico de prioridade (1 a 3) em texto
+string classificarPrioridade(int prioridade) {
+      switch (prioridade) {
+            case 1: 
+                  return "Baixa";
+            case 3: 
+                  return "Alta";
+            default: 
+                  return "Média";
+      }
+}
+
+// Interpreta a prioridade digitada pelo usuário (texto ou número) e retorna o código (1 a 3)
+int lerPrioridade(string prioridade) {
       if (prioridade == "baixa" || prioridade == "Baixa" || prioridade == "BAIXA" || prioridade == "1") {
             return 1;
       }
@@ -51,39 +67,136 @@ int classificarPrioridade(string prioridade) {
       }
 }
 
+// Cadastra um novo chamado com status inicial "Aberto", se houver vaga disponível
 void cadastrarChamado() {
+      if (totalChamados >= 10) {
+            cout << "\nLimite de chamados cadastrados atingido.\n" << endl;
+            pausar();
+            return;
+      }
+
+      string prioridade;
+
+      cout << "\n-------------------------------" << endl;
+      cout << "        NOVO CHAMADO          " << endl;
+      cout << "-------------------------------\n" << endl;
+
       listaChamados[totalChamados].Numero = totalChamados + 1;
+
       cout << "> Solicitante: ";
       getline(cin, listaChamados[totalChamados].Solicitante);
       cout << "> Setor: ";
       getline(cin, listaChamados[totalChamados].Setor);
       cout << "> Prioridade (Baixa, Média ou Alta): ";
-      cin >> prioridade;
-      listaChamados[totalChamados].Prioridade = classificarPrioridade(prioridade);
+      getline(cin, prioridade);
+      listaChamados[totalChamados].Prioridade = lerPrioridade(prioridade);
       listaChamados[totalChamados].Status = "Aberto";
       cout << "> Descrição: ";
       getline(cin, listaChamados[totalChamados].Descricao);
       totalChamados++;
-      cout << endl << "Chamado cadastrado com sucesso!" << endl;
-      cout << "Pressione ENTER para continuar...";
-      cin >> prioridade;
+
+      cout << endl << "Chamado #" << totalChamados << " cadastrado com sucesso!" << endl << endl;
+      pausar();
 }
 
+// Exibe todos os chamados cadastrados, com seus dados completos
 void listarChamados() {
+      cout << "\n-------------------------------------------------------------------------" << endl;
+      cout << "                          CHAMADOS CADASTRADOS                           " << endl;
+      cout << "-------------------------------------------------------------------------\n" << endl;
 
+      if (totalChamados == 0) {
+            cout << "Nenhum chamado cadastrado.\n" << endl;
+            pausar();
+            return;
+      }
+
+      for (int i = 0; i < totalChamados; i++) {
+            cout << "Chamado #" << listaChamados[i].Numero << endl;
+            cout << "  Solicitante: " << listaChamados[i].Solicitante << endl;
+            cout << "  Setor:       " << listaChamados[i].Setor << endl;
+            cout << "  Prioridade:  " << classificarPrioridade(listaChamados[i].Prioridade) << endl;
+            cout << "  Status:      " << listaChamados[i].Status << endl;
+            cout << "  Descrição:   " << listaChamados[i].Descricao << "\n" << endl;
+      }
+      pausar();
 }
 
+// Permite alterar o status de um chamado existente
 void atualizarStatus() {
+      if (totalChamados == 0) {
+            cout << "\nNenhum chamado cadastrado.\n" << endl;
+            pausar();
+            return;
+      }
 
+      int numero;
+      cout << "\n> Número do chamado: ";
+      cin >> numero;
+      cin.ignore();
+
+      if (numero < 1 || numero > totalChamados) {
+            cout << "\nChamado inválido.\n" << endl;
+            pausar();
+            return;
+      }
+
+      cout << "\nNovo status:" << endl;
+      cout << "1 - Em andamento" << endl;
+      cout << "2 - Resolvido" << endl;
+      cout << "3 - Cancelado" << endl;
+      cout << "> Opção: ";
+
+      int opcaoStatus;
+      cin >> opcaoStatus;
+      cin.ignore();
+
+      switch (opcaoStatus) {
+            case 1:
+                  listaChamados[numero - 1].Status = "Em andamento";
+                  break;
+            case 2:
+                  listaChamados[numero - 1].Status = "Resolvido";
+                  break;
+            case 3:
+                  listaChamados[numero - 1].Status = "Cancelado";
+                  break;
+            default:
+                  cout << "\nOpção inválida.\n" << endl;
+                  pausar();
+                  return;
+      }
+
+      cout << "\nStatus atualizado com sucesso!\n" << endl;
+      pausar();
 }
 
+// Exibe quantos chamados estão em cada status (aberto, em andamento, resolvido, cancelado)
 void estatisticas() {
+      int abertos = 0, andamento = 0, resolvidos = 0, cancelados = 0;
 
+      for (int i = 0; i < totalChamados; i++) {
+            if (listaChamados[i].Status == "Aberto") abertos++;
+            else if (listaChamados[i].Status == "Em andamento") andamento++;
+            else if (listaChamados[i].Status == "Resolvido") resolvidos++;
+            else if (listaChamados[i].Status == "Cancelado") cancelados++;
+      }
+
+      cout << "\n-------------------------------" << endl;
+      cout << "         ESTATÍSTICAS         " << endl;
+      cout << "-------------------------------\n" << endl;
+      cout << "Abertos:       " << abertos << endl;
+      cout << "Em andamento:  " << andamento << endl;
+      cout << "Resolvidos:    " << resolvidos << endl;
+      cout << "Cancelados:    " << cancelados << "\n" << endl;
+      pausar();
 }
 
 int main()
 {
       setlocale(LC_ALL, "pt_BR.UTF-8");
+
+      int opcao;
 
       cout << "===============================" << endl;
       cout << "   GERENCIAMENTO DE CHAMADOS   " << endl;
@@ -99,7 +212,8 @@ int main()
             cout << "4 - Exibir estatísticas" << endl;
             cout << "5 - Sair\n" << endl;
             cout << "> Escolha uma opção: ";
-            getline(cin, opcao);
+            cin >> opcao;
+            cin.ignore();
 
             switch (opcao) {
                   case 1:

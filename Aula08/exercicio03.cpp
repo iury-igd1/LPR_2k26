@@ -34,7 +34,7 @@ int main()
     cout << "   CADASTRO DE LIVROS   " << endl;
     cout << "========================\n" << endl;
 
-    for (int i = 0; i < 3; i++) {
+    for (int i = 0; i < 3; i++) { // Lê os dados de cada um dos 3 livros, somando páginas e preços ao longo da leitura
         cout << "> Informe o título do Livro " << i+1 << ": ";
         getline(cin, listaLivros[i].Titulo);
         cout << "> Informe o nome do autor do Livro " << i+1 << ": ";

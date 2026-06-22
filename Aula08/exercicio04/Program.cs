@@ -32,3 +32,225 @@ Exercício 04:
     - Não utilize classes ou listas.
 */
 
+using System;
+
+class Program
+{
+    struct Heroi
+    {
+    public string Nome;
+    public string Poder;
+    public int Pontuacao;
+    }
+    
+    static Heroi[] herois = new Heroi[5];
+    static int totalHerois = 0;
+    static int[] equipe = new int[3] { 0, 0, 0 };
+
+    static void Pausar()
+    {
+        Console.WriteLine("\nPressione ENTER para continuar...");
+        Console.ReadLine();
+    }
+
+    static void CadastrarHeroi()
+    {
+        if (totalHerois >= 5)
+        {
+            Console.WriteLine("\nLimite de heróis cadastrados atingido.");
+            Pausar();
+            return;
+        }
+
+        Console.WriteLine("\n-------------------------------------------");
+        Console.WriteLine("             CADASTRO DE HERÓI             ");
+        Console.WriteLine("-------------------------------------------\n");
+
+        Heroi heroi = new Heroi();
+
+        Console.Write("> Nome do herói: ");
+        heroi.Nome = Console.ReadLine() ?? "";
+
+        Console.Write("> Poder do herói: ");
+        heroi.Poder = Console.ReadLine() ?? "";
+
+        Console.Write("> Pontuação do herói: ");
+        heroi.Pontuacao = int.Parse(Console.ReadLine() ?? "0");
+
+        herois[totalHerois] = heroi;
+        totalHerois++;
+
+        Console.WriteLine($"\nHerói cadastrado com sucesso! ({totalHerois}/5)");
+        Pausar();
+    }
+
+    static void SelecionarEquipe()
+    {
+        if (totalHerois < 3)
+        {
+            Console.WriteLine("\nCadastre pelo menos 3 heróis antes de montar a equipe.");
+            Pausar();
+            return;
+        }
+
+        Console.WriteLine("\n-------------------------------------------");
+        Console.WriteLine("              SELEÇÃO DE EQUIPE            ");
+        Console.WriteLine("-------------------------------------------\n");
+
+        Console.WriteLine("ID  HERÓI           PODER           PONTOS");
+        Console.WriteLine("-------------------------------------------");
+
+        for (int i = 0; i < totalHerois; i++)
+        {
+            Console.WriteLine(
+                $"{i + 1}   {herois[i].Nome,-15} {herois[i].Poder,-15} {herois[i].Pontuacao}"
+            );
+        }
+
+        int[] escolhidos = new int[3];
+
+        for (int i = 0; i < 3; i++)
+        {
+            Console.Write($"\n> Escolha o herói {i + 1} da equipe: ");
+            int escolha = int.Parse(Console.ReadLine() ?? "0");
+
+            if (escolha < 1 || escolha > totalHerois)
+            {
+                Console.WriteLine("\nHerói inválido.");
+                Pausar();
+                return;
+            }
+
+            bool repetido = false;
+
+            for (int j = 0; j < i; j++)
+            {
+                if (escolhidos[j] == escolha)
+                {
+                    repetido = true;
+                    break;
+                }
+            }
+
+            if (repetido)
+            {
+                Console.WriteLine("\nVocê não pode escolher o mesmo herói mais de uma vez.");
+                Pausar();
+                return;
+            }
+
+            escolhidos[i] = escolha;
+        }
+
+        for (int i = 0; i < 3; i++)
+        {
+            equipe[i] = escolhidos[i];
+        }
+
+        Console.WriteLine("\nEquipe cadastrada com sucesso!");
+        Pausar();
+    }
+
+    static int CalcularPontuacaoTotal()
+    {
+        int total = 0;
+
+        for (int i = 0; i < 3; i++)
+        {
+            total += herois[equipe[i] - 1].Pontuacao;
+        }
+
+        return total;
+    }
+
+    static void ExibirEquipe()
+    {
+        if (equipe[0] == 0 || equipe[1] == 0 || equipe[2] == 0)
+        {
+            Console.WriteLine("\nEquipe não selecionada.");
+            Pausar();
+            return;
+        }
+
+        Console.WriteLine("\n-------------------------------------------");
+        Console.WriteLine("            EQUIPE SELECIONADA            ");
+        Console.WriteLine("-------------------------------------------\n");
+
+        for (int i = 0; i < 3; i++)
+        {
+            Heroi h = herois[equipe[i] - 1];
+
+            Console.WriteLine($"[{equipe[i]}] {h.Nome}");
+            Console.WriteLine($"    Poder: {h.Poder}");
+            Console.WriteLine($"    Pontuação: {h.Pontuacao} pts\n");
+        }
+
+        Console.WriteLine("-------------------------------------------");
+        Console.WriteLine($"\nPontuação total da equipe: {CalcularPontuacaoTotal()} pts");
+
+        Pausar();
+    }
+
+    static void MenuPrincipal()
+    {
+        int opcao = 0;
+
+        while (opcao != 5)
+        {
+            Console.WriteLine("===========================================");
+            Console.WriteLine("   SISTEMA DE FORMAÇÃO DE EQUIPES MARVEL   ");
+            Console.WriteLine("===========================================\n");
+
+            Console.WriteLine($"Heróis cadastrados: {totalHerois}/5\n");
+
+            Console.WriteLine("-------------------------------------------");
+            Console.WriteLine("1 - Cadastrar Herói");
+            Console.WriteLine("2 - Selecionar Equipe");
+            Console.WriteLine("3 - Calcular Pontuação");
+            Console.WriteLine("4 - Exibir Equipe");
+            Console.WriteLine("5 - Sair");
+            Console.WriteLine("-------------------------------------------");
+
+            Console.Write("> Escolha uma opção: ");
+            opcao = int.Parse(Console.ReadLine() ?? "0");
+
+            switch (opcao)
+            {
+                case 1:
+                    CadastrarHeroi();
+                    break;
+
+                case 2:
+                    SelecionarEquipe();
+                    break;
+
+                case 3:
+                    if (equipe[0] == 0 || equipe[1] == 0 || equipe[2] == 0)
+                        Console.WriteLine("\nNenhuma equipe foi selecionada.");
+                    else
+                        Console.WriteLine($"\nPontuação total da equipe: {CalcularPontuacaoTotal()} pts");
+
+                    Pausar();
+                    break;
+
+                case 4:
+                    ExibirEquipe();
+                    break;
+
+                case 5:
+                    Console.WriteLine("\nEncerrando programa.");
+                    break;
+
+                default:
+                    Console.WriteLine("\nOpção inválida. Tente novamente.");
+                    Pausar();
+                    break;
+            }
+        }
+    }
+
+    static void Main()
+    {
+        MenuPrincipal();
+    }
+}
