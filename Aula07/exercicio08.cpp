@@ -17,6 +17,7 @@ Exercício 08:
 #include <locale>
 #include <string>
 #include <vector>
+#include <cstdlib>
 
 using namespace std;
 
@@ -55,7 +56,7 @@ string VerificarAssento(int sala[6][8], int linha, int coluna) {
 // Monta uma representação em texto do mapa de assentos da sala
 string MostrarMapa(int sala[6][8]) {
     string mapa = "";
-    mapa += "-----------------------------\n";
+    mapa += "\n-----------------------------\n";
     mapa += "         MAPA DA SALA        \n";
     mapa += "-----------------------------\n\n";
 
@@ -85,6 +86,7 @@ int main()
     string retorno;
 
     while (executando) { // Loop principal do menu, repete até o usuário escolher "Sair"
+        system("cls");
         cout << "=========================" << endl;
         cout << "   SISTEMA DE RESERVAS   " << endl;
         cout << "=========================\n" << endl;
@@ -95,53 +97,74 @@ int main()
         cout << "5 - Sair" << endl;
         cout << "\n> Escolha uma opção: ";
         cin >> opcao;
+        cin.ignore();
         
         switch (opcao) {
             case 1:
-                cout << "\nDigite a linha (1-6) e coluna (1-8) para reservar: ";
+                cout << "\nDigite a linha (1-6) e coluna (1-8) para reservar (separados por espaço): ";
                 cin >> linha >> coluna;
+                cin.ignore();
                 if (linha < 1 || linha > 6 || coluna < 1 || coluna > 8) {
                     cout << "\nPosição inválida.\n" << endl;
+                    cout << "Pressione ENTER para continuar..." << endl;
+                    cin.get();
                     break;
                 }
                 linha--;
                 coluna--;
                 retorno = ReservarAssento(sala, linha, coluna);
                 cout << retorno << endl;
+                cout << "Pressione ENTER para continuar..." << endl;
+                cin.get();
                 break;
             case 2:
-                cout << "\nDigite a linha (1-6) e coluna (1-8) para cancelar reserva: ";
+                cout << "\nDigite a linha (1-6) e coluna (1-8) para cancelar reserva (separados por espaço): ";
                 cin >> linha >> coluna;
+                cin.ignore();
                 if (linha < 1 || linha > 6 || coluna < 1 || coluna > 8) {
                     cout << "\nPosição inválida.\n" << endl;
+                    cout << "Pressione ENTER para continuar..." << endl;
+                    cin.get();
                     break;
                 }
                 linha--;
                 coluna--;
                 retorno = CancelarReserva(sala, linha, coluna);
                 cout << retorno << endl;
+                cout << "Pressione ENTER para continuar..." << endl;
+                cin.get();
                 break;
             case 3:
-                cout << "\nDigite a linha (1-6) e coluna (1-8) para consultar: ";
+                cout << "\nDigite a linha (1-6) e coluna (1-8) para consultar (separados por espaço): ";
                 cin >> linha >> coluna;
+                cin.ignore();
                 if (linha < 1 || linha > 6 || coluna < 1 || coluna > 8) {
                     cout << "\nPosição inválida.\n" << endl;
+                    cout << "Pressione ENTER para continuar..." << endl;
+                    cin.get();
                     break;
                 }
                 linha--;
                 coluna--;
                 retorno = VerificarAssento(sala, linha, coluna);
                 cout << "\nO assento está: " << retorno << "\n" << endl;
+                cout << "Pressione ENTER para continuar..." << endl;
+                cin.get();
                 break;
             case 4:
                 cout << MostrarMapa(sala) << endl;
+                cout << "Pressione ENTER para continuar..." << endl;
+                cin.get();
                 break;
             case 5:
-                cout << "\nEncerrando o programa." << endl;
+                cout << "\nEncerrando programa." << endl;
                 executando = false;
                 break;
             default:
                 cout << "\nOpção inválida. Tente novamente.\n" << endl;
+                cout << "Pressione ENTER para continuar..." << endl;
+                cin.get();
+                break;
         }
     }
 }

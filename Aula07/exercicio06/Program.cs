@@ -65,6 +65,7 @@ while (true) { // Repete a consulta até o usuário informar a mesma cidade como
     iOrigem = -1;
     iDestino = -1;
 
+    Console.Clear();
     Console.WriteLine("============================");
     Console.WriteLine("   CONSULTA DE DISTÂNCIAS   ");
     Console.WriteLine("============================\n");

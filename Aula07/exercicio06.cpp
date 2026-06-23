@@ -22,6 +22,7 @@ Exercício 06:
 #include <locale>
 #include <string>
 #include <algorithm>
+#include <cstdlib>
 
 using namespace std;
 
@@ -78,6 +79,7 @@ int main()
         iOrigem = -1;
         iDestino = -1;
 
+        system("cls");
         cout << "============================" << endl;
         cout << "   CONSULTA DE DISTÂNCIAS   " << endl;
         cout << "============================\n" << endl;
@@ -88,12 +90,12 @@ int main()
         cout << "[3] SP  - São Paulo\n" << endl;
 
         cout << "> Cidade de origem: ";
-        cin >> origem;
+        getline(cin, origem);
         origem = parametroCidade(origem);
         iOrigem = indiceCidade(origem);
 
         cout << "> Cidade de destino: ";
-        cin >> destino;
+        getline(cin, destino);
         destino = parametroCidade(destino);
 
         if (origem == destino) {
@@ -108,7 +110,6 @@ int main()
         distancia = distancias[iOrigem][iDestino];
         cout << "\nA distância entre " << origem << " e " << destino << " é de " << distancia << " km." << endl;
         cout << "\nPressione ENTER para continuar...";
-        cin.ignore();
-        cin.get();
+        getline(cin, origem);
     }
 }

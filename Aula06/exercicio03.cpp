@@ -36,13 +36,12 @@ Exercício 03:
 #include <iomanip>
 #include <locale>
 #include <string>
-#include <limits>
+#include <cstdlib>
 
 using namespace std;
 
 void pausar() {
     cout << "\nPressione ENTER para continuar...";
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
     cin.get();
 }
 
@@ -73,7 +72,7 @@ void cadastrarHeroi(string &nome1, string &nome2, string &nome3, string &nome4, 
 
     cout << "> Pontuação do herói: ";
     cin >> pts;
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    cin.ignore();
 
     switch (totalHerois) {
         case 0:
@@ -133,31 +132,30 @@ void selecionarEquipe(const string &nome1, const string &nome2, const string &no
 
     cout << "\n> Escolha o primeiro herói da equipe: ";
     cin >> temp1;
+    cin.ignore();
     if (temp1 > totalHerois || temp1 < 1) {
         cout << "\nHerói inválido." << endl;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         pausar();
         return;
     }
 
     cout << "> Escolha o segundo herói da equipe:  ";
     cin >> temp2;
+    cin.ignore();
     if (temp2 > totalHerois || temp2 < 1) {
         cout << "\nHerói inválido." << endl;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         pausar();
         return;
     }
 
     cout << "> Escolha o terceiro herói da equipe: ";
     cin >> temp3;
+    cin.ignore();
     if (temp3 > totalHerois || temp3 < 1) {
         cout << "\nHerói inválido." << endl;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
         pausar();
         return;
     }
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 
     if (temp1 == temp2 || temp1 == temp3 || temp2 == temp3) {
         cout << "\nVocê não pode escolher o mesmo herói mais de uma vez." << endl;
@@ -270,6 +268,7 @@ void menuPrincipal(string &nome1, string &nome2, string &nome3, string &nome4, s
     int opcao = 0;
 
     while (opcao != 5) {
+        system("cls");
         cout << "===========================================" << endl;
         cout << "   SISTEMA DE FORMAÇÃO DE EQUIPES MARVEL   " << endl;
         cout << "===========================================\n" << endl;
@@ -284,7 +283,7 @@ void menuPrincipal(string &nome1, string &nome2, string &nome3, string &nome4, s
         cout << "> Escolha uma opção: ";
 
         cin >> opcao;
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        cin.ignore();
 
         switch (opcao) {
             case 1:

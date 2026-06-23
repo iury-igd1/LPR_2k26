@@ -67,5 +67,4 @@ int main()
     for (int impar : impares) {
         cout << impar << " ";
     }
-    cout << endl;
 }

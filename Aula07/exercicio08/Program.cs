@@ -47,7 +47,7 @@ string VerificarAssento(int[,] sala, int linha, int coluna) {
 // Monta uma representação em texto do mapa de assentos da sala
 string MostrarMapa(int[,] sala) {
     string mapa = "";
-    mapa += "-----------------------------\n";
+    mapa += "\n-----------------------------\n";
     mapa += "         MAPA DA SALA        \n";
     mapa += "-----------------------------\n\n";
 
@@ -67,12 +67,24 @@ string MostrarMapa(int[,] sala) {
     return mapa;
 }
 
+(int, int) LerPosicao() {
+    string[] entrada = (Console.ReadLine() ?? "").Split(' ');
+    int l = int.Parse(entrada[0]);
+    int c = int.Parse(entrada[1]);
+    return (l, c);
+}
+
+bool PosicaoValida(int linha, int coluna) {
+    return linha >= 1 && linha <= 6 && coluna >= 1 && coluna <= 8;
+}
+
 int[,] sala = new int[6, 8];
 bool executando = true;
 string retorno;
 
 // Loop principal do menu, repete até o usuário escolher "Sair"
 while (executando) {
+    Console.Clear();
     Console.WriteLine("=========================");
     Console.WriteLine("   SISTEMA DE RESERVAS   ");
     Console.WriteLine("=========================\n");
@@ -88,55 +100,60 @@ while (executando) {
 
     switch (opcao) {
         case 1:
-            Console.Write("\nDigite a linha (1-6) e coluna (1-8) para reservar: ");
+            Console.Write("\nDigite a linha (1-6) e coluna (1-8) para reservar (separados por espaço): ");
             (linha, coluna) = LerPosicao();
             if (!PosicaoValida(linha, coluna)) {
                 Console.WriteLine("\nPosição inválida.\n");
+                Console.WriteLine("Pressione ENTER para continuar...");
+                Console.ReadLine();
                 break;
             }
             retorno = ReservarAssento(sala, linha - 1, coluna - 1);
             Console.WriteLine(retorno);
+            Console.WriteLine("Pressione ENTER para continuar...");
+            Console.ReadLine();
             break;
         case 2:
-            Console.Write("\nDigite a linha (1-6) e coluna (1-8) para cancelar reserva: ");
+            Console.Write("\nDigite a linha (1-6) e coluna (1-8) para cancelar reserva (separados por espaço): ");
             (linha, coluna) = LerPosicao();
             if (!PosicaoValida(linha, coluna)) {
                 Console.WriteLine("\nPosição inválida.\n");
+                Console.WriteLine("Pressione ENTER para continuar...");
+            Console.ReadLine();
                 break;
             }
             retorno = CancelarReserva(sala, linha - 1, coluna - 1);
             Console.WriteLine(retorno);
+            Console.WriteLine("Pressione ENTER para continuar...");
+            Console.ReadLine();
             break;
         case 3:
-            Console.Write("\nDigite a linha (1-6) e coluna (1-8) para consultar: ");
+            Console.Write("\nDigite a linha (1-6) e coluna (1-8) para consultar (separados por espaço): ");
             (linha, coluna) = LerPosicao();
             if (!PosicaoValida(linha, coluna)) {
                 Console.WriteLine("\nPosição inválida.\n");
+                Console.WriteLine("Pressione ENTER para continuar...");
+                Console.ReadLine();
                 break;
             }
             retorno = VerificarAssento(sala, linha - 1, coluna - 1);
             Console.WriteLine($"\nO assento está: {retorno}\n");
+            Console.WriteLine("Pressione ENTER para continuar...");
+            Console.ReadLine();
             break;
         case 4:
             Console.WriteLine(MostrarMapa(sala));
+            Console.WriteLine("Pressione ENTER para continuar...");
+            Console.ReadLine();
             break;
         case 5:
-            Console.WriteLine("\nEncerrando o programa.");
+            Console.WriteLine("\nEncerrando programa.");
             executando = false;
             break;
         default:
             Console.WriteLine("\nOpção inválida. Tente novamente.\n");
+            Console.WriteLine("Pressione ENTER para continuar...");
+            Console.ReadLine();
             break;
     }
-}
-
-(int, int) LerPosicao() {
-    string[] entrada = (Console.ReadLine() ?? "").Split(' ');
-    int l = int.Parse(entrada[0]);
-    int c = int.Parse(entrada[1]);
-    return (l, c);
-}
-
-bool PosicaoValida(int linha, int coluna) {
-    return linha >= 1 && linha <= 6 && coluna >= 1 && coluna <= 8;
 }

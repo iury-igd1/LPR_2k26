@@ -5,6 +5,9 @@ Exercício 01:
     EXEMPLO:
         Entrada:    10
         Saída:      O número informado é PAR
+    EXEMPLO:
+        Entrada:    11
+        Saída:      O número informado é ÍMPAR
 */
 
 #include <iostream>
