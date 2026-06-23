@@ -1,5 +1,4 @@
-/* 
-Exercício 04:
+/* Exercício 04:
     Desenvolva um programa que simule um sistema de seleção de heróis da Marvel para uma equipe. 
     O programa deve ter as seguintes funcionalidades:
 
@@ -36,6 +35,7 @@ Exercício 04:
 #include <iomanip>
 #include <locale>
 #include <string>
+#include <cstdlib>
 
 using namespace std;
 
@@ -50,8 +50,7 @@ int totalHerois = 0;
 int equipe[3] = { 0, 0, 0 };
 
 void pausar() {
-    cout << "\nPressione ENTER para continuar...";
-    cin.ignore();
+    cout << "\nPressione ENTER para continuar..." << endl;
     cin.get();
 }
 
@@ -66,16 +65,13 @@ void cadastrarHeroi() {
     cout << "\n-------------------------------------------" << endl;
     cout << "             CADASTRO DE HERÓI             " << endl;
     cout << "-------------------------------------------\n" << endl;
-    cout << "Vagas disponíveis: " << (5 - totalHerois) << "\n" << endl;
 
     Heroi heroi;
 
     cout << "> Nome do herói: ";
     getline(cin, heroi.Nome);
-
     cout << "> Poder do herói: ";
     getline(cin, heroi.Poder);
-
     cout << "> Pontuação do herói: ";
     cin >> heroi.Pontuacao;
     cin.ignore();
@@ -98,11 +94,9 @@ void selecionarEquipe() {
     cout << "\n-------------------------------------------" << endl;
     cout << "              SELEÇÃO DE EQUIPE            " << endl;
     cout << "-------------------------------------------\n" << endl;
-    cout << "Escolha 3 heróis para sua equipe.\n" << endl;
-
-    cout << "-------------------------------------------" << endl;
     cout << "ID  HERÓI           PODER           PONTOS" << endl;
     cout << "-------------------------------------------" << endl;
+
     for (int i = 0; i < totalHerois; i++) {
         cout << (i + 1) << "   " << left << setw(15) << herois[i].Nome << " " << setw(15) << herois[i].Poder << " " << setw(6) << herois[i].Pontuacao << endl;
     }
@@ -122,11 +116,14 @@ void selecionarEquipe() {
         }
 
         bool repetido = false;
+
         for (int j = 0; j < i; j++) {
             if (escolhidos[j] == escolha) {
                 repetido = true;
+                break;
             }
         }
+
         if (repetido) {
             cout << "\nVocê não pode escolher o mesmo herói mais de uma vez." << endl;
             pausar();
@@ -147,9 +144,11 @@ void selecionarEquipe() {
 // Soma a pontuação dos 3 heróis da equipe selecionada
 int calcularPontuacaoTotal() {
     int total = 0;
+
     for (int i = 0; i < 3; i++) {
         total += herois[equipe[i] - 1].Pontuacao;
     }
+
     return total;
 }
 
@@ -166,10 +165,11 @@ void exibirEquipe() {
     cout << "-------------------------------------------\n" << endl;
 
     for (int i = 0; i < 3; i++) {
-        Heroi heroi = herois[equipe[i] - 1];
-        cout << "[" << equipe[i] << "] " << heroi.Nome << endl;
-        cout << "    Poder: " << heroi.Poder << endl;
-        cout << "    Pontuação: " << heroi.Pontuacao << " pts\n" << endl;
+        Heroi h = herois[equipe[i] - 1];
+
+        cout << "[" << equipe[i] << "] " << h.Nome << endl;
+        cout << "    Poder: " << h.Poder << endl;
+        cout << "    Pontuação: " << h.Pontuacao << " pts\n" << endl;
     }
 
     cout << "-------------------------------------------" << endl;
@@ -182,6 +182,7 @@ void menuPrincipal() {
     int opcao = 0;
 
     while (opcao != 5) {
+        system("cls");
         cout << "===========================================" << endl;
         cout << "   SISTEMA DE FORMAÇÃO DE EQUIPES MARVEL   " << endl;
         cout << "===========================================\n" << endl;
@@ -194,7 +195,6 @@ void menuPrincipal() {
         cout << "5 - Sair" << endl;
         cout << "-------------------------------------------" << endl;
         cout << "> Escolha uma opção: ";
-
         cin >> opcao;
         cin.ignore();
 
@@ -208,7 +208,8 @@ void menuPrincipal() {
             case 3:
                 if (equipe[0] == 0 || equipe[1] == 0 || equipe[2] == 0) {
                     cout << "\nNenhuma equipe foi selecionada." << endl;
-                } else {
+                } 
+                else {
                     cout << "\nPontuação total da equipe: " << calcularPontuacaoTotal() << " pts" << endl;
                 }
                 pausar();

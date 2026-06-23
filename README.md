@@ -4,8 +4,6 @@
 
 ### Exercícios da disciplina de Linguagem de Programação — ETE FMC
 
-Implementações lado a lado em **C++** e **C#**, construídas ao longo do curso técnico, aula após aula.
-
 <br/>
 
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?style=for-the-badge&logo=c%2B%2B&logoColor=white)
@@ -19,12 +17,12 @@ Implementações lado a lado em **C++** e **C#**, construídas ao longo do curso
 
 ## 👨‍💻 Sobre o repositório
 
-Este repositório reúne todos os exercícios práticos desenvolvidos durante as aulas de **Linguagem de Programação (LPR)**. Cada exercício é resolvido **duas vezes** — uma em C++ e outra em C# — com o objetivo de fixar a lógica de programação independentemente da sintaxe da linguagem utilizada.
+Este repositório reúne todos os exercícios práticos desenvolvidos durante as aulas de **Linguagem de Programação (LPR)**. Cada exercício é resolvido **duas vezes**, uma em C++ e outra em C#, com o objetivo de fixar a lógica de programação independentemente da sintaxe da linguagem utilizada.
 
 |                    |                                                                   |
 | ------------------ | ----------------------------------------------------------------- |
 | 🏫 **Instituição** | Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC) |
-| 🎓 **Curso**       | Técnico em Desenvolvimento de Sistemas                            |
+| 🎓 **Curso**       | Técnico em Desenvolvimento de Sistemas (DS)                       |
 | 📘 **Disciplina**  | Linguagem de Programação (LPR)                                    |
 | 👨‍🏫 **Professor**   | José Andery Carneiro                                              |
 | 🙋 **Aluno**       | Iury Gonçalves de Souza                                           |
@@ -57,8 +55,6 @@ LPR_2k26/
 └── README.md
 ```
 
-> 💡 As pastas `bin/` e `obj/` (geradas automaticamente pela compilação do .NET) são ignoradas via `.gitignore` e não fazem parte do código-fonte.
-
 ---
 
 ## 📖 Conteúdo das aulas
@@ -82,24 +78,6 @@ LPR_2k26/
 
 ---
 
-## ▶️ Como executar
-
-### Versão em C#
-
-```bash
-cd AulaXX/exercicioYY
-dotnet run
-```
-
-### Versão em C++
-
-```bash
-g++ exercicioYY.cpp -o exercicioYY
-./exercicioYY
-```
-
----
-
 ## 📌 Competências desenvolvidas
 
 - 🧠 Lógica de programação e resolução de problemas
@@ -115,15 +93,15 @@ g++ exercicioYY.cpp -o exercicioYY
 ## 📈 Status do repositório
 
 ```
-✅ Em desenvolvimento contínuo — Aulas 01 a 08 concluídas
+✅ Em desenvolvimento
 ```
 
-Novos exercícios e conteúdos serão adicionados conforme o avanço da disciplina ao longo do ano letivo de 2026.
+Novos exercícios e conteúdos serão adicionados conforme o avanço da disciplina.
 
 <div align="center">
 
 ---
 
-_Feito com 💙 durante o curso Técnico em Desenvolvimento de Sistemas — ETE FMC_
+_Feito com dedicação durante o curso Técnico em Desenvolvimento de Sistemas — ETE FMC_
 
 </div>

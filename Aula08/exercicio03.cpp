@@ -52,6 +52,12 @@ int main()
         cout << endl;
     }
 
+    cout << "Livros cadastrados:" << endl;
+    cout << "[1] " << listaLivros[0].Titulo << endl;
+    cout << "[2] " << listaLivros[1].Titulo << endl;
+    cout << "[3] " << listaLivros[2].Titulo << endl;
+    cout << endl;
+
     cout << fixed << setprecision(2);
     cout << "Preço total dos livros cadastrados = R$ " << somaPrecos << endl;
     cout << "Média de páginas dos livros = " << somaPaginas / 3 << endl;    

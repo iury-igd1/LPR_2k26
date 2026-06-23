@@ -38,10 +38,10 @@ class Program
             listaFilmes[i].Diretor = Console.ReadLine() ?? "";
 
             Console.Write($"> Informe o ano de lançamento do Filme {i + 1}: ");
-            listaFilmes[i].AnoLancamento = int.Parse(Console.ReadLine() ?? "0");
+            int.TryParse(Console.ReadLine(), out listaFilmes[i].AnoLancamento);
 
             Console.Write($"> Informe a duração (em minutos) do Filme {i + 1}: ");
-            listaFilmes[i].DuracaoMinutos = int.Parse(Console.ReadLine() ?? "0");
+            int.TryParse(Console.ReadLine(), out listaFilmes[i].DuracaoMinutos);
 
             Console.WriteLine();
         }

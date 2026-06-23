@@ -38,14 +38,14 @@ class Program
             listaLivros[i].Autor = Console.ReadLine() ?? "";
 
             Console.Write($"> Informe o ano de publicação do Livro {i + 1}: ");
-            listaLivros[i].AnoPublicacao = int.Parse(Console.ReadLine() ?? "0");
+            int.TryParse(Console.ReadLine(), out listaLivros[i].AnoPublicacao);
 
             Console.Write($"> Informe o número de páginas do Livro {i + 1}: ");
-            listaLivros[i].NumeroPaginas = int.Parse(Console.ReadLine() ?? "0");
+            int.TryParse(Console.ReadLine(), out listaLivros[i].NumeroPaginas);
             somaPaginas += listaLivros[i].NumeroPaginas;
 
             Console.Write($"> Informe o preço do Livro {i + 1}: ");
-            listaLivros[i].Preco = double.Parse(Console.ReadLine() ?? "0");
+            double.TryParse(Console.ReadLine(), out listaLivros[i].Preco);
             somaPrecos += listaLivros[i].Preco;
 
             Console.WriteLine();

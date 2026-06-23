@@ -47,5 +47,11 @@ int main()
         cout << endl;
     }
 
+    cout << "Produtos cadastrados:" << endl;
+    cout << "[1] " << listaProdutos[0].Nome << endl;
+    cout << "[2] " << listaProdutos[1].Nome << endl;
+    cout << "[3] " << listaProdutos[2].Nome << endl;
+    cout << endl;
+
     cout << "Valor total em estoque = R$ " << fixed << setprecision(2) << total << endl;
 }

@@ -36,13 +36,12 @@ class Program
             listaProdutos[i].Codigo = Console.ReadLine() ?? "";
 
             Console.Write("> Informe o preço do Produto " + (i + 1) + ": ");
-            listaProdutos[i].Preco = double.Parse(Console.ReadLine() ?? "0");
+            double.TryParse(Console.ReadLine(), out listaProdutos[i].Preco);
 
             Console.Write("> Informe a quantidade do Produto " + (i + 1) + " no estoque: ");
-            listaProdutos[i].Quantidade = int.Parse(Console.ReadLine() ?? "0");
+            int.TryParse(Console.ReadLine(), out listaProdutos[i].Quantidade);
 
             total += listaProdutos[i].Preco * listaProdutos[i].Quantidade;
-
             Console.WriteLine();
         }
 
