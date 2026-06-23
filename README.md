@@ -69,10 +69,11 @@ LPR_2k26/
 |  06  | Funções e modularização                               |     3      |
 |  07  | Vetores e matrizes                                    |     8      |
 |  08  | Structs                                               |     5      |
+|  09  | Listas e dicionários                                  |     8      |
 
 <div align="center">
 
-**Total: 30 exercícios · 60 implementações (C++ & C#)**
+**Total: 38 exercícios · 76 implementações (C++ & C#)**
 
 </div>
 
