@@ -9,6 +9,7 @@ Exercício 07:
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <map>
 
 using namespace std;
 

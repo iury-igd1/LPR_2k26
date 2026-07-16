@@ -8,10 +8,38 @@ Exercício 05:
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <map>
 
 using namespace std;
 
 int main()
 {
     setlocale(LC_ALL, "pt_BR.UTF-8");
+
+    map<string, string> jogos;
+    string nomeJogo, generoJogo, nomeBusca;
+
+    cout << "=======================" << endl;
+    cout << "   CADASTRO DE JOGOS   " << endl;
+    cout << "=======================" << endl;
+
+    for (int i = 0; i < 5; i++) {
+        cout << "\n> Digite o nome do jogo " << i + 1 << ": ";
+        cin >> nomeJogo;
+
+        cout << "> Digite o gênero do jogo " << i + 1 << ": ";
+        cin >> generoJogo;
+
+        jogos[nomeJogo] = generoJogo;
+    }
+
+    cout << "\n> Digite o nome do jogo que deseja buscar: ";
+    cin >> nomeBusca;
+
+    if (jogos.find(nomeBusca) != jogos.end()) {
+        cout << "O gênero do jogo '" << nomeBusca << "' é: " << jogos[nomeBusca] << "." << endl;
+    }
+    else {
+        cout << "O jogo '" << nomeBusca << "' não foi cadastrado." << endl;
+    }
 }

@@ -25,6 +25,7 @@ Exercício 08:
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <map>
 
 using namespace std;
 
