@@ -8,6 +8,7 @@ Exercício 05:
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <string>
 #include <map>
 
 using namespace std;
@@ -16,6 +17,7 @@ int main()
 {
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
+    // Dicionário de armazenamento dos jogos no formato jogo-gênero
     map<string, string> jogos;
     string nomeJogo, generoJogo, nomeBusca;
 
@@ -23,20 +25,20 @@ int main()
     cout << "   CADASTRO DE JOGOS   " << endl;
     cout << "=======================" << endl;
 
-    for (int i = 0; i < 5; i++) {
-        cout << "\n> Digite o nome do jogo " << i + 1 << ": ";
-        cin >> nomeJogo;
+    for (int i = 1; i <= 5; i++) {
+        cout << "\n> Digite o nome do jogo " << i << ": ";
+        getline(cin >> ws, nomeJogo); // 'ws' descarta espaços em branco e quebras de linha no buffer
 
-        cout << "> Digite o gênero do jogo " << i + 1 << ": ";
-        cin >> generoJogo;
+        cout << "> Digite o gênero do jogo " << i << ": ";
+        getline(cin >> ws, generoJogo);
 
         jogos[nomeJogo] = generoJogo;
     }
 
     cout << "\n> Digite o nome do jogo que deseja buscar: ";
-    cin >> nomeBusca;
+    getline(cin >> ws, nomeBusca);
 
-    if (jogos.find(nomeBusca) != jogos.end()) {
+    if (jogos.find(nomeBusca) != jogos.end()) { // Verifica se a chave existe
         cout << "O gênero do jogo '" << nomeBusca << "' é: " << jogos[nomeBusca] << "." << endl;
     }
     else {

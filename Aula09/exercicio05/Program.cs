@@ -12,6 +12,7 @@ class Program
 {
     static void Main()
     {
+        // Dicionário de armazenamento dos jogos no formato jogo-gênero
         Dictionary<string, string> jogos = new Dictionary<string, string>();
         string nomeJogo, generoJogo, nomeBusca;
 
@@ -19,11 +20,11 @@ class Program
         Console.WriteLine("   CADASTRO DE JOGOS   ");
         Console.WriteLine("=======================");
 
-        for (int i = 0; i < 5; i++) {
-            Console.Write($"\n> Digite o nome do jogo {i + 1}: ");
+        for (int i = 1; i <= 5; i++) {
+            Console.Write($"\n> Digite o nome do jogo {i}: ");
             nomeJogo = Console.ReadLine() ?? "";
 
-            Console.Write($"> Digite o gênero do jogo {i + 1}: ");
+            Console.Write($"> Digite o gênero do jogo {i}: ");
             generoJogo = Console.ReadLine() ?? "";
 
             jogos[nomeJogo] = generoJogo;
@@ -32,7 +33,7 @@ class Program
         Console.Write($"\n> Digite o nome do jogo que deseja buscar: ");
         nomeBusca = Console.ReadLine() ?? "";
 
-        if (jogos.ContainsKey(nomeBusca)) {
+        if (jogos.ContainsKey(nomeBusca)) { // Verifica se a chave existe
             Console.WriteLine($"O gênero do jogo '{nomeBusca}' é: {jogos[nomeBusca]}.");
         } 
         else {

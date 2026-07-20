@@ -24,11 +24,11 @@ class Program
         Console.Write("> Digite o número de pessoas que serão informadas: ");
         int.TryParse(Console.ReadLine(), out int total);
 
-        for (int i = 0; i < total; i++) {
-            Console.Write($"\n> Digite o nome da pessoa {i + 1}: ");
+        for (int i = 1; i <= total; i++) {
+            Console.Write($"\n> Digite o nome da pessoa {i}: ");
             nomePessoa = Console.ReadLine() ?? "";
 
-            Console.Write($"> Digite a idade da pessoa {i + 1}: ");
+            Console.Write($"> Digite a idade da pessoa {i}: ");
             int.TryParse(Console.ReadLine(), out idadePessoa);
             somaIdades += idadePessoa;
             qtde += 1;
@@ -36,12 +36,12 @@ class Program
             pessoas[nomePessoa] = idadePessoa;
         }
 
-        double media = somaIdades / qtde;
+        double media = (double)somaIdades / qtde;
 
         Console.WriteLine("\nPessoas com idade acima da média:");
         foreach (var idd in pessoas) {
             if (idd.Value > media) {
-                Console.Write($"{idd.Key} ");
+                Console.WriteLine($"{idd.Key}");
             }
         }
 
@@ -56,7 +56,7 @@ class Program
             }
         }
 
-        Console.WriteLine($"\n\nPessoa mais velha: {maisVelho}, com {iddMaisVelho} anos");
+        Console.WriteLine($"\nPessoa mais velha: {maisVelho}, com {iddMaisVelho} anos");
         Console.WriteLine($"Pessoa mais nova: {maisNovo}, com {iddMaisNovo} anos");
 
         Console.Write("\n> Informe um valor de idade para remover do dicionário: ");
