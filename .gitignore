@@ -412,6 +412,9 @@ FodyWeavers.xsd
 !.vscode/extensions.json
 !.vscode/*.code-snippets
 
+# Executáveis compilados dos exercícios em C++ (g++), gerados na pasta "output" de cada aula
+output/
+
 # Local History for Visual Studio Code
 .history/
 

@@ -5,23 +5,23 @@ VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula02", "Aula02", "{30625B67-50E2-3290-E11B-CFFFE7C12F3E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula02\exercicio01\exercicio01.csproj", "{DB8DC859-FF2D-4B45-A53E-A88D14A4484E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula02\C#\exercicio01\exercicio01.csproj", "{DB8DC859-FF2D-4B45-A53E-A88D14A4484E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula02\exercicio04\exercicio04.csproj", "{5524F5E2-9E42-4B46-950D-48387FEEE00E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula02\C#\exercicio04\exercicio04.csproj", "{5524F5E2-9E42-4B46-950D-48387FEEE00E}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula04", "Aula04", "{AA9DB573-8FBF-AD2A-31C4-7133FA26FAF8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula04\exercicio03\exercicio03.csproj", "{D411CA48-3D38-4E04-91B3-349E77F0525C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula04\C#\exercicio03\exercicio03.csproj", "{D411CA48-3D38-4E04-91B3-349E77F0525C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula04\exercicio01\exercicio01.csproj", "{B1ED1BBA-59DC-4847-A380-E3BEFBCA7104}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula04\C#\exercicio01\exercicio01.csproj", "{B1ED1BBA-59DC-4847-A380-E3BEFBCA7104}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula05", "Aula05", "{8E79E8E2-0076-BB2C-8AFC-2DF921FBEA30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula05\exercicio01\exercicio01.csproj", "{3D263C24-C5CA-45DA-9345-0176CFB1C73A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula05\C#\exercicio01\exercicio01.csproj", "{3D263C24-C5CA-45DA-9345-0176CFB1C73A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula05\exercicio02\exercicio02.csproj", "{AB1E506A-AEA6-44FC-8832-91E2F310C8A3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula05\C#\exercicio02\exercicio02.csproj", "{AB1E506A-AEA6-44FC-8832-91E2F310C8A3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula05\exercicio04\exercicio04.csproj", "{3F764796-4903-4D3A-A11F-12B1D0F0B7EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula05\C#\exercicio04\exercicio04.csproj", "{3F764796-4903-4D3A-A11F-12B1D0F0B7EB}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula01", "Aula01", "{AB451824-C61C-77B0-27A7-9C45A6BDF2F4}"
 EndProject
@@ -29,73 +29,75 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "helloworld", "Aula01\hellow
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula06", "Aula06", "{C0791738-8473-80FC-0B7A-D82F0DEA9F25}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula06\exercicio03\exercicio03.csproj", "{52D08CCF-BD21-4F86-B303-3FFDF5078838}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula06\C#\exercicio03\exercicio03.csproj", "{52D08CCF-BD21-4F86-B303-3FFDF5078838}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula07", "Aula07", "{1859E3E8-C82F-CD32-B4B1-5DBC64B71EFD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula07\exercicio02\exercicio02.csproj", "{9E787FAF-AFE5-4A0A-862D-B39A0894040C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula07\C#\exercicio02\exercicio02.csproj", "{9E787FAF-AFE5-4A0A-862D-B39A0894040C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio06", "Aula07\exercicio06\exercicio06.csproj", "{160D659C-57DF-440E-AFD7-74752C82C26B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio06", "Aula07\C#\exercicio06\exercicio06.csproj", "{160D659C-57DF-440E-AFD7-74752C82C26B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula07\exercicio04\exercicio04.csproj", "{78CC309A-1673-4107-A045-E7F2EEB39BC2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula07\C#\exercicio04\exercicio04.csproj", "{78CC309A-1673-4107-A045-E7F2EEB39BC2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula07\exercicio05\exercicio05.csproj", "{8893DD23-5F1A-483F-895A-759DB5DED206}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula07\C#\exercicio05\exercicio05.csproj", "{8893DD23-5F1A-483F-895A-759DB5DED206}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula08", "Aula08", "{E78F79FB-78E9-89F5-DFE8-35A7782095C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula08\exercicio04\exercicio04.csproj", "{EBA87235-8DC3-492A-82F4-F62663F6A429}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula08\C#\exercicio04\exercicio04.csproj", "{EBA87235-8DC3-492A-82F4-F62663F6A429}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula08\exercicio02\exercicio02.csproj", "{28A621DA-7652-4F04-9A8F-A20F48475B3C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula08\C#\exercicio02\exercicio02.csproj", "{28A621DA-7652-4F04-9A8F-A20F48475B3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula02\exercicio02\exercicio02.csproj", "{5DD5B599-C775-4019-A17D-8AF6954D3FE7}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula02\C#\exercicio02\exercicio02.csproj", "{5DD5B599-C775-4019-A17D-8AF6954D3FE7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula02\exercicio03\exercicio03.csproj", "{3669D542-555A-4509-824C-755392C5D8F6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula02\C#\exercicio03\exercicio03.csproj", "{3669D542-555A-4509-824C-755392C5D8F6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula03", "Aula03", "{CD11FE63-B85B-A9FD-0F2A-AAFC0336C56A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "hellogit", "Aula03\hellogit\hellogit.csproj", "{4BA0119C-456C-4F4D-AE18-FFE52E3122B5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula04\exercicio02\exercicio02.csproj", "{7B44239F-43CC-44AA-BFA2-EF3A763681A1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula04\C#\exercicio02\exercicio02.csproj", "{7B44239F-43CC-44AA-BFA2-EF3A763681A1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula05\exercicio03\exercicio03.csproj", "{C6D845C9-C517-41A5-9331-9A48F471C10F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula05\C#\exercicio03\exercicio03.csproj", "{C6D845C9-C517-41A5-9331-9A48F471C10F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula05\exercicio05\exercicio05.csproj", "{52E7D915-80F7-47E8-B693-72D26DB19F19}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula05\C#\exercicio05\exercicio05.csproj", "{52E7D915-80F7-47E8-B693-72D26DB19F19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula06\exercicio01\exercicio01.csproj", "{E4509BC9-45B1-4223-9A5A-FCCCC4A76331}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula06\C#\exercicio01\exercicio01.csproj", "{E4509BC9-45B1-4223-9A5A-FCCCC4A76331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula06\exercicio02\exercicio02.csproj", "{5E5C7125-8EE5-436B-8C5D-CC5478C64391}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula06\C#\exercicio02\exercicio02.csproj", "{5E5C7125-8EE5-436B-8C5D-CC5478C64391}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula07\exercicio01\exercicio01.csproj", "{7B133EFF-AD69-4B27-99AC-999A0D1DD799}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula07\C#\exercicio01\exercicio01.csproj", "{7B133EFF-AD69-4B27-99AC-999A0D1DD799}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula07\exercicio03\exercicio03.csproj", "{28D1F93F-E0F0-4F76-B0FE-8D440AA0653C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula07\C#\exercicio03\exercicio03.csproj", "{28D1F93F-E0F0-4F76-B0FE-8D440AA0653C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio07", "Aula07\exercicio07\exercicio07.csproj", "{7A7B7FD6-4977-4EE9-97D4-D5EE0CA31AFA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio07", "Aula07\C#\exercicio07\exercicio07.csproj", "{7A7B7FD6-4977-4EE9-97D4-D5EE0CA31AFA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio08", "Aula07\exercicio08\exercicio08.csproj", "{1B1F85DA-B824-4284-AACB-6B89B97164E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio08", "Aula07\C#\exercicio08\exercicio08.csproj", "{1B1F85DA-B824-4284-AACB-6B89B97164E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula08\exercicio01\exercicio01.csproj", "{57C58673-D271-4E62-BB7F-06E6348F3252}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula08\C#\exercicio01\exercicio01.csproj", "{57C58673-D271-4E62-BB7F-06E6348F3252}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula08\exercicio03\exercicio03.csproj", "{FE334AFD-8013-4C97-B0E4-5DC4B393A451}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula08\C#\exercicio03\exercicio03.csproj", "{FE334AFD-8013-4C97-B0E4-5DC4B393A451}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula08\exercicio05\exercicio05.csproj", "{F3A51C07-D7A8-4A8F-A78E-A3C540345794}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula08\C#\exercicio05\exercicio05.csproj", "{F3A51C07-D7A8-4A8F-A78E-A3C540345794}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Aula09", "Aula09", "{C2397381-8A20-6FC1-488B-90E6677595D8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula09\exercicio01\exercicio01.csproj", "{0295B301-AA18-4A63-8581-2BB636A38F1B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio01", "Aula09\C#\exercicio01\exercicio01.csproj", "{0295B301-AA18-4A63-8581-2BB636A38F1B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula09\exercicio02\exercicio02.csproj", "{9CAFAA57-586A-4C0B-935C-F92445A38E9E}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio02", "Aula09\C#\exercicio02\exercicio02.csproj", "{9CAFAA57-586A-4C0B-935C-F92445A38E9E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula09\exercicio03\exercicio03.csproj", "{49BAC86D-FE57-49BF-A87B-67652A3EDC7A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio03", "Aula09\C#\exercicio03\exercicio03.csproj", "{49BAC86D-FE57-49BF-A87B-67652A3EDC7A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula09\exercicio04\exercicio04.csproj", "{209FBFAD-4951-425F-A47F-41047F094ECD}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio04", "Aula09\C#\exercicio04\exercicio04.csproj", "{209FBFAD-4951-425F-A47F-41047F094ECD}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula09\exercicio05\exercicio05.csproj", "{D918FCAD-DF64-416F-8298-DF115EDA0360}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio05", "Aula09\C#\exercicio05\exercicio05.csproj", "{D918FCAD-DF64-416F-8298-DF115EDA0360}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio06", "Aula09\exercicio06\exercicio06.csproj", "{0385E16C-C34C-47F9-8438-612E1E102B4A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio06", "Aula09\C#\exercicio06\exercicio06.csproj", "{0385E16C-C34C-47F9-8438-612E1E102B4A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio07", "Aula09\exercicio07\exercicio07.csproj", "{75D7BE88-15CF-4169-9B3A-694F96ED41E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio07", "Aula09\C#\exercicio07\exercicio07.csproj", "{75D7BE88-15CF-4169-9B3A-694F96ED41E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio08", "Aula09\exercicio08\exercicio08.csproj", "{1610030E-7389-4A49-89C8-DA0446FC048A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "exercicio08", "Aula09\C#\exercicio08\exercicio08.csproj", "{1610030E-7389-4A49-89C8-DA0446FC048A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "C#", "C#", "{316D53E0-6872-E6DD-21E2-64EBDA09F712}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -606,5 +608,6 @@ Global
 		{0385E16C-C34C-47F9-8438-612E1E102B4A} = {C2397381-8A20-6FC1-488B-90E6677595D8}
 		{75D7BE88-15CF-4169-9B3A-694F96ED41E6} = {C2397381-8A20-6FC1-488B-90E6677595D8}
 		{1610030E-7389-4A49-89C8-DA0446FC048A} = {C2397381-8A20-6FC1-488B-90E6677595D8}
+		{316D53E0-6872-E6DD-21E2-64EBDA09F712} = {30625B67-50E2-3290-E11B-CFFFE7C12F3E}
 	EndGlobalSection
 EndGlobal
