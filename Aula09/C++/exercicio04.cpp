@@ -14,8 +14,8 @@ Exercício 04:
 #include <iomanip>
 #include <string>
 #include <locale>
+#include <cstdlib>
 #include <algorithm>
-#include <cstdlib> 
 #include <list> // Biblioteca para listas
 
 using namespace std;
@@ -191,7 +191,7 @@ void Menu()
 {
     int opcao = 0;
     while (opcao != 5) {
-        system("cls"); // Limpa o console
+        system("cls");
         cout << "====================================" << endl;
         cout << "   SISTEMA DE CADASTRO DE PILOTOS   " << endl;
         cout << "====================================\n" << endl;

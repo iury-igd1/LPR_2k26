@@ -1,9 +1,9 @@
 ﻿/* 
 Exercício 07:
-    Construa um dicionário de X pares chave-valor onde as chaves são cidades e os valores são suas respectivas populações.
-    Encontre e imprima todas as cidades com população acima da média.
-    Encontre e imprima o nome da cidade mais populosa e o nome da cidade menos populosa.
-    Remova todas as cidades com população igual a um valor Y (fornecido pelo usuário) e imprima o dicionário atualizado.
+    Construa um dicionário de X pares chave-valor onde as chaves são cidades e os valores são suas respectivas 
+    populações. Encontre e imprima todas as cidades com população acima da média. Encontre e imprima o nome da 
+    cidade mais populosa e o nome da cidade menos populosa. Remova todas as cidades com população igual a um 
+    valor Y (fornecido pelo usuário) e imprima o dicionário atualizado.
 */
 
 using System;
@@ -18,6 +18,7 @@ class Program
 
     static void Main()
     {
+        Console.Clear();
         Console.WriteLine("=========================");
         Console.WriteLine("   CADASTRO DE CIDADES   ");
         Console.WriteLine("=========================\n");
@@ -63,10 +64,14 @@ class Program
         Console.Write("\n> Informe um valor de população para remover do dicionário: ");
         float.TryParse(Console.ReadLine(), out float filtro);
 
+        List<string> chavesParaRemover = new List<string>();
         foreach (var ppl in cidades) {
             if (ppl.Value == filtro) {
-            cidades.Remove(ppl.Key);
+                chavesParaRemover.Add(ppl.Key);
             }
+        }
+        foreach (var chave in chavesParaRemover) {
+            cidades.Remove(chave);
         }
 
         Console.WriteLine("\nDicionário final:");

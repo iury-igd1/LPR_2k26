@@ -22,6 +22,7 @@ class Program
         List<int> notas = new List<int>();
         int nota, soma = 0;
 
+        Console.Clear();
         Console.WriteLine("=======================");
         Console.WriteLine("   CADASTRO DE NOTAS   ");
         Console.WriteLine("=======================\n");

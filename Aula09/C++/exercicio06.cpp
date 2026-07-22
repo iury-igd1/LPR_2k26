@@ -1,14 +1,15 @@
 /* 
 Exercício 06:
     Construa um dicionário de X pares chave-valor em que as chaves são nomes e os valores são respectivas idades. 
-    Encontre e imprima todos os nomes de pessoas com idade acima da média.
-    Encontre e imprima o nome da pessoa mais velha e o nome da pessoa mais nova.
-    Remova todas as pessoas com idade igual a um valor Y (fornecido pelo usuário) e imprima o dicionário atualizado.
+    Encontre e imprima todos os nomes de pessoas com idade acima da média. Encontre e imprima o nome da pessoa 
+    mais velha e o nome da pessoa mais nova. Remova todas as pessoas com idade igual a um valor Y (fornecido 
+    pelo usuário) e imprima o dicionário atualizado.
 */
 
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <cstdlib>
 #include <string>
 #include <map>
 
@@ -23,6 +24,7 @@ int main()
     int total, filtro;
     map<string, int> pessoas;
 
+    system("cls");
     cout << "=========================" << endl;
     cout << "   CADASTRO DE PESSOAS   " << endl;
     cout << "=========================\n" << endl;
@@ -68,9 +70,12 @@ int main()
     cout << "\n> Informe um valor de idade para remover do dicionário: ";
     cin >> filtro;
 
-    for (auto idd : pessoas) {
-        if (idd.second == filtro) {
-            pessoas.erase(idd.first);
+    for (auto it = pessoas.begin(); it != pessoas.end(); ) {
+        if (it->second == filtro) {
+            it = pessoas.erase(it);
+        } 
+        else {
+            ++it;
         }
     }
 

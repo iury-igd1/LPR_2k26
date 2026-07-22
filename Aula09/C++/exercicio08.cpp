@@ -25,11 +25,11 @@ Exercício 08:
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <cstdlib>
 #include <string>
 #include <map>
 #include <list>
 #include <algorithm>
-#include <cstdlib>
 
 using namespace std;
 

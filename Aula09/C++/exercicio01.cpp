@@ -15,6 +15,7 @@ Exercício 01:
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <cstdlib>
 #include <list> // Biblioteca para listas
 
 using namespace std;
@@ -26,6 +27,7 @@ int main()
     list<int> notas;
     int nota, soma = 0;
 
+    system("cls");
     cout << "=======================" << endl;
     cout << "   CADASTRO DE NOTAS   " << endl;
     cout << "=======================\n" << endl;

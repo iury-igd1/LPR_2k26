@@ -1,14 +1,15 @@
 /* 
 Exercício 07:
-    Construa um dicionário de X pares chave-valor onde as chaves são cidades e os valores são suas respectivas populações.
-    Encontre e imprima todas as cidades com população acima da média.
-    Encontre e imprima o nome da cidade mais populosa e o nome da cidade menos populosa.
-    Remova todas as cidades com população igual a um valor Y (fornecido pelo usuário) e imprima o dicionário atualizado.
+    Construa um dicionário de X pares chave-valor onde as chaves são cidades e os valores são suas respectivas 
+    populações. Encontre e imprima todas as cidades com população acima da média. Encontre e imprima o nome da 
+    cidade mais populosa e o nome da cidade menos populosa. Remova todas as cidades com população igual a um 
+    valor Y (fornecido pelo usuário) e imprima o dicionário atualizado.
 */
 
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <cstdlib>
 #include <string>
 #include <map>
 
@@ -23,6 +24,7 @@ int main()
     int total, qtde = 0;
     map<string, float> cidades;
 
+    system("cls");
     cout << "=========================" << endl;
     cout << "   CADASTRO DE CIDADES   " << endl;
     cout << "=========================\n" << endl;
@@ -68,9 +70,12 @@ int main()
     cout << "\n> Informe um valor de população para remover do dicionário: ";
     cin >> filtro;
 
-    for (auto ppl : cidades) {
-        if (ppl.second == filtro) {
-            cidades.erase(ppl.first);
+    for (auto it = cidades.begin(); it != cidades.end(); ) {
+        if (it->second == filtro) {
+            it = cidades.erase(it);
+        } 
+        else {
+            ++it;
         }
     }
 

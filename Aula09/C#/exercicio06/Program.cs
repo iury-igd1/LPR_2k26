@@ -1,9 +1,9 @@
 ﻿/* 
 Exercício 06:
     Construa um dicionário de X pares chave-valor em que as chaves são nomes e os valores são respectivas idades. 
-    Encontre e imprima todos os nomes de pessoas com idade acima da média.
-    Encontre e imprima o nome da pessoa mais velha e o nome da pessoa mais nova.
-    Remova todas as pessoas com idade igual a um valor Y (fornecido pelo usuário) e imprima o dicionário atualizado.
+    Encontre e imprima todos os nomes de pessoas com idade acima da média. Encontre e imprima o nome da pessoa 
+    mais velha e o nome da pessoa mais nova. Remova todas as pessoas com idade igual a um valor Y (fornecido 
+    pelo usuário) e imprima o dicionário atualizado.
 */
 
 using System;
@@ -17,6 +17,7 @@ class Program
 
     static void Main()
     {
+        Console.Clear();
         Console.WriteLine("=========================");
         Console.WriteLine("   CADASTRO DE PESSOAS   ");
         Console.WriteLine("=========================\n");
@@ -62,10 +63,14 @@ class Program
         Console.Write("\n> Informe um valor de idade para remover do dicionário: ");
         int.TryParse(Console.ReadLine(), out int filtro);
 
+        List<string> chavesParaRemover = new List<string>();
         foreach (var idd in pessoas) {
             if (idd.Value == filtro) {
-                pessoas.Remove(idd.Key);
+                chavesParaRemover.Add(idd.Key);
             }
+        }
+        foreach (var chave in chavesParaRemover) {
+            pessoas.Remove(chave);
         }
 
         Console.WriteLine("\nDicionário final:");

@@ -1,16 +1,16 @@
 /* 
 Exercício 03:
-    Construa uma lista de 100 números aleatórios. Crie um algoritmo que coloque-os em ordem crescente e imprima-os.
-    A partir dessa lista ordenada, remova todos os números pares e imprima a lista novamente.
+    Construa uma lista de 100 números aleatórios. Crie um algoritmo que coloque-os em ordem crescente e 
+    imprima-os. A partir dessa lista ordenada, remova todos os números pares e imprima a lista novamente.
     Por fim, imprima quais números se repetem, se existe algum número repetido.
 */
 
 #include <iostream>
 #include <locale>
+#include <cstdlib>
 #include <algorithm> 
 #include <list> // Biblioteca para listas
 #include <ctime>
-#include <cstdlib> // Biblioteca para números aleatórios
 
 using namespace std;
 
@@ -33,6 +33,7 @@ int main()
     setlocale(LC_ALL, "pt_BR.UTF-8");
     srand(time(NULL));
 
+    system("cls");
     cout << "=================================" << endl;
     cout << "   LISTA DE NÚMEROS ALEATÓRIOS   " << endl;
     cout << "=================================\n" << endl;
