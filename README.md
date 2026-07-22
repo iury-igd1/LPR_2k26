@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:7C3AED&height=180&section=header&text=LPR_2k26&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Exercícios%20de%20Linguagem%20de%20Programação%20•%20ETE%20FMC%20•%202026&descAlignY=58"/>
-
-# 📚 LPR_2k26
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1F6FEB,100:1F6FEB&height=180&section=header&text=LPR_2k26&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Exercícios%20de%20Linguagem%20de%20Programação%20•%20ETE%20FMC%20•%202026&descAlignY=58"/>
 
 ### Exercícios desenvolvidos na disciplina de **Linguagem de Programação (LPR)**
 
@@ -79,17 +77,17 @@ LPR_2k26/
 
 ## 📖 Conteúdo das aulas
 
-| 📚 Aula | 📖 Conteúdo                                                | 📝 Exercícios | ⭐ Destaques                              |
-| :-----: | ---------------------------------------------------------- | :-----------: | ----------------------------------------- |
-|   01    | Primeiro programa e ambiente de desenvolvimento            |       1       | `cout` / `Console.WriteLine`              |
-|   02    | Tipos de dados e operadores aritméticos                    |       4       | Área, folha de pagamento e custo de peças |
-|   03    | Git, GitHub e versionamento                                |       1       | Primeiro commit                           |
-|   04    | Estruturas de seleção (`if` / `switch`)                    |       3       | Paridade, múltiplos e RPG                 |
-|   05    | Estruturas de repetição (`while`, `do-while`, `for`)       |       5       | Médias, adivinhação e treino Jedi         |
-|   06    | Funções e modularização                                    |       3       | Menus, reverso de número e equipe Marvel  |
-|   07    | Vetores e matrizes                                         |       8       | Matrizes, busca e mapa de cinema          |
-|   08    | `struct`s                                                  |       5       | Filmes, livros, produtos e chamados       |
-|   09    | Listas e dicionários (`list`, `map`, `List`, `Dictionary`) |       8       | Biblioteca, ranking e dicionário de jogos |
+| Aula | 📖 Conteúdo                                                | Exercícios | ⭐ Destaques                              |
+| :--: | ---------------------------------------------------------- | :--------: | ----------------------------------------- |
+|  01  | Primeiro programa e ambiente de desenvolvimento            |     1      | `cout` / `Console.WriteLine`              |
+|  02  | Tipos de dados e operadores aritméticos                    |     4      | Área, folha de pagamento e custo de peças |
+|  03  | Git, GitHub e versionamento                                |     1      | Primeiro commit                           |
+|  04  | Estruturas de seleção (`if` / `switch`)                    |     3      | Paridade, múltiplos e RPG                 |
+|  05  | Estruturas de repetição (`while`, `do-while`, `for`)       |     5      | Médias, adivinhação e treino Jedi         |
+|  06  | Funções e modularização                                    |     3      | Menus, reverso de número e equipe Marvel  |
+|  07  | Vetores e matrizes                                         |     8      | Matrizes, busca e mapa de cinema          |
+|  08  | `struct`s                                                  |     5      | Filmes, livros, produtos e chamados       |
+|  09  | Listas e dicionários (`list`, `map`, `List`, `Dictionary`) |     8      | Biblioteca, ranking e dicionário de jogos |
 
 <div align="center">
 
@@ -164,4 +162,4 @@ Projeto acadêmico desenvolvido por **Iury Gonçalves de Souza** durante o curso
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:2563EB,100:7C3AED&height=120&section=footer"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1F6FEB,100:1F6FEB&height=120&section=footer"/>
