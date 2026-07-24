@@ -27,7 +27,7 @@ int main()
     cout << "   CADASTRO DE JOGOS   " << endl;
     cout << "=======================" << endl;
 
-    for (int i = 1; i <= 5; i++) {
+    for (int i = 1; i <= 5; i++) { // Cadastro dos cinco jogos e seus respectivos gêneros
         cout << "\n> Digite o nome do jogo " << i << ": ";
         getline(cin >> ws, nomeJogo); // 'ws' descarta espaços em branco e quebras de linha no buffer
 
@@ -37,10 +37,12 @@ int main()
         jogos[nomeJogo] = generoJogo;
     }
 
-    cout << "\n> Digite o nome do jogo que deseja buscar: ";
+    // Solicita o nome do jogo que será pesquisado
+    cout << "\n> Digite o nome do jogo que deseja buscar: "; 
     getline(cin >> ws, nomeBusca);
 
-    if (jogos.find(nomeBusca) != jogos.end()) { // Verifica se a chave existe
+    // Busca o jogo informado no dicionário e exibe seu gênero, caso exista
+    if (jogos.find(nomeBusca) != jogos.end()) {
         cout << "O gênero do jogo '" << nomeBusca << "' é: " << jogos[nomeBusca] << "." << endl;
     }
     else {

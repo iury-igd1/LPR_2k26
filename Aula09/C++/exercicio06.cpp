@@ -22,7 +22,7 @@ int main()
     string nomePessoa = "", maisVelho = "", maisNovo = "";
     int idadePessoa = 0, somaIdades = 0, qtde = 0, iddMaisVelho = -1, iddMaisNovo = 999999999;
     int total, filtro;
-    map<string, int> pessoas;
+    map<string, int> pessoas; // Dicionário de armazenamento das pessoas no formato nome-idade
 
     system("cls");
     cout << "=========================" << endl;
@@ -32,7 +32,7 @@ int main()
     cout << "> Digite o número de pessoas que serão informadas: ";
     cin >> total;
 
-    for (int i = 1; i <= total; i++) {
+    for (int i = 1; i <= total; i++) { // Cadastro das pessoas informadas pelo usuário
         cout << "\n> Digite o nome da pessoa " << i << ": ";
         getline(cin >> ws, nomePessoa); // 'ws' descarta espaços em branco e quebras de linha no buffer
 
@@ -44,7 +44,7 @@ int main()
         pessoas[nomePessoa] = idadePessoa;
     }
 
-    double media = (double)somaIdades / qtde;
+    double media = (double)somaIdades / qtde; // Calcula a média das idades cadastradas
 
     cout << "\nPessoas com idade acima da média:" << endl;
     for (auto idd : pessoas) {
@@ -53,7 +53,7 @@ int main()
         }
     }
 
-    for (auto idd : pessoas) {
+    for (auto idd : pessoas) { // Identifica a pessoa mais velha e a mais nova
         if (idd.second > iddMaisVelho) {
             maisVelho = idd.first;
             iddMaisVelho = idd.second;
@@ -70,6 +70,7 @@ int main()
     cout << "\n> Informe um valor de idade para remover do dicionário: ";
     cin >> filtro;
 
+    // Remove todas as pessoas que possuem a idade informada pelo usuário
     for (auto it = pessoas.begin(); it != pessoas.end(); ) {
         if (it->second == filtro) {
             it = pessoas.erase(it);
@@ -79,7 +80,7 @@ int main()
         }
     }
 
-    cout << "\nDicionário final:" << endl;
+    cout << "\nDicionário final:" << endl; // Exibe o dicionário após as remoções
     for (auto idd : pessoas) {
         cout << idd.first << ", " << idd.second << endl;
     }

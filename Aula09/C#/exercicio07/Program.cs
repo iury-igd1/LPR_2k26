@@ -14,6 +14,7 @@ class Program
     static string nomeCidade = "", maisPopulosa = "", menosPopulosa = "";
     static float populacao = 0.0f, somaPopulacoes = 0.0f, populacaoMaior = -1.0f, populacaoMenor = 999999999.0f;
     static int qtde = 0;
+    // Dicionário de armazenamento das cidades no formato cidade-população
     static Dictionary<string, float> cidades = new Dictionary<string, float>();
 
     static void Main()
@@ -26,7 +27,7 @@ class Program
         Console.Write("> Digite o número de cidades que serão informadas: ");
         int.TryParse(Console.ReadLine(), out int total);
 
-        for (int i = 1; i <= total; i++) {
+        for (int i = 1; i <= total; i++) { // Cadastro das cidades informadas pelo usuário
             Console.Write($"\n> Digite o nome da cidade {i}: ");
             nomeCidade = Console.ReadLine() ?? "";
 
@@ -38,7 +39,7 @@ class Program
             cidades[nomeCidade] = populacao;
         }
 
-        double media = somaPopulacoes / qtde;
+        double media = somaPopulacoes / qtde; // Calcula a média das populações cadastradas
 
         Console.WriteLine("\nCidades com população acima da média:");
         foreach (var ppl in cidades) {
@@ -47,7 +48,7 @@ class Program
             }
         }
 
-        foreach (var ppl in cidades) {
+        foreach (var ppl in cidades) { // Identifica a cidade mais e menos populosa
             if (ppl.Value > populacaoMaior) {
                 maisPopulosa = ppl.Key;
                 populacaoMaior = ppl.Value;
@@ -64,17 +65,19 @@ class Program
         Console.Write("\n> Informe um valor de população para remover do dicionário: ");
         float.TryParse(Console.ReadLine(), out float filtro);
 
+        // Armazena as chaves das cidades com a população informada
         List<string> chavesParaRemover = new List<string>();
         foreach (var ppl in cidades) {
             if (ppl.Value == filtro) {
                 chavesParaRemover.Add(ppl.Key);
             }
         }
+        // Remove do dicionário todas as cidades com a população informada
         foreach (var chave in chavesParaRemover) {
             cidades.Remove(chave);
         }
 
-        Console.WriteLine("\nDicionário final:");
+        Console.WriteLine("\nDicionário final:"); // Exibe o dicionário após as remoções
         foreach (var ppl in cidades) {
             Console.WriteLine($"{ppl.Key}, {ppl.Value}");
         }

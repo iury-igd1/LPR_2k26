@@ -27,7 +27,8 @@ using System.Collections.Generic;
 
 class Program
 {
-    static int totalCadastrados = 0;
+    static int totalCadastrados = 0; // Controla a quantidade total de livros cadastrados
+    // Dicionário que armazena os livros utilizando o código como chave
     static Dictionary<string, Livro> biblioteca = new Dictionary<string, Livro>();
     struct Livro
     {
@@ -45,7 +46,7 @@ class Program
 
     static void CadastrarLivro()
     {
-        if (totalCadastrados >= 10) {
+        if (totalCadastrados >= 10) { // Impede o cadastro de mais de 10 livros
             Console.WriteLine("\nLimite máximo de 10 livros cadastrados atingido.");
             Pausar();
             return;
@@ -59,13 +60,13 @@ class Program
         Console.Write("> Digite o código identificador do livro (Ex: 1A01): ");
         string codigo = Console.ReadLine() ?? "";
 
-        if (biblioteca.ContainsKey(codigo)) {
+        if (biblioteca.ContainsKey(codigo)) { // Verifica se o código informado já está cadastrado
             Console.WriteLine("\nErro: Já existe um livro cadastrado com este código.");
             Pausar();
             return;
         }
 
-        Livro novoLivro = new Livro();
+        Livro novoLivro = new Livro(); // Cria um novo livro e solicita suas informações
         totalCadastrados++;
 
         Console.Write($"> Informe o título do Livro {totalCadastrados}: ");
@@ -80,7 +81,7 @@ class Program
         Console.Write($"> Informe a quantidade disponível do Livro {totalCadastrados}: ");
         int.TryParse(Console.ReadLine(), out novoLivro.Quantidade);
 
-        biblioteca[codigo] = novoLivro;
+        biblioteca[codigo] = novoLivro; // Armazena o livro no dicionário utilizando o código como chave
 
         Console.WriteLine($"\nLivro cadastrado com sucesso! ({totalCadastrados}/10)");
         Pausar();
@@ -102,7 +103,7 @@ class Program
         Console.Write("> Digite o código do livro que deseja buscar: ");
         string codigo = Console.ReadLine() ?? "";
 
-        if (biblioteca.ContainsKey(codigo)) {
+        if (biblioteca.ContainsKey(codigo)) { // Procura o livro pelo código informado
             Livro livro = biblioteca[codigo];
             Console.WriteLine($"\n[Livro Encontrado]");
             Console.WriteLine($"Título: {livro.Titulo}");
@@ -132,10 +133,10 @@ class Program
         Console.Write("> Digite o código do livro para realizar o empréstimo: ");
         string codigo = Console.ReadLine() ?? "";
 
-        if (biblioteca.ContainsKey(codigo)) {
+        if (biblioteca.ContainsKey(codigo)) { // Verifica se o livro existe no dicionário
             Livro livro = biblioteca[codigo];
 
-            if (livro.Quantidade > 0) {
+            if (livro.Quantidade > 0) { // Realiza o empréstimo apenas se houver exemplares disponíveis
                 livro.Quantidade--; // Reduz a quantidade disponível
                 biblioteca[codigo] = livro; // Grava a cópia modificada de volta no dicionário
                 Console.WriteLine($"\nEmpréstimo realizado com sucesso! Exemplares restantes: {livro.Quantidade}");
@@ -165,16 +166,19 @@ class Program
 
         Console.WriteLine($"Total de livros cadastrados: {biblioteca.Count}\n");
 
+        // Variáveis auxiliares para identificar o livro mais antigo e o maior estoque
         int anoMaisAntigo = 999999;
         string tituloMaisAntigo = "";
 
         int maiorQuantidade = -1;
         string tituloMaiorQtd = "";
 
+        // Listas utilizadas para contabilizar a quantidade de livros por autor
         List<string> listaAutores = new List<string>();
         List<int> qtdLivrosPorAutor = new List<int>();
 
-        foreach (var item in biblioteca) {
+        // Percorre todos os livros cadastrados para gerar as estatísticas
+        foreach (var item in biblioteca) { 
             Livro livro = item.Value;
 
             if (livro.AnoPublicacao < anoMaisAntigo) {
@@ -186,6 +190,7 @@ class Program
                 tituloMaiorQtd = livro.Titulo;
             }
 
+            // Verifica se o autor já foi contabilizado anteriormente
             if (listaAutores.Contains(livro.Autor)) {
                 int posicao = listaAutores.IndexOf(livro.Autor);
                 qtdLivrosPorAutor[posicao]++;
@@ -202,6 +207,7 @@ class Program
         Console.WriteLine("-------------------------------------------");
         Console.WriteLine("       QUANTIDADE DE LIVROS POR AUTOR      ");
         Console.WriteLine("-------------------------------------------");
+        // Exibe a quantidade de livros cadastrados para cada autor
         for (int i = 0; i < listaAutores.Count; i++) {
             Console.WriteLine($"Autor: {listaAutores[i],-20} | Livros registados: {qtdLivrosPorAutor[i]}");
         }
@@ -212,7 +218,7 @@ class Program
     static void Menu()
     {
         int opcao = 0;
-        while (opcao != 5) {
+        while (opcao != 5) { // Exibe o menu principal até que o usuário escolha sair
             Console.Clear();
             Console.WriteLine("===========================================");
             Console.WriteLine("      SISTEMA DE GESTÃO DE BIBLIOTECA      ");
@@ -229,7 +235,7 @@ class Program
             Console.Write("> Escolha uma opção: ");
             int.TryParse(Console.ReadLine(), out opcao);
 
-            switch (opcao) {
+            switch (opcao) { // Executa a funcionalidade correspondente à opção escolhida
                 case 1:
                     CadastrarLivro();
                     break;

@@ -42,8 +42,8 @@ struct Livro
     int Quantidade;
 };
 
-int totalCadastrados = 0;
-map<string, Livro> biblioteca; 
+int totalCadastrados = 0; // Controla a quantidade total de livros cadastrados
+map<string, Livro> biblioteca; // Dicionário que armazena os livros utilizando o código como chave
 
 void Pausar() 
 {
@@ -53,7 +53,7 @@ void Pausar()
 
 void CadastrarLivro() 
 {
-    if (totalCadastrados >= 10) {
+    if (totalCadastrados >= 10) { // Impede o cadastro de mais de 10 livros
         cout << "\nLimite máximo de 10 livros cadastrados atingido." << endl;
         Pausar();
         return;
@@ -74,7 +74,7 @@ void CadastrarLivro()
         return;
     }
 
-    Livro novoLivro;
+    Livro novoLivro; // Cria um novo livro e solicita suas informações
     totalCadastrados++;
 
     cout << "> Informe o título do Livro " << totalCadastrados << ": ";
@@ -91,7 +91,7 @@ void CadastrarLivro()
     
     cin.ignore(10000, '\n');
 
-    biblioteca[codigo] = novoLivro;
+    biblioteca[codigo] = novoLivro; // Armazena o livro no dicionário utilizando o código como chave
     cout << "\nLivro cadastrado com sucesso! (" << totalCadastrados << "/10)" << endl;
     Pausar();
 }
@@ -113,7 +113,7 @@ void BuscarLivro()
     cout << "> Digite o código do livro que deseja buscar: ";
     getline(cin >> ws, codigo);
 
-    if (biblioteca.find(codigo) != biblioteca.end()) {
+    if (biblioteca.find(codigo) != biblioteca.end()) { // Procura o livro pelo código informado
         Livro livro = biblioteca[codigo];
         cout << "\n[Livro Encontrado]" << endl;
         cout << "Título: " << livro.Titulo << endl;
@@ -145,9 +145,9 @@ void EmprestarLivro()
     getline(cin >> ws, codigo);
 
     if (biblioteca.find(codigo) != biblioteca.end()) {
-        
-        if (biblioteca[codigo].Quantidade > 0) {
-            biblioteca[codigo].Quantidade--; 
+        // Realiza o empréstimo apenas se houver exemplares disponíveis
+        if (biblioteca[codigo].Quantidade > 0) { 
+            biblioteca[codigo].Quantidade--; // Reduz a quantidade disponível
             cout << "\nEmpréstimo realizado com sucesso! Exemplares restantes: " << biblioteca[codigo].Quantidade << endl;
         } 
         else {
@@ -175,15 +175,18 @@ void ExibirRelatorio()
 
     cout << "Total de livros cadastrados: " << biblioteca.size() << "\n" << endl;
 
+    // Variáveis auxiliares para identificar o livro mais antigo e o maior estoque
     int anoMaisAntigo = 999999;
     string tituloMaisAntigo = "";
 
     int maiorQuantidade = -1;
     string tituloMaiorQtd = "";
 
+    // Listas utilizadas para contabilizar a quantidade de livros por autor
     list<string> listaAutores;
     list<int> qtdLivrosPorAutor;
 
+    // Percorre todos os livros cadastrados para gerar as estatísticas
     for (auto it = biblioteca.begin(); it != biblioteca.end(); it++) {
         Livro livro = it->second;
 
@@ -196,6 +199,7 @@ void ExibirRelatorio()
             tituloMaiorQtd = livro.Titulo;
         }
 
+        // Verifica se o autor já foi contabilizado anteriormente
         auto itAutor = find(listaAutores.begin(), listaAutores.end(), livro.Autor);
         if (itAutor != listaAutores.end()) {
             int posicao = distance(listaAutores.begin(), itAutor);
@@ -218,7 +222,8 @@ void ExibirRelatorio()
     
     auto itA = listaAutores.begin();
     auto itQ = qtdLivrosPorAutor.begin();
-    
+
+    // Exibe a quantidade de livros cadastrados para cada autor
     for (; itA != listaAutores.end(); itA++, itQ++) {
         cout << "Autor: " << left << setw(20) << *itA << " | Livros registados: " << *itQ << endl;
     }
@@ -229,7 +234,7 @@ void ExibirRelatorio()
 void Menu() 
 {
     int opcao = 0;
-    while (opcao != 5) {
+    while (opcao != 5) { // Exibe o menu principal até que o usuário escolha sair
         system("cls");
         cout << "===========================================" << endl;
         cout << "      SISTEMA DE GESTÃO DE BIBLIOTECA      " << endl;
@@ -251,7 +256,7 @@ void Menu()
         }
         cin.ignore(10000, '\n');
 
-        switch (opcao) {
+        switch (opcao) { // Executa a funcionalidade correspondente à opção escolhida
             case 1:
                 CadastrarLivro();
                 break;

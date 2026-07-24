@@ -21,7 +21,7 @@ class Program
         Console.WriteLine("   CADASTRO DE JOGOS   ");
         Console.WriteLine("=======================");
 
-        for (int i = 1; i <= 5; i++) {
+        for (int i = 1; i <= 5; i++) { // Cadastro dos cinco jogos e seus respectivos gêneros
             Console.Write($"\n> Digite o nome do jogo {i}: ");
             nomeJogo = Console.ReadLine() ?? "";
 
@@ -31,10 +31,12 @@ class Program
             jogos[nomeJogo] = generoJogo;
         }
 
+        // Solicita o nome do jogo que será pesquisado
         Console.Write($"\n> Digite o nome do jogo que deseja buscar: ");
         nomeBusca = Console.ReadLine() ?? "";
 
-        if (jogos.ContainsKey(nomeBusca)) { // Verifica se a chave existe
+        // Busca o jogo informado no dicionário e exibe seu gênero, caso exista
+        if (jogos.ContainsKey(nomeBusca)) {
             Console.WriteLine($"O gênero do jogo '{nomeBusca}' é: {jogos[nomeBusca]}.");
         } 
         else {

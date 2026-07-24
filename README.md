@@ -1,8 +1,6 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1F6FEB,100:1F6FEB&height=180&section=header&text=LPR_2k26&fontSize=42&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Exercícios%20de%20Linguagem%20de%20Programação%20•%20ETE%20FMC%20•%202026&descAlignY=58"/>
-
-### Exercícios desenvolvidos na disciplina de **Linguagem de Programação (LPR)**
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E3A8A,100:1E3A8A&height=180&section=header&text=LPR_2k26&fontSize=40&fontColor=ffffff&animation=fadeIn&fontAlignY=26&desc=Linguagem%20de%20Programação%20•%20ETE%20FMC%20•%202026&descAlignY=46"/>
 
 <p>
 
@@ -27,47 +25,40 @@
 
 ## 👨‍💻 Sobre o repositório
 
-> [!NOTE]
-> Este repositório reúne todos os exercícios desenvolvidos durante a disciplina de **Linguagem de Programação (LPR)**.
->
-> Cada atividade é implementada **duas vezes**, uma em **C++** e outra em **C#**, permitindo comparar a sintaxe, os recursos de cada linguagem e diferentes formas de resolver o mesmo problema.
+Este repositório reúne todos os exercícios desenvolvidos durante a disciplina de **Linguagem de Programação (LPR)**.
+
+Cada atividade é implementada **duas vezes**, uma em **C++** e outra em **C#**, permitindo comparar a sintaxe, os recursos e as particularidades de cada linguagem na resolução do mesmo problema.
 
 | 🏷️ Informação      | 📄 Descrição                                                      |
 | :----------------- | :---------------------------------------------------------------- |
 | 🏫 **Instituição** | Escola Técnica de Eletrônica Francisco Moreira da Costa (ETE FMC) |
 | 🎓 **Curso**       | Técnico em Desenvolvimento de Sistemas (DS)                       |
-| 📘 **Disciplina**  | Linguagem de Programação (LPR)                                    |
+| 📘 **Disciplina**  | Linguagem de Programação (LPR) — 2026                             |
 | 👨‍🏫 **Professor**   | José Andery Carneiro                                              |
 | 👨‍🎓 **Aluno**       | Iury Gonçalves de Souza                                           |
-| 📅 **Ano letivo**  | 2026                                                              |
 
 ---
 
 ## 🗃️ Estrutura do repositório
 
-> [!TIP]
-> Cada exercício possui uma implementação equivalente em **C++** e outra em **C#**, facilitando a comparação entre as linguagens.
+Cada exercício possui uma implementação equivalente em **C++** e outra em **C#**, facilitando a comparação entre as linguagens.
 
 ```text
 LPR_2k26/
 ├── Aula01/
-│   └── helloworld.cpp                # primeiro contato com o console
+│   ├── helloworld.cpp                # primeiro contato com o console
 │   └── helloworld/Program.cs
 │
 ├── Aula02 a Aula05/
-│   └── exercicioNN.cpp               # variáveis, seleção e repetição
+│   ├── exercicioNN.cpp               # variáveis, seleção e repetição
 │   └── exercicioNN/Program.cs
 │
 ├── Aula06 a Aula07/
-│   └── exercicioNN.cpp               # funções, vetores e matrizes
+│   ├── exercicioNN.cpp               # funções, vetores e matrizes
 │   └── exercicioNN/Program.cs
 │
-├── Aula08/
-│   └── exercicioNN.cpp               # structs
-│   └── exercicioNN/Program.cs
-│
-├── Aula09/
-│   └── exercicioNN.cpp               # listas e dicionários
+├── Aula08 e Aula09/
+│   ├── exercicioNN.cpp               # structs, listas e dicionários
 │   └── exercicioNN/Program.cs
 │
 └── README.md
@@ -91,7 +82,7 @@ LPR_2k26/
 
 <div align="center">
 
-### 📊 Estatísticas do projeto
+### 📊 Estatísticas
 
 | 📂 Aulas | 💻 Exercícios | 🔁 Implementações |
 | :------: | :-----------: | :---------------: |
@@ -114,7 +105,7 @@ g++ exercicio08.cpp -o exercicio08
 No Windows:
 
 ```bash
-exercicio08.exe
+.\exercicio08.exe
 ```
 
 ### C#
@@ -128,15 +119,14 @@ dotnet run
 
 ## 📌 Competências desenvolvidas
 
-> [!IMPORTANT]
-> Ao concluir todos os exercícios deste repositório, foram praticados conceitos fundamentais da programação estruturada utilizando duas linguagens diferentes.
+Ao concluir todos os exercícios deste repositório, foram praticados conceitos fundamentais da programação estruturada utilizando duas linguagens diferentes.
 
 - 🧠 Lógica de programação
 - 🔀 Estruturas condicionais
 - 🔁 Estruturas de repetição
 - 🧩 Modularização com funções
+- ⚖️ Comparação entre implementações em C++ e C#
 - 🌿 Versionamento com Git e GitHub
-- 🔄 Comparação entre implementações em C++ e C#
 
 ---
 
@@ -162,4 +152,4 @@ Projeto acadêmico desenvolvido por **Iury Gonçalves de Souza** durante o curso
 
 </div>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1F6FEB,100:1F6FEB&height=120&section=footer"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:1E3A8A,100:1E3A8A&height=120&section=footer"/>

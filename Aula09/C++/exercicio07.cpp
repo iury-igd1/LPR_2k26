@@ -22,7 +22,7 @@ int main()
     string nomeCidade = "", maisPopulosa = "", menosPopulosa = "";
     float populacao = 0.0f, somaPopulacoes = 0.0f, populacaoMaior = -1.0f, populacaoMenor = 999999999.0f, filtro;
     int total, qtde = 0;
-    map<string, float> cidades;
+    map<string, float> cidades; // Dicionário de armazenamento das cidades no formato cidade-população
 
     system("cls");
     cout << "=========================" << endl;
@@ -32,7 +32,7 @@ int main()
     cout << "> Digite o número de cidades que serão informadas: ";
     cin >> total;
 
-    for (int i = 1; i <= total; i++) {
+    for (int i = 1; i <= total; i++) { // Cadastro das cidades informadas pelo usuário
         cout << "\n> Digite o nome da cidade " << i << ": ";
         getline(cin >> ws, nomeCidade); // 'ws' descarta espaços em branco e quebras de linha no buffer
 
@@ -44,7 +44,7 @@ int main()
         cidades[nomeCidade] = populacao;
     }
 
-    double media = (double)somaPopulacoes / qtde;
+    double media = (double)somaPopulacoes / qtde; // Calcula a média das populações cadastradas
 
     cout << "\nCidades com população acima da média:" << endl;
     for (auto ppl : cidades) {
@@ -53,7 +53,7 @@ int main()
         }
     }
 
-    for (auto ppl : cidades) {
+    for (auto ppl : cidades) { // Identifica a cidade mais e menos populosa
         if (ppl.second > populacaoMaior) {
             maisPopulosa = ppl.first;
             populacaoMaior = ppl.second;
@@ -70,6 +70,7 @@ int main()
     cout << "\n> Informe um valor de população para remover do dicionário: ";
     cin >> filtro;
 
+    // Remove todas as cidades com a população informada
     for (auto it = cidades.begin(); it != cidades.end(); ) {
         if (it->second == filtro) {
             it = cidades.erase(it);
@@ -79,7 +80,7 @@ int main()
         }
     }
 
-    cout << "\nDicionário final:" << endl;
+    cout << "\nDicionário final:" << endl; // Exibe o dicionário após as remoções
     for (auto ppl : cidades) {
         cout << ppl.first << ", " << ppl.second << endl;
     }

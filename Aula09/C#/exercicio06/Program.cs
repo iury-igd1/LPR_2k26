@@ -13,6 +13,7 @@ class Program
 {
     static string nomePessoa = "", maisVelho = "", maisNovo = "";
     static int idadePessoa = 0, somaIdades = 0, qtde = 0, iddMaisVelho = -1, iddMaisNovo = 999999999;
+    // Dicionário de armazenamento das pessoas no formato nome-idade
     static Dictionary<string, int> pessoas = new Dictionary<string, int>();
 
     static void Main()
@@ -25,7 +26,7 @@ class Program
         Console.Write("> Digite o número de pessoas que serão informadas: ");
         int.TryParse(Console.ReadLine(), out int total);
 
-        for (int i = 1; i <= total; i++) {
+        for (int i = 1; i <= total; i++) { // Cadastro das pessoas informadas pelo usuário
             Console.Write($"\n> Digite o nome da pessoa {i}: ");
             nomePessoa = Console.ReadLine() ?? "";
 
@@ -37,7 +38,7 @@ class Program
             pessoas[nomePessoa] = idadePessoa;
         }
 
-        double media = (double)somaIdades / qtde;
+        double media = (double)somaIdades / qtde; // Calcula a média das idades cadastradas
 
         Console.WriteLine("\nPessoas com idade acima da média:");
         foreach (var idd in pessoas) {
@@ -46,7 +47,7 @@ class Program
             }
         }
 
-        foreach (var idd in pessoas) {
+        foreach (var idd in pessoas) { // Identifica a pessoa mais velha e a mais nova
             if (idd.Value > iddMaisVelho) {
                 maisVelho = idd.Key;
                 iddMaisVelho = idd.Value;
@@ -63,17 +64,19 @@ class Program
         Console.Write("\n> Informe um valor de idade para remover do dicionário: ");
         int.TryParse(Console.ReadLine(), out int filtro);
 
+        // Armazena as chaves das pessoas que possuem a idade informada
         List<string> chavesParaRemover = new List<string>();
         foreach (var idd in pessoas) {
             if (idd.Value == filtro) {
                 chavesParaRemover.Add(idd.Key);
             }
         }
-        foreach (var chave in chavesParaRemover) {
+        // Remove do dicionário todas as pessoas com a idade informada
+        foreach (var chave in chavesParaRemover) { 
             pessoas.Remove(chave);
         }
 
-        Console.WriteLine("\nDicionário final:");
+        Console.WriteLine("\nDicionário final:"); // Exibe o dicionário após as remoções
         foreach (var idd in pessoas) {
             Console.WriteLine($"{idd.Key}, {idd.Value}");
         }
