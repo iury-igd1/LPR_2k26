@@ -1,6 +1,6 @@
 ﻿/* 
 Exercício 02:
-    Faça um programa para ler os dados de um funcionário (nome, salário bruto e imposto). 
+    Faça um programa para ler os dados de um funcionário (nome e salário bruto). 
     A classe funcionário deve conter os seguintes métodos:
       - Mostrar os dados do funcionário (nome e salário líquido);
       - Aumentar o salário do funcionário com base em uma porcentagem dada.
@@ -11,28 +11,52 @@ Exercício 02:
 
     EXEMPLO:
         Entrada:    Iury
-                    2500
+                    2400
         Saída:      Nome do funcionário: Iury
-                    Salário líquido: R$ 2125,00
+                    Salário líquido: R$ 2040,00
+        Entrada:    s
+                    10
+        Saída:      Após aumento:
+                    Nome do funcionário: Iury                                     
+                    Salário líquido: R$ 2244,00 
 */
 
 using System;
 
-class Program
-{
-    public class Funcionario {
-        public string Nome = "";
-        public double SalarioBruto;
-        public double Imposto;
+class Funcionario {
+    public string Nome;
+    public double SalarioBruto;
 
-        public double calcSalarioLiquido() {
-            return SalarioBruto - Imposto;
+    public Funcionario(string nome, double salarioBruto) {
+        Nome = nome;
+        SalarioBruto = salarioBruto;
+    }
+
+    public double calcImposto() {
+        if (SalarioBruto <= 2000) {
+            return SalarioBruto * 0.1;
         }
-        public void aumentarSalario(double porcentagem) {
-            SalarioBruto += SalarioBruto * porcentagem / 100;
+        else if (SalarioBruto <= 3000) {
+            return SalarioBruto * 0.15;
+        }
+        else {
+            return SalarioBruto * 0.2;
         }
     }
 
+    public void dados() {
+        double salarioLiquido = SalarioBruto - calcImposto();
+        Console.WriteLine($"\nNome do funcionário: {Nome}");
+        Console.WriteLine($"Salário líquido: R$ {salarioLiquido:F2}");
+    }
+
+    public void aumentarSalario(double porcentagem) {
+        SalarioBruto += SalarioBruto * porcentagem / 100;
+    }
+}
+
+class Program
+{   
     static void Main()
     {
         Console.Clear();
@@ -44,23 +68,10 @@ class Program
         string nome = Console.ReadLine() ?? "N/A";
 
         Console.Write($"> Insira o salário bruto do funcionário: ");
-        double salarioBruto = double.Parse(Console.ReadLine() ?? "0");
+        double salario = double.Parse(Console.ReadLine() ?? "0");
 
-        Funcionario funcionario = new Funcionario();
-        funcionario.Nome = nome;
-        funcionario.SalarioBruto = salarioBruto;
-        if (salarioBruto <= 2000) {
-            funcionario.Imposto = salarioBruto * 0.10;
-        } 
-        else if (salarioBruto <= 3000) {
-            funcionario.Imposto = salarioBruto * 0.15;
-        } 
-        else {
-            funcionario.Imposto = salarioBruto * 0.20;
-        }
-
-        Console.WriteLine($"\nNome do funcionário: {funcionario.Nome}");
-        Console.WriteLine($"Salário líquido: R$ {funcionario.calcSalarioLiquido():F2}");
+        Funcionario funcionario = new Funcionario(nome, salario);
+        funcionario.dados();
 
         Console.Write($"\n> Deseja aumentar o salário do funcionário? (s/n): ");
         string resposta = Console.ReadLine() ?? "n";
@@ -68,7 +79,8 @@ class Program
             Console.Write($"> Insira a porcentagem de aumento: ");
             double porcentagem = double.Parse(Console.ReadLine() ?? "0");
             funcionario.aumentarSalario(porcentagem);
-            Console.WriteLine($"\nSalário após aumento: R$ {funcionario.calcSalarioLiquido():F2}");
+            Console.Write($"\nApós aumento:");
+            funcionario.dados();
         }
     }
 }

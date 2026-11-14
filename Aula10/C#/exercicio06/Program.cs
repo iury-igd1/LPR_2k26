@@ -11,31 +11,58 @@ Exercício 06:
 using System;
 using System.Collections.Generic;
 
+class Reserva {
+    public string Codigo;
+    public Cliente? Cliente;
+
+    public Reserva(string codigo) {
+        Codigo = codigo;
+    }
+}
+
+class Cliente {
+    public string Nome;
+    public List<Reserva> Reservas = new List<Reserva>();
+
+    public Cliente(string nome) {
+        Nome = nome;
+    }
+
+    public void addReserva(Reserva reserva) {
+        if (reserva.Cliente != null) {
+            Console.WriteLine($"\nA reserva {reserva.Codigo} já possui cliente.");
+            return;
+        }
+
+        reserva.Cliente = this;
+        Reservas.Add(reserva);
+    }
+
+    public void listarReservas() {
+        Console.WriteLine($"Reservas de {Nome}:");
+        foreach (Reserva reserva in Reservas) {
+            Console.WriteLine($"- {reserva.Codigo}");
+        }
+    }
+}
+
 class Program
 {
-    public class Cliente {
-        public string Nome = "";
-        public List<Reserva> Reservas = [];
-
-        public void AdicionarReserva(Reserva reserva) {
-            Reservas.Add(reserva);
-            reserva.Cliente = this;
-        }
-        public void ListarReservas() {
-            Console.WriteLine($"Reservas do cliente {Nome}:");
-            foreach (var reserva in Reservas) {
-                Console.WriteLine($"- Reserva ID: {reserva.Id}, Data: {reserva.Data}");
-            }
-        }
-    }
-
-    public class Reserva(int id, DateTime data) {
-        public int Id = id;
-        public DateTime Data = data;
-        public Cliente? Cliente;
-    }
-
     static void Main()
     {
+        Cliente cliente = new Cliente("Iury");
+        Reserva primeira = new Reserva("R001");
+        Reserva segunda = new Reserva("R002");
+
+        Console.Clear();
+        Console.WriteLine("=========================");
+        Console.WriteLine("   SISTEMA DE RESERVAS   ");
+        Console.WriteLine("=========================\n");
+
+        cliente.addReserva(primeira);
+        cliente.addReserva(segunda);
+        cliente.listarReservas();
+        
+        cliente.addReserva(primeira);
     } 
 }

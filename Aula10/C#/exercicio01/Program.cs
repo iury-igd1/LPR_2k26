@@ -12,20 +12,22 @@ Exercício 01:
 
 using System;
 
-class Program
-{
-    public class Retangulo {
-        public double Altura;
-        public double Largura;
+class Retangulo {
+    public double Altura;
+    public double Largura;
 
-        public double calcArea() {
-            return Altura * Largura;
-        }
-        public double calcPerimetro() {
-            return 2 * (Altura + Largura);
-        }
+    public double calcArea() {
+        return Altura * Largura;
     }
-    
+
+    public double calcPerimetro() {
+        return 2 * (Altura + Largura);
+    }
+
+}
+
+class Program
+{    
     static void Main()
     {
         Console.Clear();
@@ -33,17 +35,15 @@ class Program
         Console.WriteLine("   CÁLCULO DE RETÂNGULO   ");
         Console.WriteLine("==========================\n");
 
+        Retangulo retangulo = new Retangulo();
+
         Console.Write($"> Insira o valor da altura do retângulo: ");
-        double altura = double.Parse(Console.ReadLine() ?? "0");
+        retangulo.Altura = double.Parse(Console.ReadLine() ?? "0");
 
         Console.Write($"> Insira o valor da largura do retângulo: ");
-        double largura = double.Parse(Console.ReadLine() ?? "0");
+        retangulo.Largura = double.Parse(Console.ReadLine() ?? "0");
 
-        Retangulo retangulo = new Retangulo();
-        retangulo.Altura = altura;
-        retangulo.Largura = largura;
-
-        Console.WriteLine($"\nÁrea do retângulo: {retangulo.calcArea()} u²");
-        Console.WriteLine($"Perímetro do retângulo: {retangulo.calcPerimetro()} u");
+        Console.WriteLine($"\nÁrea do retângulo: {retangulo.calcArea():F2} u²");
+        Console.WriteLine($"Perímetro do retângulo: {retangulo.calcPerimetro():F2} u");
     }
 }

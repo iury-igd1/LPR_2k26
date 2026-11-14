@@ -13,32 +13,40 @@ Exercício 03:
                     40
                     50
                     80
-        Saída:      Nome do aluno: Iury
-                    Matrícula: 0123AB*9
+        Saída:      Nome do aluno: Iury (0123AB*9)
                     Média: 55,00
-                    Precisa para a final: 5,00
+                    Precisa na final: 5,00
 */
 
 using System;
 
-class Program
-{
-    public class Aluno {
-        public string Nome = "";
-        public string Matricula = "";
-        public double[] Notas = new double[3];
+class Aluno {
+    public string Nome;
+    public string Matricula;
+    public double[] Notas = new double[3];
 
-        public double calcMedia() {
-            return (Notas[0] * 2.5 + Notas[1] * 2.5 + Notas[2] * 2) / 7;
+    public Aluno(string nome, string matricula) {
+        Nome = nome;
+        Matricula = matricula;
+    }
+
+    public double calcMedia() {
+        return (Notas[0] * 2.5 + Notas[1] * 2.5 + Notas[2] * 2) / 7.0;
+    }
+        
+    public double final() {
+        double media = calcMedia();
+        if (media < 60) {
+            return 60 - media;
         }
-        public double final(double media) {
-            if (media < 60) {
-                return 60 - media;
-            }
+        else {
             return 0;
         }
     }
+}
 
+class Program
+{
     static void Main()
     {
         Console.Clear();
@@ -52,9 +60,7 @@ class Program
         Console.Write($"> Insira a matrícula do aluno: ");
         string matricula = Console.ReadLine() ?? "N/A";
 
-        Aluno aluno = new Aluno();
-        aluno.Nome = nome;
-        aluno.Matricula = matricula;
+        Aluno aluno = new Aluno(nome, matricula);
 
         Console.Write($"\n> Insira a nota da primeira prova (0 a 100): ");
         aluno.Notas[0] = double.Parse(Console.ReadLine() ?? "0");
@@ -65,12 +71,8 @@ class Program
         Console.Write($"> Insira a nota do trabalho (0 a 100): ");
         aluno.Notas[2] = double.Parse(Console.ReadLine() ?? "0");
 
-        double media = aluno.calcMedia();
-        double final = aluno.final(media);
-
-        Console.WriteLine($"\nNome do aluno: {aluno.Nome}");
-        Console.WriteLine($"Matrícula: {aluno.Matricula}");
-        Console.WriteLine($"Média: {media:F2}");
-        Console.WriteLine($"Precisa para a final: {final:F2}");
+        Console.WriteLine($"\nNome do aluno: {aluno.Nome} ({aluno.Matricula})");
+        Console.WriteLine($"Média: {aluno.calcMedia():F2}");
+        Console.WriteLine($"Precisa na final: {aluno.final():F2}");
     } 
 }
