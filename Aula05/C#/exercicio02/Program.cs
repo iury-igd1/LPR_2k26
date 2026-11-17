@@ -35,7 +35,7 @@ do { // Repete até o jogador acertar o número sorteado
         Console.WriteLine("Chutou baixo!");
     } 
     else if (palpite > valorInteiro) {
-        Console.WriteLine("Chutou Alto!");
+        Console.WriteLine("Chutou alto!");
     } 
     else {
         Console.WriteLine($"Acertou em {tentativas} tentativas!");

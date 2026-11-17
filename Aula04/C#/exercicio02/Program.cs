@@ -20,12 +20,9 @@ string[] entrada = (Console.ReadLine() ?? "").Split(' ');
 int.TryParse(entrada[0], out int A);
 int.TryParse(entrada[1], out int B);
 
-if (A == 0 || B == 0) { // Zero não pode ser divisor
-    Console.WriteLine("\nZero não é um número válido para análise de múltiplos.");
-} 
-else if (A % B == 0 || B % A == 0) { // Um é múltiplo do outro se a divisão entre eles tiver resto zero
+if ((A != 0 && (B % A == 0)) || (B != 0 && (A % B == 0))) { // Zero não pode ser divisor
     Console.WriteLine("\nSão Múltiplos");
-} 
+}
 else {
     Console.WriteLine("\nNão são Múltiplos");
 }

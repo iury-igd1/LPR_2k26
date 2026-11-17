@@ -13,31 +13,36 @@ Exercício 03:
                     40
                     50
                     80
-        Saída:      Nome do aluno: Iury (0123AB*9)
-                    Média: 55,00
-                    Precisa na final: 5,00
+        Saída:      Nome = Iury (0123AB*9)
+                    Média = 55.00
+                    Precisa na final = 65.00
 */
 
 using System;
 
 class Aluno {
-    public string Nome;
-    public string Matricula;
-    public double[] Notas = new double[3];
+    public string nome;
+    public string matricula;
+    public double[] notas = new double[3];
 
+    // Inicializa a identificação do aluno
     public Aluno(string nome, string matricula) {
-        Nome = nome;
-        Matricula = matricula;
+        this.nome = nome;
+        this.matricula = matricula;
     }
 
+    // Calcula a média ponderada: peso 2,5 para cada prova e peso 2 para o trabalho
     public double calcMedia() {
-        return (Notas[0] * 2.5 + Notas[1] * 2.5 + Notas[2] * 2) / 7.0;
+        // Posições: primeira prova, segunda prova e trabalho
+        return (notas[0] * 2.5 + notas[1] * 2.5 + notas[2] * 2) / 7.0;
     }
         
+    // Retorna a nota necessária na prova final ou zero quando o aluno já está aprovado
     public double final() {
         double media = calcMedia();
+
         if (media < 60) {
-            return 60 - media;
+            return 120 - media; // Para aprovação, a média entre a nota atual e a final deve ser pelo menos 60
         }
         else {
             return 0;
@@ -54,25 +59,25 @@ class Program
         Console.WriteLine("   INFORMAÇÕES DO ALUNO   ");
         Console.WriteLine("==========================\n");
 
-        Console.Write($"> Insira o nome do aluno: ");
+        Console.Write("> Insira o nome do aluno: ");
         string nome = Console.ReadLine() ?? "N/A";
 
-        Console.Write($"> Insira a matrícula do aluno: ");
+        Console.Write("> Insira a matrícula do aluno: ");
         string matricula = Console.ReadLine() ?? "N/A";
 
         Aluno aluno = new Aluno(nome, matricula);
 
-        Console.Write($"\n> Insira a nota da primeira prova (0 a 100): ");
-        aluno.Notas[0] = double.Parse(Console.ReadLine() ?? "0");
+        Console.Write("\n> Insira a nota da primeira prova (0 a 100): ");
+        aluno.notas[0] = double.Parse(Console.ReadLine() ?? "0");
 
-        Console.Write($"> Insira a nota da segunda prova (0 a 100): ");
-        aluno.Notas[1] = double.Parse(Console.ReadLine() ?? "0");
+        Console.Write("> Insira a nota da segunda prova (0 a 100): ");
+        aluno.notas[1] = double.Parse(Console.ReadLine() ?? "0");
 
-        Console.Write($"> Insira a nota do trabalho (0 a 100): ");
-        aluno.Notas[2] = double.Parse(Console.ReadLine() ?? "0");
+        Console.Write("> Insira a nota do trabalho (0 a 100): ");
+        aluno.notas[2] = double.Parse(Console.ReadLine() ?? "0");
 
-        Console.WriteLine($"\nNome do aluno: {aluno.Nome} ({aluno.Matricula})");
-        Console.WriteLine($"Média: {aluno.calcMedia():F2}");
-        Console.WriteLine($"Precisa na final: {aluno.final():F2}");
+        Console.WriteLine($"\nNome = {aluno.nome} ({aluno.matricula})");
+        Console.WriteLine($"Média = {aluno.calcMedia():F2}");
+        Console.WriteLine($"Precisa na final = {aluno.final():F2}");
     } 
 }

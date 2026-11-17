@@ -61,3 +61,5 @@ Console.Write($"\nNúmeros ímpares = ");
 foreach (int impar in impares) {
     Console.Write($"{impar} ");
 }
+
+Console.WriteLine();

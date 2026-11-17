@@ -4,7 +4,7 @@ Exercício 04:
         - Leia o nome de 10 alunos;
         - Leia a nota de cada aluno (0 a 100);
         - Armazene os nomes em um vetor de strings e as notas em um vetor de inteiros;
-        - Crie uma função chamada ClassificarAluno() que receba a nota e retorne:
+        - Crie uma função chamada classificarAluno() que receba a nota e retorne:
             Reprovado   (nota < 60)
             Recuperação (60 <= nota <= 79)
             Aprovado    (nota >= 80)
@@ -27,7 +27,7 @@ using namespace std;
 
 int aprovados = 0, recuperacao = 0, reprovados = 0;
 
-string ClassificarAluno(int nota) { // Classifica a nota do aluno e incrementa o contador correspondente
+string classificarAluno(int nota) { // Classifica a nota do aluno e incrementa o contador correspondente
     if (nota < 60) {
         reprovados++;
         return "Reprovado(a)";
@@ -76,7 +76,7 @@ int main()
     double somaNotas = 0;
     // Monta o relatório linha a linha, classificando cada aluno e somando as notas
     for (int i = 0; i < 10; i++) {
-        string situacao = ClassificarAluno(notas[i]);
+        string situacao = classificarAluno(notas[i]);
         cout << left << setw(20) << nomes[i] << " " << setw(6) << notas[i] << " " << setw(15) << situacao << endl;
         somaNotas += notas[i];
     }

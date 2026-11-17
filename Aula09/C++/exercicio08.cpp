@@ -30,12 +30,12 @@ Exercício 08:
 #include <map>
 #include <list>
 #include <algorithm>
+#include <iterator>
 
 using namespace std;
 
 // Definição da struct
-struct Livro 
-{
+struct Livro {
     string Titulo;
     string Autor;
     int AnoPublicacao;
@@ -45,14 +45,14 @@ struct Livro
 int totalCadastrados = 0; // Controla a quantidade total de livros cadastrados
 map<string, Livro> biblioteca; // Dicionário que armazena os livros utilizando o código como chave
 
-void Pausar() 
-{
+// Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
+void Pausar() {
     cout << "\nPressione ENTER para continuar..." << endl;
     cin.get();
 }
 
-void CadastrarLivro() 
-{
+// Cadastra um livro identificado por um código único
+void CadastrarLivro() {
     if (totalCadastrados >= 10) { // Impede o cadastro de mais de 10 livros
         cout << "\nLimite máximo de 10 livros cadastrados atingido." << endl;
         Pausar();
@@ -96,8 +96,8 @@ void CadastrarLivro()
     Pausar();
 }
 
-void BuscarLivro() 
-{
+// Procura um livro pelo código e exibe seus dados, se ele estiver cadastrado
+void BuscarLivro() {
     if (biblioteca.empty()) {
         cout << "\nNenhum livro foi cadastrado." << endl;
         Pausar();
@@ -127,8 +127,8 @@ void BuscarLivro()
     Pausar();
 }
 
-void EmprestarLivro() 
-{
+// Realiza o empréstimo de um exemplar quando o livro possui estoque disponível
+void EmprestarLivro() {
     if (biblioteca.empty()) {
         cout << "\nNenhum livro foi cadastrado." << endl;
         Pausar();
@@ -160,8 +160,8 @@ void EmprestarLivro()
     Pausar();
 }
 
-void ExibirRelatorio() 
-{
+// Exibe o total de títulos, o livro mais antigo, o maior estoque e os títulos por autor
+void ExibirRelatorio() {
     if (biblioteca.empty()) {
         cout << "\nNenhum livro cadastrado ainda." << endl;
         Pausar();
@@ -225,14 +225,14 @@ void ExibirRelatorio()
 
     // Exibe a quantidade de livros cadastrados para cada autor
     for (; itA != listaAutores.end(); itA++, itQ++) {
-        cout << "Autor: " << left << setw(20) << *itA << " | Livros registados: " << *itQ << endl;
+        cout << "Autor: " << left << setw(20) << *itA << " | Livros registrados: " << *itQ << endl;
     }
 
     Pausar();
 }
 
-void Menu() 
-{
+// Mantém o menu da biblioteca em execução até o usuário escolher sair
+void Menu() {
     int opcao = 0;
     while (opcao != 5) { // Exibe o menu principal até que o usuário escolha sair
         system("cls");
@@ -251,7 +251,7 @@ void Menu()
         cout << "> Escolha uma opção: ";
         cin >> opcao;
 
-        if (cin.fail()) {
+        if (cin.fail()) { // Recupera a leitura do menu quando a entrada não pode ser interpretada como número
             cin.clear();
         }
         cin.ignore(10000, '\n');

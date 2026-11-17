@@ -40,6 +40,7 @@ Exercício 03:
 
 using namespace std;
 
+// Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
 void pausar() {
     cout << "\nPressione ENTER para continuar...";
     cin.get();
@@ -72,9 +73,9 @@ void cadastrarHeroi(string &nome1, string &nome2, string &nome3, string &nome4, 
 
     cout << "> Pontuação do herói: ";
     cin >> pts;
-    cin.ignore();
+    cin.ignore(); 
 
-    switch (totalHerois) {
+    switch (totalHerois) { // Armazena o novo herói nas variáveis correspondentes à próxima posição livre
         case 0:
             nome1 = nome; poder1 = poder; pts1 = pts;
             break;
@@ -128,7 +129,7 @@ void selecionarEquipe(const string &nome1, const string &nome2, const string &no
         cout << "5   " << left << setw(15) << nome5 << " " << setw(15) << poder5 << " " << setw(6) << pts5 << endl;
     }
 
-    int temp1, temp2, temp3;
+    int temp1, temp2, temp3; // Guarda as escolhas temporariamente para preservar a equipe anterior se houver erro
 
     cout << "\n> Escolha o primeiro herói da equipe: ";
     cin >> temp1;
@@ -157,13 +158,14 @@ void selecionarEquipe(const string &nome1, const string &nome2, const string &no
         return;
     }
 
-    if (temp1 == temp2 || temp1 == temp3 || temp2 == temp3) {
+    if (temp1 == temp2 || temp1 == temp3 || temp2 == temp3) { // Impede que o mesmo herói ocupe mais de uma posição na equipe
         cout << "\nVocê não pode escolher o mesmo herói mais de uma vez." << endl;
         pausar();
         return;
     }
 
-    equipe1 = temp1;
+    // Confirma a nova equipe após validar as três escolhas
+    equipe1 = temp1; 
     equipe2 = temp2;
     equipe3 = temp3;
 

@@ -8,7 +8,8 @@ Exercício 04:
         Saída:      Soma dos dígitos do quadrado = 7
 */
 
-int quadrado, soma = 0;
+int soma = 0;
+long quadrado;
 
 Console.Clear();
 Console.WriteLine("==================================");
@@ -18,7 +19,7 @@ Console.WriteLine("==================================\n");
 // Lê o número informado pelo usuário
 Console.Write("> Digite um número inteiro: ");
 string entrada = Console.ReadLine()!;
-int.TryParse(entrada, out int numero);
+long.TryParse(entrada, out long numero);
 
 // Calcula o quadrado e converte para string para acessar cada dígito
 quadrado = numero * numero;

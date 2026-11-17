@@ -17,11 +17,11 @@ Exercício 05:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <string>
 #include <algorithm>
+#include <cctype>
 
 using namespace std;
 
@@ -37,6 +37,7 @@ struct Chamado {
 Chamado listaChamados[10];
 int totalChamados = 0;
 
+// Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
 void pausar() {
     cout << "\nPressione ENTER para continuar..." << endl;
     cin.get();
@@ -66,7 +67,7 @@ int lerPrioridade(string prioridade) {
         return 3;
     } 
     else {
-        return 2;
+        return 2; // Considera média qualquer entrada que não tenha sido reconhecida como baixa ou alta
     }
 }
 
@@ -203,6 +204,7 @@ void estatisticas() {
     pausar();
 }
 
+// Mantém o menu em execução e encaminha cada opção para a função correspondente
 void menuPrincipal() {
     int opcao = 0;
 

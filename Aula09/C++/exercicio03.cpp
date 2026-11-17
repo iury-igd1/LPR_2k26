@@ -16,6 +16,7 @@ using namespace std;
 
 list<int> numeros;
 
+// Exibe os números da lista, quebrando a linha a cada 40 elementos
 void imprimirLista() {
     int contador = 0;
     for (int n : numeros) {
@@ -26,6 +27,7 @@ void imprimirLista() {
             cout << endl;
         }
     }
+    cout << endl;
 }
 
 int main()
@@ -68,8 +70,8 @@ int main()
     imprimirLista();
 
     cout << "\n\nNúmeros repetidos encontrados na lista: " << endl;
-    list<int> listaParalela;
-    list<int> impressos;
+    list<int> listaParalela; // Guarda os números já encontrados para identificar repetições
+    list<int> impressos; // Guarda os números repetidos já exibidos para não imprimi-los novamente
     bool repetido = false;
 
     for (auto it = numeros.begin(); it != numeros.end(); ) {

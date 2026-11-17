@@ -37,6 +37,7 @@ class Program
         }
 
         Console.WriteLine("\nSaída: ");
+        // Forma novas linhas até distribuir todos os nomes, usando um nome de cada tamanho por linha
         while (nomes.Count > 0) {
             List<string> linhaAtual = new List<string>(); // Guarda os nomes da linha a ser impressa
             List<int> tamanhosUsados = new List<int>(); // Guarda os tamanhos dos nomes da linha a ser impressa

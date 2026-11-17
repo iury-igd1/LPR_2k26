@@ -20,8 +20,7 @@ using System;
 
 class Program
 {
-    struct Chamado
-    {
+    struct Chamado {
         public int Numero;
         public string Solicitante;
         public string Setor;
@@ -33,15 +32,14 @@ class Program
     static Chamado[] listaChamados = new Chamado[10];
     static int totalChamados = 0;
 
-    static void Pausar()
-    {
+    // Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
+    static void Pausar() {
         Console.WriteLine("\nPressione ENTER para continuar...");
         Console.ReadLine();
     }
 
     // Converte o código numérico de prioridade (1 a 3) em texto
-    static string ClassificarPrioridade(int prioridade)
-    {
+    static string ClassificarPrioridade(int prioridade) {
         switch (prioridade) {
             case 1: 
                 return "Baixa";
@@ -53,8 +51,7 @@ class Program
     }
 
     // Interpreta a prioridade digitada pelo usuário (texto ou número) e retorna o código (1 a 3)
-    static int LerPrioridade(string prioridade)
-    {
+    static int LerPrioridade(string prioridade) {
         string p = prioridade.ToUpper();
 
         if (p == "BAIXA" || p == "1") {
@@ -64,13 +61,12 @@ class Program
             return 3;
         } 
         else {
-            return 2;
+            return 2; // Considera média qualquer entrada que não tenha sido reconhecida como baixa ou alta
         }
     }
 
     // Cadastra um novo chamado com status inicial "Aberto", se houver vaga disponível
-    static void CadastrarChamado()
-    {
+    static void CadastrarChamado() {
         if (totalChamados >= 10) {
             Console.WriteLine("\nLimite de chamados cadastrados atingido.");
             Pausar();
@@ -102,8 +98,7 @@ class Program
     }
 
     // Exibe todos os chamados cadastrados, com seus dados completos
-    static void ListarChamados()
-    {
+    static void ListarChamados() {
         Console.WriteLine("\n-------------------------------------------------------------------------");
         Console.WriteLine("                           CHAMADOS CADASTRADOS                          ");
         Console.WriteLine("-------------------------------------------------------------------------\n");
@@ -126,8 +121,7 @@ class Program
     }
 
     // Permite alterar o status de um chamado existente
-    static void AtualizarStatus()
-    {
+    static void AtualizarStatus() {
         if (totalChamados == 0) {
             Console.WriteLine("\nNenhum chamado cadastrado.");
             Pausar();
@@ -170,8 +164,7 @@ class Program
     }
 
     // Exibe quantos chamados estão em cada status (aberto, em andamento, resolvido, cancelado)
-    static void Estatisticas()
-    {
+    static void Estatisticas() {
         int abertos = 0, andamento = 0, resolvidos = 0, cancelados = 0;
 
         for (int i = 0; i < totalChamados; i++) {
@@ -201,8 +194,8 @@ class Program
         Pausar();
     }
 
-    static void MenuPrincipal()
-    {
+    // Mantém o menu em execução e encaminha cada opção para a função correspondente
+    static void MenuPrincipal() { 
         int opcao = 0;
         while (opcao != 5) {
             Console.Clear();

@@ -60,7 +60,7 @@ class Program {
         Console.Write("> Pontuação do herói: ");
         int pts = int.Parse(Console.ReadLine() ?? "0");
 
-        switch (totalHerois) {
+        switch (totalHerois) { // Armazena o novo herói nas variáveis correspondentes à próxima posição livre
             case 0:
                 nome1 = nome;
                 poder1 = poder;
@@ -126,7 +126,7 @@ class Program {
             Console.WriteLine($"5   {nome5,-15} {poder5,-15} {pts5,-6}");
         }
 
-        int temp1, temp2, temp3;
+        int temp1, temp2, temp3; // Guarda as escolhas temporariamente para preservar a equipe anterior se houver erro
 
         Console.Write("\n> Escolha o primeiro herói da equipe: ");
         temp1 = int.Parse(Console.ReadLine() ?? "1");
@@ -155,13 +155,14 @@ class Program {
             return;
         }
 
-        if (temp1 == temp2 || temp1 == temp3 || temp2 == temp3) {
+        if (temp1 == temp2 || temp1 == temp3 || temp2 == temp3) { // Impede que o mesmo herói ocupe mais de uma posição na equipe
             Console.WriteLine("\nVocê não pode escolher o mesmo herói mais de uma vez.");
             Console.WriteLine("\nPressione ENTER para continuar...");
             Console.ReadLine();
             return;
         }
 
+        // Confirma a nova equipe após validar as três escolhas
         equipe1 = temp1;
         equipe2 = temp2;
         equipe3 = temp3;
@@ -173,8 +174,7 @@ class Program {
     }
 
     // Retorna a pontuação do herói cujo número foi informado
-    static int pontuacao(int heroi, int pts1, int pts2, int pts3, int pts4, int pts5)
-    {
+    static int pontuacao(int heroi, int pts1, int pts2, int pts3, int pts4, int pts5) {
         switch (heroi) {
             case 1: 
                 return pts1;

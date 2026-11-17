@@ -8,7 +8,7 @@ Exercício 01:
 
     EXEMPLO:
         Entrada:    5 2 7 8 6 10
-        Saída:      Média dos números pares = 6.5
+        Saída:      Média dos números pares = 6.50
 */
 
 double soma = 0, qnt = 0;
@@ -25,9 +25,9 @@ numeros = Console.ReadLine()!.Split();
 int.TryParse(numeros[0], out int contador);
 
 while (contador > 0) { // Percorre apenas os números digitados (ignorando a quantidade na posição 0)
-    double.TryParse(numeros[contador], out double numero);
+    int.TryParse(numeros[contador], out int numero);
 
-    if (numero % 2 == 0) {
+    if (numero % 2 == 0) { // Acumula a soma e a quantidade apenas dos números pares
         soma += numero;
         qnt++;
     }
@@ -38,5 +38,5 @@ if (qnt == 0) { // Se nenhum número par foi digitado
     Console.WriteLine("\nNenhum número par foi digitado.");
 } 
 else {      
-    Console.WriteLine($"\nMédia dos números pares = {soma/qnt}");
+    Console.WriteLine($"\nMédia dos números pares = {soma / qnt :F2}");
 }

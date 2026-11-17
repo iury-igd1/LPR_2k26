@@ -30,22 +30,21 @@ class Program
     static int totalCadastrados = 0; // Controla a quantidade total de livros cadastrados
     // Dicionário que armazena os livros utilizando o código como chave
     static Dictionary<string, Livro> biblioteca = new Dictionary<string, Livro>();
-    struct Livro
-    {
+    struct Livro {
         public string Titulo;
         public string Autor;
         public int AnoPublicacao;
         public int Quantidade;
     }
 
-    static void Pausar()
-    {
+    // Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
+    static void Pausar() {
         Console.WriteLine("\nPressione ENTER para continuar...");
         Console.ReadLine();
     }
 
-    static void CadastrarLivro()
-    {
+    // Cadastra um livro identificado por um código único
+    static void CadastrarLivro() {
         if (totalCadastrados >= 10) { // Impede o cadastro de mais de 10 livros
             Console.WriteLine("\nLimite máximo de 10 livros cadastrados atingido.");
             Pausar();
@@ -87,8 +86,8 @@ class Program
         Pausar();
     }
 
-    static void BuscarLivro()
-    {
+    // Procura um livro pelo código e exibe seus dados, se ele estiver cadastrado
+    static void BuscarLivro() {
         if (biblioteca.Count == 0) {
             Console.WriteLine("\nNenhum livro foi cadastrado.");
             Pausar();
@@ -117,8 +116,8 @@ class Program
         Pausar();
     }
 
-    static void EmprestarLivro()
-    {
+    // Realiza o empréstimo de um exemplar quando o livro possui estoque disponível
+    static void EmprestarLivro() {
         if (biblioteca.Count == 0) {
             Console.WriteLine("\nNenhum livro foi cadastrado.");
             Pausar();
@@ -151,8 +150,8 @@ class Program
         Pausar();
     }
 
-    static void ExibirRelatorio()
-    {
+    // Exibe o total de títulos, o livro mais antigo, o maior estoque e os títulos por autor
+    static void ExibirRelatorio() {
         if (biblioteca.Count == 0) {
             Console.WriteLine("\nNenhum livro cadastrado ainda.");
             Pausar();
@@ -209,14 +208,14 @@ class Program
         Console.WriteLine("-------------------------------------------");
         // Exibe a quantidade de livros cadastrados para cada autor
         for (int i = 0; i < listaAutores.Count; i++) {
-            Console.WriteLine($"Autor: {listaAutores[i],-20} | Livros registados: {qtdLivrosPorAutor[i]}");
+            Console.WriteLine($"Autor: {listaAutores[i],-20} | Livros registrados: {qtdLivrosPorAutor[i]}");
         }
 
         Pausar();
     }
 
-    static void Menu()
-    {
+    // Mantém o menu da biblioteca em execução até o usuário escolher sair
+    static void Menu() {
         int opcao = 0;
         while (opcao != 5) { // Exibe o menu principal até que o usuário escolha sair
             Console.Clear();
@@ -258,6 +257,7 @@ class Program
             }
         }
     }
+    
     static void Main()
     {
         Menu();

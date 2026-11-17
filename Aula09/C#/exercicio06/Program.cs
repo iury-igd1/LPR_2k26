@@ -12,7 +12,7 @@ using System.Collections.Generic;
 class Program
 {
     static string nomePessoa = "", maisVelho = "", maisNovo = "";
-    static int idadePessoa = 0, somaIdades = 0, qtde = 0, iddMaisVelho = -1, iddMaisNovo = 999999999;
+    static int idadePessoa = 0, somaIdades = 0, iddMaisVelho = -1, iddMaisNovo = 999999999;
     // Dicionário de armazenamento das pessoas no formato nome-idade
     static Dictionary<string, int> pessoas = new Dictionary<string, int>();
 
@@ -26,28 +26,24 @@ class Program
         Console.Write("> Digite o número de pessoas que serão informadas: ");
         int.TryParse(Console.ReadLine(), out int total);
 
+        if (total <= 0) {
+            Console.WriteLine("\nValor informado inválido.");
+            return;
+        }
+
         for (int i = 1; i <= total; i++) { // Cadastro das pessoas informadas pelo usuário
             Console.Write($"\n> Digite o nome da pessoa {i}: ");
             nomePessoa = Console.ReadLine() ?? "";
 
             Console.Write($"> Digite a idade da pessoa {i}: ");
             int.TryParse(Console.ReadLine(), out idadePessoa);
-            somaIdades += idadePessoa;
-            qtde += 1;
 
             pessoas[nomePessoa] = idadePessoa;
         }
 
-        double media = (double)somaIdades / qtde; // Calcula a média das idades cadastradas
+        foreach (var idd in pessoas) { // Soma as idades e identifica as pessoas mais velha e mais nova
+            somaIdades += idd.Value;
 
-        Console.WriteLine("\nPessoas com idade acima da média:");
-        foreach (var idd in pessoas) {
-            if (idd.Value > media) {
-                Console.WriteLine($"{idd.Key}");
-            }
-        }
-
-        foreach (var idd in pessoas) { // Identifica a pessoa mais velha e a mais nova
             if (idd.Value > iddMaisVelho) {
                 maisVelho = idd.Key;
                 iddMaisVelho = idd.Value;
@@ -58,6 +54,16 @@ class Program
             }
         }
 
+        double media = (double)somaIdades / pessoas.Count; // Calcula a média das idades cadastradas
+
+        Console.WriteLine($"\nMédia das idades: {media:F2}");
+        Console.WriteLine("\nPessoas com idade acima da média:");
+        foreach (var idd in pessoas) { // Exibe somente as pessoas cuja idade é maior que a média calculada
+            if (idd.Value > media) {
+                Console.WriteLine($"- {idd.Key}");
+            }
+        }
+
         Console.WriteLine($"\nPessoa mais velha: {maisVelho}, com {iddMaisVelho} anos");
         Console.WriteLine($"Pessoa mais nova: {maisNovo}, com {iddMaisNovo} anos");
 
@@ -65,20 +71,27 @@ class Program
         int.TryParse(Console.ReadLine(), out int filtro);
 
         // Armazena as chaves das pessoas que possuem a idade informada
+        // Separa a busca das remoções para não alterar o dicionário durante sua enumeração
         List<string> chavesParaRemover = new List<string>();
         foreach (var idd in pessoas) {
             if (idd.Value == filtro) {
                 chavesParaRemover.Add(idd.Key);
             }
         }
+        
         // Remove do dicionário todas as pessoas com a idade informada
         foreach (var chave in chavesParaRemover) { 
             pessoas.Remove(chave);
         }
 
         Console.WriteLine("\nDicionário final:"); // Exibe o dicionário após as remoções
-        foreach (var idd in pessoas) {
-            Console.WriteLine($"{idd.Key}, {idd.Value}");
+        if (pessoas.Count == 0) {
+            Console.WriteLine("(Vazio)");
+        }
+        else {
+            foreach (var idd in pessoas) {
+                Console.WriteLine($"{idd.Key}, {idd.Value}");
+            }
         }
     }
 }

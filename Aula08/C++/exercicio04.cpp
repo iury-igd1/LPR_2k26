@@ -46,16 +46,21 @@ struct Heroi {
     int Pontuacao;
 };
 
+struct Equipe {
+    int integrantes[3] = { 0, 0, 0 }; // Identificadores dos 3 heróis selecionados
+};
+
 Heroi herois[5];
 int totalHerois = 0; // Controla quantas posições já estão preenchidas
-int equipe[3] = { 0, 0, 0 }; // ID (1 a 5) dos 3 heróis escolhidos
+Equipe equipe;
 
+// Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
 void pausar() {
     cout << "\nPressione ENTER para continuar..." << endl;
     cin.get();
 }
 
-// Solicita nome, poder e pontuação de um novo herói e o adiciona à lista, se houver vaga
+// Solicita nome, poder e pontuação de um novo herói e o adiciona ao vetor, se houver vaga
 void cadastrarHeroi() {
     if (totalHerois >= 5) {
         cout << "\nLimite de heróis cadastrados atingido." << endl;
@@ -102,7 +107,7 @@ void selecionarEquipe() {
         cout << (i + 1) << "   " << left << setw(15) << herois[i].Nome << " " << setw(15) << herois[i].Poder << " " << setw(6) << herois[i].Pontuacao << endl;
     }
 
-    int escolhidos[3];
+    Equipe novaEquipe; // Armazena as escolhas temporariamente, sem alterar a equipe já selecionada
 
     for (int i = 0; i < 3; i++) {
         cout << "\n> Escolha o herói " << (i + 1) << " da equipe: ";
@@ -120,7 +125,7 @@ void selecionarEquipe() {
 
         // Compara a escolha atual com as escolhas para que o mesmo herói não entre duas vezes na equipe
         for (int j = 0; j < i; j++) {
-            if (escolhidos[j] == escolha) {
+            if (novaEquipe.integrantes[j] == escolha) {
                 repetido = true;
                 break;
             }
@@ -132,12 +137,10 @@ void selecionarEquipe() {
             return;
         }
 
-        escolhidos[i] = escolha;
+        novaEquipe.integrantes[i] = escolha;
     }
 
-    for (int i = 0; i < 3; i++) {
-        equipe[i] = escolhidos[i];
-    }
+    equipe = novaEquipe; // Confirma a nova equipe somente depois de validar seus três integrantes
 
     cout << "\nEquipe cadastrada com sucesso!" << endl;
     pausar();
@@ -148,7 +151,8 @@ int calcularPontuacaoTotal() {
     int total = 0;
 
     for (int i = 0; i < 3; i++) {
-        total += herois[equipe[i] - 1].Pontuacao;
+        int indice = equipe.integrantes[i] - 1; // Converte o identificador do herói para o índice correspondente no vetor
+        total += herois[indice].Pontuacao;
     }
 
     return total;
@@ -156,8 +160,8 @@ int calcularPontuacaoTotal() {
 
 // Exibe os heróis da equipe selecionada e a pontuação total
 void exibirEquipe() {
-    // Qualquer posição ainda igual a 0 indica que a equipe completa ainda não foi selecionada
-    if (equipe[0] == 0 || equipe[1] == 0 || equipe[2] == 0) {
+    // O primeiro identificador permanece zero enquanto nenhuma equipe completa foi confirmada
+    if (equipe.integrantes[0] == 0) {
         cout << "\nEquipe não selecionada." << endl;
         pausar();
         return;
@@ -168,9 +172,10 @@ void exibirEquipe() {
     cout << "-------------------------------------------\n" << endl;
 
     for (int i = 0; i < 3; i++) {
-        Heroi h = herois[equipe[i] - 1];
+        int id = equipe.integrantes[i];
+        Heroi h = herois[id - 1];
 
-        cout << "[" << equipe[i] << "] " << h.Nome << endl;
+        cout << "[" << id << "] " << h.Nome << endl;
         cout << "    Poder: " << h.Poder << endl;
         cout << "    Pontuação: " << h.Pontuacao << " pts\n" << endl;
     }
@@ -209,7 +214,7 @@ void menuPrincipal() {
                 selecionarEquipe();
                 break;
             case 3:
-                if (equipe[0] == 0 || equipe[1] == 0 || equipe[2] == 0) {
+                if (equipe.integrantes[0] == 0) {
                     cout << "\nNenhuma equipe foi selecionada." << endl;
                 } 
                 else {

@@ -8,34 +8,37 @@ Exercício 05:
         preço total da compra.
     
     EXEMPLO:
-        Saída:      Produto: Xícara de Café                                                                                         
-                    Quantidade: 3                                                                                                   
-                    Preço total: R$ 31,50 
+        Saída:      Produto = Xícara de Café                                                                                         
+                    Quantidade = 3                                                                                                   
+                    Preço total = R$ 31.50 
 */
 
 using System;
 
 class Produto {
-    public string Nome;
-    public double Preco;
+    public string nome;
+    public double preco;
 
+    // Inicializa o produto com nome e preço unitário
     public Produto(string nome, double preco) {
-        Nome = nome;
-        Preco = preco;
+        this.nome = nome;
+        this.preco = preco;
     }
 }
 
 class Pedido {
-    public Produto ProdutoComprado;
-    public int Quantidade;
+    public Produto produtoComprado;
+    public int quantidade;
 
+    // Associa o produto ao pedido e define a quantidade comprada
     public Pedido(Produto produto, int quantidade) {
-        ProdutoComprado = produto;
-        Quantidade = quantidade;
+        produtoComprado = produto;
+        this.quantidade = quantidade;
     }
 
+    // Calcula o total da compra multiplicando o preço unitário pela quantidade
     public double preco() {
-        return ProdutoComprado.Preco * Quantidade;
+        return produtoComprado.preco * quantidade;
     }
 }
 
@@ -44,16 +47,16 @@ class Program
 
     static void Main()
     {
-        Produto produto = new Produto("Xícara de Café", 10.50);
-        Pedido pedido = new Pedido(produto, 3);
-
         Console.Clear();
         Console.WriteLine("=======================");
         Console.WriteLine("   PREÇO DE PRODUTOS   ");
         Console.WriteLine("=======================\n");
 
-        Console.WriteLine($"Produto: {pedido.ProdutoComprado.Nome}");
-        Console.WriteLine($"Quantidade: {pedido.Quantidade}");
-        Console.WriteLine($"Preço total: {pedido.preco():F2}");
+        Produto produto = new Produto("Xícara de Café", 10.50);
+        Pedido pedido = new Pedido(produto, 3);
+
+        Console.WriteLine($"Produto = {pedido.produtoComprado.nome}");
+        Console.WriteLine($"Quantidade = {pedido.quantidade}");
+        Console.WriteLine($"Preço total = R$ {pedido.preco():F2}");
     }
 }

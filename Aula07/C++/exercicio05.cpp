@@ -5,7 +5,7 @@ Exercício 05:
 
     EXEMPLO:
         Entrada:    1 2 3 4 5 6 7 8 9
-        Saída:      Matriz informda:
+        Saída:      Matriz informada:
                     1 2 3
                     4 5 6
                     7 8 9
@@ -13,7 +13,6 @@ Exercício 05:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 

@@ -9,5 +9,5 @@ using namespace std;
 
 int main()
 {
-     cout << "Hello, GitHub!" << endl; // Imprime a mensagem no console
+    cout << "Hello, GitHub!" << endl; // Imprime a mensagem no console
 } 

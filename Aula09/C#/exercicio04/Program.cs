@@ -15,8 +15,7 @@ using System.Collections.Generic; // Biblioteca para listas
 
 class Program
 {
-    struct Piloto
-    {
+    struct Piloto {
         public string Nome;
         public string Equipe;
         public int Pontuacao;
@@ -25,14 +24,14 @@ class Program
     static int totalCadastrados = 0; 
     static List<Piloto> pilotos = new List<Piloto>(); // Lista que armazena todos os dados
 
-    static void Pausar()
-    {
+    // Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
+    static void Pausar() {
         Console.WriteLine("\nPressione ENTER para continuar...");
         Console.ReadLine();
     }
 
-    static void CadastrarPiloto()
-    {
+    // Solicita os dados de um piloto e o adiciona à lista, respeitando o limite de cadastros
+    static void CadastrarPiloto() {
         if (totalCadastrados >= 10) { 
             Console.WriteLine("\nLimite máximo de 10 pilotos cadastrados atingido.");
             Pausar();
@@ -60,8 +59,8 @@ class Program
         Pausar();
     }
 
-    static void ExibirRanking()
-    {
+    // Exibe os pilotos em ordem decrescente de pontuação, preservando a lista original
+    static void ExibirRanking() {
         if (pilotos.Count == 0) {
             Console.WriteLine("\nNenhum piloto cadastrado ainda.");
             Pausar();
@@ -92,8 +91,8 @@ class Program
         Pausar();
     }
 
-    static double CalcularPontuacaoMedia()
-    {
+    // Retorna a média das pontuações dos pilotos cadastrados
+    static double CalcularPontuacaoMedia() {
         if (pilotos.Count == 0) { // Evita divisão por zero
             return 0;
         }
@@ -106,8 +105,8 @@ class Program
         return (ptsTotal / (double)pilotos.Count);
     }
 
-    static void ExibirEstatisticasMedia()
-    {
+    // Exibe a média e a quantidade de pilotos com pontuação igual ou superior a ela
+    static void ExibirEstatisticasMedia() {
         if (pilotos.Count == 0) {
             Console.WriteLine("\nNenhum piloto cadastrado ainda.");
             Pausar();
@@ -131,8 +130,8 @@ class Program
         Pausar();
     }
 
-    static void ExibirMelhorEquipe()
-    {
+    // Soma os pontos dos pilotos de cada equipe e identifica a equipe com maior total
+    static void ExibirMelhorEquipe() {
         if (pilotos.Count == 0) {
             Console.WriteLine("\nNenhum piloto cadastrado ainda.");
             Pausar();
@@ -169,8 +168,8 @@ class Program
         Pausar();
     }
 
-    static void Menu()
-    {
+    // Mantém o menu em execução e encaminha cada opção para a função correspondente
+    static void Menu() {
         int opcao = 0;
         while (opcao != 5) {
             Console.Clear();

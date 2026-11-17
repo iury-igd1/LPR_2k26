@@ -12,11 +12,8 @@ Exercício 07:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
-#include <string>
-#include <vector>
 
 using namespace std;
 

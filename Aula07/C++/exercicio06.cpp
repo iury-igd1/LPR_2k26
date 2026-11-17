@@ -18,11 +18,11 @@ Exercício 06:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <string>
 #include <algorithm>
+#include <cctype>
 
 using namespace std;
 
@@ -32,7 +32,7 @@ string paraMaiusculas(string texto) {
     return texto;
 }
 
-// Converte qualquer forma de digitar a cidade para o nome padrão
+// Converte os códigos, siglas e nomes reconhecidos para o nome padrão da cidade
 string parametroCidade(string cidade) {
     string upper = paraMaiusculas(cidade);
     if (cidade == "0" || upper == "VIT" || upper == "VITORIA" || upper == "VITÓRIA") {

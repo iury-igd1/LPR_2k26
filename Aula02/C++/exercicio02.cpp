@@ -12,7 +12,6 @@ Exercício 02:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 

@@ -16,12 +16,12 @@ Exercício 04:
 #include <locale>
 #include <cstdlib>
 #include <algorithm>
+#include <iterator>
 #include <list> // Biblioteca para listas
 
 using namespace std;
 
-struct Piloto 
-{
+struct Piloto {
     string Nome;
     string Equipe;
     int Pontuacao;
@@ -30,14 +30,14 @@ struct Piloto
 int totalCadastrados = 0;
 list<Piloto> pilotos; // Lista que armazena todos os dados
 
-void Pausar() 
-{
+// Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
+void Pausar() {
     cout << "\nPressione ENTER para continuar..." << endl;
     cin.get();
 }
 
-void CadastrarPiloto() 
-{
+// Solicita os dados de um piloto e o adiciona à lista, respeitando o limite de cadastros
+void CadastrarPiloto() {
     if (totalCadastrados >= 10) {
         cout << "\nLimite máximo de 10 pilotos cadastrados atingido." << endl;
         Pausar();
@@ -64,8 +64,8 @@ void CadastrarPiloto()
     Pausar();
 }
 
-void ExibirRanking() 
-{
+// Exibe os pilotos em ordem decrescente de pontuação, preservando a lista original
+void ExibirRanking() {
     if (pilotos.empty()) {
         cout << "\nNenhum piloto cadastrado ainda." << endl;
         Pausar();
@@ -94,28 +94,28 @@ void ExibirRanking()
     int posicao = 1;
     for (auto it = ranking.begin(); it != ranking.end(); it++) {
         // left e setw(15) criam colunas alinhadas com 15 espaços predefinidos
-        cout << posicao << "º: " << left << setw(15) << it -> Nome << " | " << setw(15) << it -> Equipe << " | " << it -> Pontuacao << " pts" << endl;
+        cout << posicao << "º: " << left << setw(15) << it->Nome << " | " << setw(15) << it->Equipe << " | " << it->Pontuacao << " pts" << endl;
         posicao++;
     }
     Pausar();
 }
 
-double CalcularPontuacaoMedia() 
-{
+// Retorna a média das pontuações dos pilotos cadastrados
+double CalcularPontuacaoMedia() {
     if (pilotos.empty()) { // Evita divisão por zero
         return 0;
     }
 
     double ptsTotal = 0;
     for (auto it = pilotos.begin(); it != pilotos.end(); it++) { // Percorre todos os elementos da lista
-        ptsTotal += it -> Pontuacao; // Soma as pontuações individuais
+        ptsTotal += it->Pontuacao; // Soma as pontuações individuais
     }
 
     return (ptsTotal / (double)pilotos.size());
 }
 
-void ExibirEstatisticasMedia() 
-{
+// Exibe a média e a quantidade de pilotos com pontuação igual ou superior a ela
+void ExibirEstatisticasMedia() {
     if (pilotos.empty()) {
         cout << "\nNenhum piloto cadastrado ainda." << endl;
         Pausar();
@@ -126,7 +126,7 @@ void ExibirEstatisticasMedia()
     int acimaMedia = 0;
 
     for (auto it = pilotos.begin(); it != pilotos.end(); it++) { // Percorre a lista principal contando quem bateu a média
-        if (it -> Pontuacao >= media) {
+        if (it->Pontuacao >= media) {
             acimaMedia++;
         }
     }
@@ -140,8 +140,8 @@ void ExibirEstatisticasMedia()
     Pausar();
 }
 
-void ExibirMelhorEquipe() 
-{
+// Soma os pontos dos pilotos de cada equipe e identifica a equipe com maior total
+void ExibirMelhorEquipe() {
     if (pilotos.empty()) {
         cout << "\nNenhum piloto cadastrado ainda." << endl;
         Pausar();
@@ -153,18 +153,18 @@ void ExibirMelhorEquipe()
 
     for (auto it = pilotos.begin(); it != pilotos.end(); it++) {
         // Busca se a equipe atual já existe na lista nomeEquipes
-        auto itNome = find(nomeEquipes.begin(), nomeEquipes.end(), it -> Equipe);
+        auto itNome = find(nomeEquipes.begin(), nomeEquipes.end(), it->Equipe);
         if (itNome != nomeEquipes.end()) {  // A equipe existe
             // Descobre o índice calculando a distância entre o começo da lista e o iterador achado
             int distancia = distance(nomeEquipes.begin(), itNome);
             auto itPontos = pontosEquipes.begin();
             // Avança o iterador de pontos a exata mesma distância, alinhando as duas listas
             advance(itPontos, distancia);
-            *itPontos += it -> Pontuacao; // Soma os pontos
+            *itPontos += it->Pontuacao; // Soma os pontos
         }
         else {
-            nomeEquipes.push_back(it -> Equipe);
-            pontosEquipes.push_back (it -> Pontuacao);
+            nomeEquipes.push_back(it->Equipe);
+            pontosEquipes.push_back(it->Pontuacao);
         }
     }
 
@@ -187,8 +187,8 @@ void ExibirMelhorEquipe()
     Pausar();
 }
 
-void Menu() 
-{
+// Mantém o menu em execução e encaminha cada opção para a função correspondente
+void Menu() {
     int opcao = 0;
     while (opcao != 5) {
         system("cls");

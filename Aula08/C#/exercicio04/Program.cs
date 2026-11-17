@@ -36,26 +36,31 @@ using System;
 
 class Program
 {
-    struct Heroi
-    {
-    public string Nome;
-    public string Poder;
-    public int Pontuacao;
+    struct Heroi {
+        public string Nome;
+        public string Poder;
+        public int Pontuacao;
+    }
+
+    struct Equipe {
+        public int[] integrantes; // Identificadores dos 3 heróis selecionados
     }
     
     static Heroi[] herois = new Heroi[5];
     static int totalHerois = 0; // Controla quantas posições já estão preenchidas
-    static int[] equipe = new int[3] { 0, 0, 0 }; // ID (1 a 5) dos 3 heróis escolhidos
 
-    static void Pausar()
-    {
+    static Equipe equipe = new Equipe {
+        integrantes = new int[3]
+    };
+
+    // Aguarda ENTER para que o usuário possa ler o resultado antes de voltar ao menu
+    static void Pausar() {
         Console.WriteLine("\nPressione ENTER para continuar...");
         Console.ReadLine();
     }
 
-    // Solicita nome, poder e pontuação de um novo herói e o adiciona à lista, se houver vaga
-    static void CadastrarHeroi()
-    {
+    // Solicita nome, poder e pontuação de um novo herói e o adiciona ao vetor, se houver vaga
+    static void CadastrarHeroi() {
         if (totalHerois >= 5) {
             Console.WriteLine("\nLimite de heróis cadastrados atingido.");
             Pausar();
@@ -83,8 +88,7 @@ class Program
     }
 
     // Exibe os heróis cadastrados e permite escolher 3 deles para formar a equipe
-    static void SelecionarEquipe()
-    {
+    static void SelecionarEquipe() {
         if (totalHerois < 3) {
             Console.WriteLine("\nCadastre pelo menos 3 heróis antes de montar a equipe.");
             Pausar();
@@ -101,7 +105,10 @@ class Program
             Console.WriteLine($"{i + 1}   {herois[i].Nome,-15} {herois[i].Poder,-15} {herois[i].Pontuacao,-6}");
         }
 
-        int[] escolhidos = new int[3];
+        // Armazena as escolhas temporariamente, sem alterar a equipe já selecionada
+        Equipe novaEquipe = new Equipe {
+            integrantes = new int[3]
+        };
 
         for (int i = 0; i < 3; i++) {
             Console.Write($"\n> Escolha o herói {i + 1} da equipe: ");
@@ -117,7 +124,7 @@ class Program
 
             // Compara a escolha atual com as escolhas para que o mesmo herói não entre duas vezes na equipe
             for (int j = 0; j < i; j++) {
-                if (escolhidos[j] == escolha) {
+                if (novaEquipe.integrantes[j] == escolha) {
                     repetido = true;
                     break;
                 }
@@ -129,34 +136,31 @@ class Program
                 return;
             }
 
-            escolhidos[i] = escolha;
+            novaEquipe.integrantes[i] = escolha;
         }
 
-        for (int i = 0; i < 3; i++) {
-            equipe[i] = escolhidos[i];
-        }
+        equipe = novaEquipe; // Confirma a nova equipe somente depois de validar seus três integrantes
 
         Console.WriteLine("\nEquipe cadastrada com sucesso!");
         Pausar();
     }
 
     // Soma a pontuação dos 3 heróis da equipe selecionada
-    static int CalcularPontuacaoTotal()
-    {
+    static int CalcularPontuacaoTotal() {
         int total = 0;
 
         for (int i = 0; i < 3; i++) {
-            total += herois[equipe[i] - 1].Pontuacao;
+            int indice = equipe.integrantes[i] - 1; // Converte o identificador do herói para o índice correspondente no vetor
+            total += herois[indice].Pontuacao;
         }
 
         return total;
     }
 
     // Exibe os heróis da equipe selecionada e a pontuação total
-    static void ExibirEquipe()
-    {
-        // Qualquer posição ainda igual a 0 indica que a equipe completa ainda não foi selecionada
-        if (equipe[0] == 0 || equipe[1] == 0 || equipe[2] == 0) {
+    static void ExibirEquipe() {
+        // O primeiro identificador permanece zero enquanto nenhuma equipe completa foi confirmada
+        if (equipe.integrantes[0] == 0) {
             Console.WriteLine("\nEquipe não selecionada.");
             Pausar();
             return;
@@ -167,9 +171,10 @@ class Program
         Console.WriteLine("-------------------------------------------\n");
 
         for (int i = 0; i < 3; i++) {
-            Heroi h = herois[equipe[i] - 1];
+            int id = equipe.integrantes[i];
+            Heroi h = herois[id - 1];
 
-            Console.WriteLine($"[{equipe[i]}] {h.Nome}");
+            Console.WriteLine($"[{id}] {h.Nome}");
             Console.WriteLine($"    Poder: {h.Poder}");
             Console.WriteLine($"    Pontuação: {h.Pontuacao} pts\n");
         }
@@ -180,8 +185,7 @@ class Program
     }
 
     // Exibe o menu principal e direciona para a função correspondente até o usuário escolher sair
-    static void MenuPrincipal()
-    {
+    static void MenuPrincipal() {
         int opcao = 0;
         while (opcao != 5) {
             Console.Clear();
@@ -208,7 +212,7 @@ class Program
                     SelecionarEquipe();
                     break;
                 case 3:
-                    if (equipe[0] == 0 || equipe[1] == 0 || equipe[2] == 0) {
+                    if (equipe.integrantes[0] == 0) {
                         Console.WriteLine("\nNenhuma equipe foi selecionada.");
                     }
                     else {

@@ -11,7 +11,6 @@ Exercício 01:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <string>
@@ -37,13 +36,13 @@ int main()
     cout << "========================\n" << endl;
 
     for (int i = 0; i < 3; i++) { // Lê os dados de cada um dos 3 filmes
-        cout << "> Informe o título do Filme " << i+1 << ": ";
+        cout << "> Informe o título do Filme " << i + 1 << ": ";
         getline(cin, listaFilmes[i].Titulo);
-        cout << "> Informe o nome do diretor do Filme " << i+1 << ": ";
+        cout << "> Informe o nome do diretor do Filme " << i + 1 << ": ";
         getline(cin, listaFilmes[i].Diretor);
-        cout << "> Informe o ano de lançamento do Filme " << i+1 << ": ";
+        cout << "> Informe o ano de lançamento do Filme " << i + 1 << ": ";
         cin >> listaFilmes[i].AnoLancamento;
-        cout << "> Informe a duração (em minutos) do Filme " << i+1 << ": ";
+        cout << "> Informe a duração (em minutos) do Filme " << i + 1 << ": ";
         cin >> listaFilmes[i].DuracaoMinutos;
 
         cin.ignore();

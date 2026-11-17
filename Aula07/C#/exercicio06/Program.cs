@@ -17,8 +17,8 @@ Exercício 06:
         Saída:      A distância entre RJ e SP é de 429 km.
 */
 
-// Converte qualquer forma de digitar a cidade para o nome padrão
-string parametroCidade (string cidade) {
+// Converte os códigos, siglas e nomes reconhecidos para o nome padrão da cidade
+string parametroCidade(string cidade) {
     string upper = cidade.ToUpper();
     if (cidade == "0" || upper == "VIT" || upper == "VITORIA" || upper == "VITÓRIA") {
         return "Vitória";
@@ -38,7 +38,7 @@ string parametroCidade (string cidade) {
 }
 
 // Converte o nome padrão da cidade no índice correspondente da matriz de distâncias
-int indiceCidade (string cidade) {
+int indiceCidade(string cidade) {
     switch (cidade) {
         case "Vitória": 
             return 0; 

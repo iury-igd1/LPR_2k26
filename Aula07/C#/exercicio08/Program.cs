@@ -7,13 +7,13 @@ Exercício 08:
         1 - Reservar assento
         2 - Cancelar reserva
         3 - Consultar assento
-            Utilizar uma função chamada VerificarAssento(). A função deve retornar "Livre" ou "Ocupado".
+            Utilizar uma função chamada verificarAssento(). A função deve retornar "Livre" ou "Ocupado".
         4 - Mostrar mapa da sala
         5 - Encerrar
 */
 
 // Reserva o assento informado, se ele estiver livre
-string ReservarAssento(int[,] sala, int linha, int coluna) {
+string reservarAssento(int[,] sala, int linha, int coluna) {
     if (sala[linha, coluna] == 0) {
         sala[linha, coluna] = 1;
         return "\nAssento reservado com sucesso!\n";
@@ -24,7 +24,7 @@ string ReservarAssento(int[,] sala, int linha, int coluna) {
 }
 
 // Cancela a reserva do assento informado, se ele estiver ocupado
-string CancelarReserva(int[,] sala, int linha, int coluna) {
+string cancelarReserva(int[,] sala, int linha, int coluna) {
     if (sala[linha, coluna] == 1) {
         sala[linha, coluna] = 0;
         return "\nReserva cancelada com sucesso!\n";
@@ -35,7 +35,7 @@ string CancelarReserva(int[,] sala, int linha, int coluna) {
 }
 
 // Retorna "Livre" ou "Ocupado" de acordo com o status do assento
-string VerificarAssento(int[,] sala, int linha, int coluna) {
+string verificarAssento(int[,] sala, int linha, int coluna) {
     if (sala[linha, coluna] == 0) {
         return "Livre";
     }
@@ -45,7 +45,7 @@ string VerificarAssento(int[,] sala, int linha, int coluna) {
 }
 
 // Monta uma representação em texto do mapa de assentos da sala
-string MostrarMapa(int[,] sala) {
+string mostrarMapa(int[,] sala) {
     string mapa = "";
     mapa += "\n-----------------------------\n";
     mapa += "         MAPA DA SALA        \n";
@@ -67,18 +67,18 @@ string MostrarMapa(int[,] sala) {
     return mapa;
 }
 
-(int, int) LerPosicao() {
+(int, int) lerPosicao() { // Lê a linha e a coluna informadas e retorna os dois valores
     string[] entrada = (Console.ReadLine() ?? "").Split(' ');
     int l = int.Parse(entrada[0]);
     int c = int.Parse(entrada[1]);
     return (l, c);
 }
 
-bool PosicaoValida(int linha, int coluna) {
+bool posicaoValida(int linha, int coluna) { // Verifica se a posição está dentro das seis linhas e oito colunas da sala
     return linha >= 1 && linha <= 6 && coluna >= 1 && coluna <= 8;
 }
 
-int[,] sala = new int[6, 8];
+int[,] sala = new int[6, 8]; // Inicializa todos os assentos como livres: 0 representa livre e 1 representa ocupado
 bool executando = true;
 string retorno;
 
@@ -101,48 +101,51 @@ while (executando) {
     switch (opcao) {
         case 1:
             Console.Write("\nDigite a linha (1-6) e coluna (1-8) para reservar (separados por espaço): ");
-            (linha, coluna) = LerPosicao();
-            if (!PosicaoValida(linha, coluna)) {
+            (linha, coluna) = lerPosicao();
+            if (!posicaoValida(linha, coluna)) {
                 Console.WriteLine("\nPosição inválida.\n");
                 Console.WriteLine("Pressione ENTER para continuar...");
                 Console.ReadLine();
                 break;
             }
-            retorno = ReservarAssento(sala, linha - 1, coluna - 1);
+            // Converte a numeração apresentada ao usuário para índices iniciados em zero
+            retorno = reservarAssento(sala, linha - 1, coluna - 1);
             Console.WriteLine(retorno);
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
             break;
         case 2:
             Console.Write("\nDigite a linha (1-6) e coluna (1-8) para cancelar reserva (separados por espaço): ");
-            (linha, coluna) = LerPosicao();
-            if (!PosicaoValida(linha, coluna)) {
+            (linha, coluna) = lerPosicao();
+            if (!posicaoValida(linha, coluna)) {
                 Console.WriteLine("\nPosição inválida.\n");
                 Console.WriteLine("Pressione ENTER para continuar...");
                 Console.ReadLine();
                 break;
             }
-            retorno = CancelarReserva(sala, linha - 1, coluna - 1);
+            // Converte a numeração apresentada ao usuário para índices iniciados em zero
+            retorno = cancelarReserva(sala, linha - 1, coluna - 1);
             Console.WriteLine(retorno);
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
             break;
         case 3:
             Console.Write("\nDigite a linha (1-6) e coluna (1-8) para consultar (separados por espaço): ");
-            (linha, coluna) = LerPosicao();
-            if (!PosicaoValida(linha, coluna)) {
+            (linha, coluna) = lerPosicao();
+            if (!posicaoValida(linha, coluna)) {
                 Console.WriteLine("\nPosição inválida.\n");
                 Console.WriteLine("Pressione ENTER para continuar...");
                 Console.ReadLine();
                 break;
             }
-            retorno = VerificarAssento(sala, linha - 1, coluna - 1);
+            // Converte a numeração apresentada ao usuário para índices iniciados em zero
+            retorno = verificarAssento(sala, linha - 1, coluna - 1);
             Console.WriteLine($"\nO assento está: {retorno}\n");
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
             break;
         case 4:
-            Console.WriteLine(MostrarMapa(sala));
+            Console.WriteLine(mostrarMapa(sala));
             Console.WriteLine("Pressione ENTER para continuar...");
             Console.ReadLine();
             break;

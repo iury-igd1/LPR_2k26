@@ -13,7 +13,6 @@ Exercício 05:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <cmath> // Para arredondamentos
@@ -36,10 +35,11 @@ int main()
     cout << "> Digite o número de horas de treinamento por dia: ";
     cin >> horas;
     
-    if (horas <= 0) {
+    if (horas <= 0 || horas > 24) {
         cout << "Valor de horas inválido." << endl;
-    } else {
-        diasTotal = 1000 / horas;
+    } 
+    else {
+        diasTotal = 1000 / horas; // Calcula quantos dias de treinamento são necessários para atingir 1000 horas
 
         // 5 * 4.5 = 22.5 dias úteis por mês
         meses = static_cast<int>(diasTotal / 22.5); // Armazena somente a parte inteira
@@ -50,7 +50,7 @@ int main()
 
         int diasFinal = ceil(diasRestantes); // Arredonda para cima
 
-        if (diasFinal == 5) {
+        if (diasFinal == 5) { // Converte cinco dias restantes em uma semana completa
             semanas += 1;
             diasFinal = 0;
         }

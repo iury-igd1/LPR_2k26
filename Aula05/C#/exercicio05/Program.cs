@@ -21,11 +21,11 @@ Console.WriteLine("Meta: 1000 horas\n");
 Console.Write("> Digite o número de horas de treinamento por dia: ");
 double.TryParse(Console.ReadLine(), out double horas);
 
-if (horas <= 0) {
+if (horas <= 0 || horas > 24) {
     Console.WriteLine("Valor de horas inválido.");
 } 
 else {
-    double diasTotal = 1000 / horas;
+    double diasTotal = 1000 / horas; // Calcula quantos dias de treinamento são necessários para atingir 1000 horas
 
     // 5 * 4.5 = 22.5 dias úteis por mês
     int meses = (int)(diasTotal / 22.5); // Armazena somente a parte inteira
@@ -36,7 +36,7 @@ else {
 
     int diasFinal = (int)Math.Ceiling(diasRestantes); // Arredonda para cima
 
-    if (diasFinal == 5) {
+    if (diasFinal == 5) { // Converte cinco dias restantes em uma semana completa
         semanas += 1;
         diasFinal = 0;
     }

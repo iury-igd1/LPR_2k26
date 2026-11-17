@@ -24,10 +24,10 @@ Console.Write("> Código, número de peças e valor unitário da peça 2 (separa
 string[] entrada2 = Console.ReadLine()!.Split(' ');
 
 int.TryParse(entrada1[1], out int numero1);
-float.TryParse(entrada1[2], out float valor1);
+decimal.TryParse(entrada1[2], out decimal valor1);
 int.TryParse(entrada2[1], out int numero2);
-float.TryParse(entrada2[2], out float valor2);
+decimal.TryParse(entrada2[2], out decimal valor2);
 
-float valor = (numero1 * valor1) + (numero2 * valor2); // Calcula o valor total a pagar pelas duas peças
+decimal valor = (numero1 * valor1) + (numero2 * valor2); // Calcula o valor total a pagar pelas duas peças
 
 Console.WriteLine($"\nValor a pagar = R$ {valor:F2}");

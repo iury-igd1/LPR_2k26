@@ -7,22 +7,20 @@ Exercício 08:
         1 - Reservar assento
         2 - Cancelar reserva
         3 - Consultar assento
-            Utilizar uma função chamada VerificarAssento(). A função deve retornar "Livre" ou "Ocupado".
+            Utilizar uma função chamada verificarAssento(). A função deve retornar "Livre" ou "Ocupado".
         4 - Mostrar mapa da sala
         5 - Encerrar
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <string>
-#include <vector>
 
 using namespace std;
 
 // Reserva o assento informado, se ele estiver livre
-string ReservarAssento(int sala[6][8], int linha, int coluna) {
+string reservarAssento(int sala[6][8], int linha, int coluna) {
     if (sala[linha][coluna] == 0) {
         sala[linha][coluna] = 1;
         return "\nAssento reservado com sucesso!\n";
@@ -33,7 +31,7 @@ string ReservarAssento(int sala[6][8], int linha, int coluna) {
 }
 
 // Cancela a reserva do assento informado, se ele estiver ocupado
-string CancelarReserva(int sala[6][8], int linha, int coluna) {
+string cancelarReserva(int sala[6][8], int linha, int coluna) {
     if (sala[linha][coluna] == 1) {
         sala[linha][coluna] = 0;
         return "\nReserva cancelada com sucesso!\n";
@@ -44,7 +42,7 @@ string CancelarReserva(int sala[6][8], int linha, int coluna) {
 }
 
 // Retorna "Livre" ou "Ocupado" de acordo com o status do assento
-string VerificarAssento(int sala[6][8], int linha, int coluna) {
+string verificarAssento(int sala[6][8], int linha, int coluna) {
     if (sala[linha][coluna] == 0) {
         return "Livre";
     }
@@ -54,7 +52,7 @@ string VerificarAssento(int sala[6][8], int linha, int coluna) {
 }
 
 // Monta uma representação em texto do mapa de assentos da sala
-string MostrarMapa(int sala[6][8]) {
+string mostrarMapa(int sala[6][8]) {
     string mapa = "";
     mapa += "\n-----------------------------\n";
     mapa += "         MAPA DA SALA        \n";
@@ -80,7 +78,7 @@ int main()
 {
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
-    int sala[6][8] = {0};
+    int sala[6][8] = {0}; // Inicializa todos os assentos como livres: 0 representa livre e 1 representa ocupado
     int opcao, linha, coluna;
     bool executando = true;
     string retorno;
@@ -110,9 +108,10 @@ int main()
                     cin.get();
                     break;
                 }
+                // Converte a numeração apresentada ao usuário para índices iniciados em zero
                 linha--;
                 coluna--;
-                retorno = ReservarAssento(sala, linha, coluna);
+                retorno = reservarAssento(sala, linha, coluna);
                 cout << retorno << endl;
                 cout << "Pressione ENTER para continuar..." << endl;
                 cin.get();
@@ -127,9 +126,10 @@ int main()
                     cin.get();
                     break;
                 }
+                // Converte a numeração apresentada ao usuário para índices iniciados em zero
                 linha--;
                 coluna--;
-                retorno = CancelarReserva(sala, linha, coluna);
+                retorno = cancelarReserva(sala, linha, coluna);
                 cout << retorno << endl;
                 cout << "Pressione ENTER para continuar..." << endl;
                 cin.get();
@@ -144,15 +144,16 @@ int main()
                     cin.get();
                     break;
                 }
+                // Converte a numeração apresentada ao usuário para índices iniciados em zero
                 linha--;
                 coluna--;
-                retorno = VerificarAssento(sala, linha, coluna);
+                retorno = verificarAssento(sala, linha, coluna);
                 cout << "\nO assento está: " << retorno << "\n" << endl;
                 cout << "Pressione ENTER para continuar..." << endl;
                 cin.get();
                 break;
             case 4:
-                cout << MostrarMapa(sala) << endl;
+                cout << mostrarMapa(sala) << endl;
                 cout << "Pressione ENTER para continuar..." << endl;
                 cin.get();
                 break;

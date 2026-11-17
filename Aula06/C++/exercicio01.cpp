@@ -8,33 +8,40 @@ Exercício 01:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <string>
 
 using namespace std;
 
-string inversoNumero (int numero) {
-    // Observação: Números negativos não são tratados de forma especial: o sinal "-" acaba sendo revertido 
-    // junto com os dígitos (ex: -123 vira "321-").
+long long inversoNumero(long long numero) { // Inverte a ordem dos dígitos, preservando o sinal do número
     string num = to_string(numero);
     string resultado = "";
 
-    // Percorre a string do número de trás para frente, juntando cada dígito em uma string
-    for (int i = num.length(); i >= 1; i--) {
-        char digito = num[i-1];
-        resultado += digito;
+    if (num[0] == '-') {
+        resultado += "-";
+        // Percorre a string do número de trás para frente, juntando cada dígito em uma string
+        for (int i = num.length(); i > 1; i--) {
+            char digito = num[i - 1];
+            resultado += digito;
+        }
+    }
+    else {
+        // Percorre a string do número de trás para frente, juntando cada dígito em uma string
+        for (int i = num.length(); i >= 1; i--) {
+            char digito = num[i - 1];
+            resultado += digito;
+        }
     }
 
-    return resultado;
+    return stoll(resultado); // Converte o texto invertido para número, eliminando zeros à esquerda
 }
 
 int main()
 {
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
-    int numero_usuario;
+    long long numeroUsuario;
 
     system("cls");
     cout << "=========================" << endl;
@@ -43,8 +50,8 @@ int main()
 
     // Lê o número informado pelo usuário
     cout << "> Digite um número inteiro: ";
-    cin >> numero_usuario;
+    cin >> numeroUsuario;
 
-    string resultado = inversoNumero(numero_usuario);
+    long long resultado = inversoNumero(numeroUsuario);
     cout << "\nO inverso desse número é: " << resultado << endl;
 }

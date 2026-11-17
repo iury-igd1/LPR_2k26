@@ -14,7 +14,6 @@ Exercício 02:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <ctime>
@@ -45,7 +44,7 @@ int main()
             cout << "Chutou baixo!" << endl;
         } 
         else if (palpite > valorInteiro) {
-            cout << "Chutou Alto!" << endl;
+            cout << "Chutou alto!" << endl;
         } 
         else {
             cout << "Acertou em " << tentativas << " tentativas!" << endl;

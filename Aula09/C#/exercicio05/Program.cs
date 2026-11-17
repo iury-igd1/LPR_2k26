@@ -28,7 +28,7 @@ class Program
             Console.Write($"> Digite o gênero do jogo {i}: ");
             generoJogo = Console.ReadLine() ?? "";
 
-            jogos[nomeJogo] = generoJogo;
+            jogos[nomeJogo] = generoJogo; // Armazena o gênero pela chave do jogo
         }
 
         // Solicita o nome do jogo que será pesquisado

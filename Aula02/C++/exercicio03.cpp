@@ -15,6 +15,7 @@ Exercício 03:
 #include <iostream>
 #include <iomanip>
 #include <locale>
+#include <cstdlib>
 
 using namespace std;
 
@@ -23,8 +24,9 @@ int main()
     setlocale(LC_ALL, "pt_BR.UTF-8");
      
     int numero, horas;
-    float valor_hora, salario;
+    float valorHora, salario;
 
+    system("cls");
     cout << "===========================================" << endl;
     cout << "   CALCULADORA DE SALÁRIO DE FUNCIONÁRIO   " << endl;
     cout << "===========================================\n" << endl;
@@ -33,12 +35,22 @@ int main()
     // Lê os dados do funcionário
     cout << "> Número: ";
     cin >> numero;
+
     cout << "> Horas trabalhadas: ";
     cin >> horas;
-    cout << "> Valor por hora: ";
-    cin >> valor_hora;
+    if (horas <= 0) {
+        cout << "\nQuantidade de horas não pode ser negativa ou nula!" << endl;
+        return 0;
+    }
 
-    salario = horas * valor_hora; // Calcula o salário (horas trabalhadas * valor por hora)
+    cout << "> Valor por hora: ";
+    cin >> valorHora;
+    if (valorHora <= 0) {
+        cout << "\nValor por hora não pode ser negativo ou nulo!" << endl;
+        return 0;
+    }
+
+    salario = horas * valorHora; // Calcula o salário (horas trabalhadas * valor por hora)
 
     cout << "\nNúmero = " << numero << endl;
     cout << "Salário = R$ " << fixed << setprecision(2) << salario << endl;

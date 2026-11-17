@@ -13,8 +13,8 @@ class Program
     static List<int> numeros = new List<int>(); // Lista global
     static Random num = new Random();
 
-    static void imprimirLista()
-    {
+    // Exibe os números da lista, quebrando a linha a cada 40 elementos
+    static void imprimirLista() {
         int contador = 0;
         foreach (int n in numeros) {
             Console.Write(n + " ");
@@ -24,7 +24,9 @@ class Program
                 Console.WriteLine();
             }
         }
+        Console.WriteLine();
     }
+    
     static void Main()
     {
         Console.Clear();
@@ -58,8 +60,8 @@ class Program
         imprimirLista();
 
         Console.WriteLine("\n\nNúmeros repetidos encontrados na lista: ");
-        List<int> listaParalela = new List<int>();
-        List<int> impressos = new List<int>();
+        List<int> listaParalela = new List<int>(); // Guarda os números já encontrados para identificar repetições
+        List<int> impressos = new List<int>(); // Guarda os números repetidos já exibidos para não imprimi-los novamente
         bool repetido = false;
         
         for (int i = 0; i < numeros.Count; i++) {

@@ -13,9 +13,9 @@ Exercício 01:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
+#include <iterator>
 #include <list> // Biblioteca para listas
 
 using namespace std;

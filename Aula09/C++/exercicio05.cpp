@@ -6,7 +6,6 @@ Exercício 05:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <string>
@@ -34,7 +33,7 @@ int main()
         cout << "> Digite o gênero do jogo " << i << ": ";
         getline(cin >> ws, generoJogo);
 
-        jogos[nomeJogo] = generoJogo;
+        jogos[nomeJogo] = generoJogo; // Armazena o gênero pela chave do jogo
     }
 
     // Solicita o nome do jogo que será pesquisado

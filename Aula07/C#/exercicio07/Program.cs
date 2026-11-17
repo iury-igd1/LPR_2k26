@@ -17,19 +17,21 @@ Console.WriteLine("   MULTIPLICAÇÃO DE MATRIZES   ");
 Console.WriteLine("===============================\n");
 
 Console.Write("> Digite os 9 elementos da primeira matriz 3x3 (separados por espaço): ");
-string[] entradaA = (Console.ReadLine() ?? "").Split(' ');
+string[] entradaA = (Console.ReadLine() ?? "").Split(' '); // Lê os nove valores da primeira matriz e os distribui entre linhas e colunas
 int[,] matrizA = new int[3, 3];
 for (int i = 0; i < 3; i++) {
-    for (int j = 0; j < 3; j++) {
+    for (int j = 0; j < 3; j++) { 
+        // O índice i * 3 + j localiza o elemento na sequência de nove valores
         matrizA[i, j] = int.Parse(entradaA[i * 3 + j]);
     }
 }
 
 Console.Write("> Digite os 9 elementos da segunda matriz 3x3 (separados por espaço):  ");
-string[] entradaB = (Console.ReadLine() ?? "").Split(' ');
+string[] entradaB = (Console.ReadLine() ?? "").Split(' '); // Lê os nove valores da segunda matriz e os distribui entre linhas e colunas
 int[,] matrizB = new int[3, 3];
 for (int i = 0; i < 3; i++) {
     for (int j = 0; j < 3; j++) {
+        // O índice i * 3 + j localiza o elemento na sequência de nove valores
         matrizB[i, j] = int.Parse(entradaB[i * 3 + j]);
     }
 }

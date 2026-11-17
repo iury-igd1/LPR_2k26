@@ -21,12 +21,22 @@ Console.WriteLine("Informe os dados do funcionário:\n");
 // Lê os dados do funcionário
 Console.Write("> Número: ");
 int.TryParse(Console.ReadLine(), out int numero);
+
 Console.Write("> Horas trabalhadas: ");
 int.TryParse(Console.ReadLine(), out int horas);
-Console.Write("> Valor por hora: ");
-float.TryParse(Console.ReadLine(), out float valorHora);
+if (horas <= 0) {
+    Console.WriteLine("\nQuantidade de horas não pode ser negativa ou nula!");
+    return;
+}
 
-float salario = horas * valorHora; // Calcula o salário (horas trabalhadas * valor por hora)
+Console.Write("> Valor por hora: ");
+decimal.TryParse(Console.ReadLine(), out decimal valorHora);
+if (valorHora <= 0) {
+    Console.WriteLine("\nValor por hora não pode ser negativo ou nulo!");
+    return;
+}
+
+decimal salario = horas * valorHora; // Calcula o salário (horas trabalhadas * valor por hora)
 
 Console.WriteLine($"\nNúmero = {numero}");
 Console.WriteLine($"Salário = R$ {salario:F2}");

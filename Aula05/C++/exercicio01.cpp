@@ -8,7 +8,7 @@ Exercício 01:
 
     EXEMPLO:
         Entrada:    5 2 7 8 6 10
-        Saída:      Média dos números pares = 6.5
+        Saída:      Média dos números pares = 6.50
 */
 
 #include <iostream>
@@ -38,7 +38,7 @@ int main()
         int numero;
         cin >> numero; // Lê um número digitado pelo usuário
 
-        if (numero % 2 == 0) {
+        if (numero % 2 == 0) { // Acumula a soma e a quantidade apenas dos números pares
             soma += numero;
             qnt++;
         }
@@ -49,6 +49,6 @@ int main()
         cout << "\nNenhum número par foi digitado." << endl;
     } 
     else {
-        cout << "\nMédia dos números pares = " << (soma / qnt) << endl;
+        cout << "\nMédia dos números pares = " << fixed << setprecision(2) << (double)soma / qnt << endl;
     }
 }

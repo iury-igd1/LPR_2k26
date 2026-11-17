@@ -9,7 +9,6 @@ Exercício 04:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <string>
@@ -20,7 +19,8 @@ int main()
 {
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
-    int numero, soma = 0;
+    long long numero;
+    int soma = 0;
 
     system("cls");
     cout << "==================================" << endl;
@@ -31,7 +31,7 @@ int main()
     cin >> numero;
 
     // Calcula o quadrado e converte para string para acessar cada dígito
-    int quadrado = numero * numero;
+    long long quadrado = numero * numero;
     string quad = to_string(quadrado);
 
     for (int i = 0; i < (int)quad.length(); i++) { // Soma cada dígito do quadrado, um a um

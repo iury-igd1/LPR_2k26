@@ -36,7 +36,7 @@ int main()
         cin >> numeros[i];
     }
 
-    int maior = numeros[0], posicao = 0;
+    int maior = numeros[0], posicao = 1;
     for (int i = 1; i < 5; i++) { // Percorre o vetor para encontrar o maior valor e sua posição
         if (numeros[i] > maior) {
             maior = numeros[i];

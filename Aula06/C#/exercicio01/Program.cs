@@ -7,19 +7,29 @@ Exercício 01:
         Saída:      O inverso desse número é: 4321
 */
 
-string InversoNumero(int numero) {
-    // Observação: Números negativos não são tratados de forma especial: o sinal "-" acaba sendo revertido 
-    // junto com os dígitos (ex: -123 vira "321-").
+
+long inversoNumero(long numero) { // Inverte a ordem dos dígitos, preservando o sinal do número
     string num = numero.ToString();
     string resultado = "";
 
-    // Percorre a string do número de trás para frente, juntando cada dígito em uma string
-    for (int i = num.Length; i >= 1; i--) {
-        char digito = num[i - 1];
-        resultado += digito;
+    if (num[0] == '-') {
+        resultado += "-";
+        // Percorre a string do número de trás para frente, juntando cada dígito em uma string
+        for (int i = num.Length; i > 1; i--) {
+            char digito = num[i - 1];
+            resultado += digito;
+        }
     }
-
-    return resultado;
+    else {
+        // Percorre a string do número de trás para frente, juntando cada dígito em uma string
+        for (int i = num.Length; i >= 1; i--) {
+            char digito = num[i - 1];
+            resultado += digito;
+        }
+    }
+    
+    long.TryParse(resultado, out long resultadoLong); // Converte o texto invertido para número, eliminando zeros à esquerda
+    return resultadoLong;
 }
 
 Console.Clear();
@@ -29,7 +39,7 @@ Console.WriteLine("=========================\n");
 
 // Lê o número informado pelo usuário
 Console.Write("> Digite um número inteiro: ");
-int.TryParse(Console.ReadLine(), out int numeroUsuario);
+long.TryParse(Console.ReadLine(), out long numeroUsuario);
 
-string resultado = InversoNumero(numeroUsuario);
+long resultado = inversoNumero(numeroUsuario);
 Console.WriteLine($"\nO inverso desse número é: {resultado}");

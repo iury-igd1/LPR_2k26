@@ -11,10 +11,8 @@ Exercício 03:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
-#include <string>
 
 using namespace std;
 

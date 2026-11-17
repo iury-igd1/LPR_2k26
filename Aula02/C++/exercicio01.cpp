@@ -5,7 +5,7 @@ Exercício 01:
 
     EXEMPLO:
         Entrada:    2.5
-        Saída:      Área = 19.6349
+        Saída:      Área = 19.6349 u.a.
 */
 
 #include <iostream>
@@ -30,7 +30,14 @@ int main()
     cout << "> Digite o valor do raio: ";
     cin >> raio; // Lê o raio informado pelo usuário
 
-    area = pi * raio * raio; // Calcula a área do círculo (área = π * raio²)
-
-    cout << "\nÁrea = " << fixed << setprecision(4) << area << endl; // Exibe o resultado com 4 casas decimais
+    if (raio < 0) {
+        cout << "\nO raio não pode ser negativo!" << endl;
+    }
+    else if (raio == 0) {
+        cout << "\nO raio não pode ser nulo!" << endl;
+    }
+    else {
+        area = pi * raio * raio; // Calcula a área do círculo (área = π * raio²)
+        cout << "\nÁrea = " << fixed << setprecision(4) << area << " u.a." << endl; // Exibe o resultado com 4 casas decimais
+    }
 }

@@ -9,55 +9,62 @@ Exercício 04:
 using System;
 
 class Arma {
-    public string Nome;
-    public int Dano;
+    public string nome;
+    public int dano;
 
+    // Inicializa a arma com nome e dano
     public Arma(string nome, int dano) {
-        Nome = nome;
-        Dano = dano;
+        this.nome = nome;
+        this.dano = dano;
     }
 
+    // Exibe o dano causado pela arma
     public void atacar() {
-        Console.WriteLine($"{Nome} causou {Dano} de dano!");
+        Console.WriteLine($"{nome} causou {dano} de dano!");
     }
 }
 
 class Artefato {
-    public string Nome;
-    public int Cura;
+    public string nome;
+    public int cura;
 
+    // Inicializa o artefato com nome e quantidade de cura
     public Artefato(string nome, int cura) {
-        Nome = nome;
-        Cura = cura;
+        this.nome = nome;
+        this.cura = cura;
     }
 
+    // Exibe a ativação do artefato e retorna os pontos de vida recuperados
     public int ativar() {
-        Console.WriteLine($"{Nome} recuperou {Cura} pontos de vida!");
-        return Cura;
+        Console.WriteLine($"{nome} recuperou {cura} pontos de vida!");
+        return cura;
     }
 }
 
 class Heroi {
-    public string Nome;
-    public int Vida;
-    public Arma ArmaEquipada;
-    public Artefato ArtefatoEquipado;
+    public string nome;
+    public int vida;
+    public Arma armaEquipada;
+    public Artefato artefatoEquipado;
 
+    // Inicializa o herói com 100 pontos de vida, uma arma e um artefato
     public Heroi(string nome, Arma arma, Artefato artefato) {
-        Nome = nome;
-        Vida = 100;
-        ArmaEquipada = arma;
-        ArtefatoEquipado = artefato;
+        this.nome = nome;
+        vida = 100;
+        armaEquipada = arma;
+        artefatoEquipado = artefato;
     }
 
+    // Executa o ataque utilizando a arma equipada pelo herói
     public void atacar() {
-        Console.Write($"\n{Nome} atacou um inimigo: ");
-        ArmaEquipada.atacar();
+        Console.Write($"\n{nome} atacou um inimigo: ");
+        armaEquipada.atacar();
     }
 
+    // Acrescenta à vida do herói a cura retornada pelo artefato equipado
     public void usarArtefato() {
-        Vida += ArtefatoEquipado.ativar();
-        Console.WriteLine($"\nVida atual: {Vida}");
+        vida += artefatoEquipado.ativar();
+        Console.WriteLine($"\nVida atual = {vida}");
     }
 }
 
@@ -77,20 +84,20 @@ class Program
         Artefato totem = new Artefato("Totem da Regeneração", 20);
         Heroi heroi = new Heroi(nome, espada, totem);
 
-        Console.WriteLine("\n========================");
+        Console.WriteLine("\n------------------------");
         Console.WriteLine("     STATUS DO HERÓI    ");
-        Console.WriteLine("========================\n");
+        Console.WriteLine("------------------------");
 
-        Console.WriteLine($"Nome: {heroi.Nome}");
-        Console.WriteLine($"Vida: {heroi.Vida}");
-        Console.WriteLine($"Arma: {heroi.ArmaEquipada.Nome}");
-        Console.WriteLine($"Artefato: {heroi.ArtefatoEquipado.Nome}");
+        Console.WriteLine($"\nNome = {heroi.nome}");
+        Console.WriteLine($"Vida = {heroi.vida}");
+        Console.WriteLine($"Arma = {heroi.armaEquipada.nome}");
+        Console.WriteLine($"Artefato = {heroi.artefatoEquipado.nome}");
 
-        Console.WriteLine("\n========================");
+        Console.WriteLine("\n------------------------");
         Console.WriteLine("        AVENTURA        ");
-        Console.WriteLine("========================");
+        Console.WriteLine("------------------------");
 
-        heroi.Vida = 60;
+        heroi.vida = 60; // Simula o dano recebido pelo herói antes de utilizar o artefato de cura
         heroi.atacar();
         heroi.usarArtefato();
     }

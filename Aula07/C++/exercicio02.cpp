@@ -11,7 +11,6 @@ Exercício 02:
 */
 
 #include <iostream>
-#include <iomanip>
 #include <locale>
 #include <cstdlib>
 #include <vector>
@@ -69,4 +68,6 @@ int main()
     for (int impar : impares) {
         cout << impar << " ";
     }
+
+    cout << endl;
 }

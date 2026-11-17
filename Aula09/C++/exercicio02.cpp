@@ -43,13 +43,13 @@ int main()
     }
 
     cout << "\nSaída: " << endl;
-
+    // Forma novas linhas até distribuir todos os nomes, usando um nome de cada tamanho por linha
     while (nomes.empty() == false) {
         list<string> linhaAtual; // Guarda os nomes da linha a ser impressa
         list<int> tamanhosUsados; // Guarda os tamanhos dos nomes da linha a ser impressa
 
         for (auto it = nomes.begin(); it != nomes.end(); ) { // Percorre todos os nomes
-            int tamanho = it -> length(); // Tamanho do nome atual
+            int tamanho = it->length(); // Tamanho do nome atual
 
             // Se o tamanho ainda não está na linha
             if (find(tamanhosUsados.begin(), tamanhosUsados.end(), tamanho) == tamanhosUsados.end()) {

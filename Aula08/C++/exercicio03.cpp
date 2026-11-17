@@ -37,16 +37,16 @@ int main()
     cout << "========================\n" << endl;
 
     for (int i = 0; i < 3; i++) { // Lê os dados de cada um dos 3 livros, somando páginas e preços ao longo da leitura
-        cout << "> Informe o título do Livro " << i+1 << ": ";
+        cout << "> Informe o título do Livro " << i + 1 << ": ";
         getline(cin, listaLivros[i].Titulo);
-        cout << "> Informe o nome do autor do Livro " << i+1 << ": ";
+        cout << "> Informe o nome do autor do Livro " << i + 1 << ": ";
         getline(cin, listaLivros[i].Autor);
-        cout << "> Informe o ano de publicação do Livro " << i+1 << ": ";
+        cout << "> Informe o ano de publicação do Livro " << i + 1 << ": ";
         cin >> listaLivros[i].AnoPublicacao;
-        cout << "> Informe o número de páginas do Livro " << i+1 << ": ";
+        cout << "> Informe o número de páginas do Livro " << i + 1 << ": ";
         cin >> listaLivros[i].NumeroPaginas;
         somaPaginas += listaLivros[i].NumeroPaginas;
-        cout << "> Informe o preço do Livro " << i+1 << ": ";
+        cout << "> Informe o preço do Livro " << i + 1 << ": ";
         cin >> listaLivros[i].Preco;
         somaPrecos += listaLivros[i].Preco;
 

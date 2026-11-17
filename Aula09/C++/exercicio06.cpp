@@ -20,7 +20,7 @@ int main()
     setlocale(LC_ALL, "pt_BR.UTF-8");
 
     string nomePessoa = "", maisVelho = "", maisNovo = "";
-    int idadePessoa = 0, somaIdades = 0, qtde = 0, iddMaisVelho = -1, iddMaisNovo = 999999999;
+    int idadePessoa = 0, somaIdades = 0, iddMaisVelho = -1, iddMaisNovo = 999999999;
     int total, filtro;
     map<string, int> pessoas; // Dicionário de armazenamento das pessoas no formato nome-idade
 
@@ -32,28 +32,24 @@ int main()
     cout << "> Digite o número de pessoas que serão informadas: ";
     cin >> total;
 
+    if (total <= 0) {
+        cout << "\nValor informado inválido." << endl;
+        return 0;
+    }
+
     for (int i = 1; i <= total; i++) { // Cadastro das pessoas informadas pelo usuário
         cout << "\n> Digite o nome da pessoa " << i << ": ";
         getline(cin >> ws, nomePessoa); // 'ws' descarta espaços em branco e quebras de linha no buffer
 
         cout << "> Digite a idade da pessoa " << i << ": ";
         cin >> idadePessoa;
-        somaIdades += idadePessoa;
-        qtde += 1;
 
         pessoas[nomePessoa] = idadePessoa;
     }
 
-    double media = (double)somaIdades / qtde; // Calcula a média das idades cadastradas
+    for (auto idd : pessoas) { // Soma as idades e identifica as pessoas mais velha e mais nova
+        somaIdades += idd.second;
 
-    cout << "\nPessoas com idade acima da média:" << endl;
-    for (auto idd : pessoas) {
-        if (idd.second > media) {
-            cout << idd.first << endl;
-        }
-    }
-
-    for (auto idd : pessoas) { // Identifica a pessoa mais velha e a mais nova
         if (idd.second > iddMaisVelho) {
             maisVelho = idd.first;
             iddMaisVelho = idd.second;
@@ -64,8 +60,19 @@ int main()
         }
     }
 
-    cout << "\nPessoa mais velha: "<< maisVelho << ", com " << iddMaisVelho << " anos" << endl;
-    cout << "Pessoa mais nova: "<< maisNovo << ", com " << iddMaisNovo << " anos" << endl;
+    double media = (double)somaIdades / pessoas.size(); // Calcula a média das idades cadastradas
+
+    cout << fixed << setprecision(2);
+    cout << "\nMédia das idades: " << media << endl;
+    cout << "\nPessoas com idade acima da média:" << endl;
+    for (auto idd : pessoas) { // Exibe somente as pessoas cuja idade é maior que a média calculada
+        if (idd.second > media) {
+            cout << "- " << idd.first << endl;
+        }
+    }
+
+    cout << "\nPessoa mais velha: " << maisVelho << ", com " << iddMaisVelho << " anos" << endl;
+    cout << "Pessoa mais nova: " << maisNovo << ", com " << iddMaisNovo << " anos" << endl;
 
     cout << "\n> Informe um valor de idade para remover do dicionário: ";
     cin >> filtro;
@@ -73,7 +80,7 @@ int main()
     // Remove todas as pessoas que possuem a idade informada pelo usuário
     for (auto it = pessoas.begin(); it != pessoas.end(); ) {
         if (it->second == filtro) {
-            it = pessoas.erase(it);
+            it = pessoas.erase(it); // A remoção devolve o próximo iterador válido, permitindo continuar o percurso
         } 
         else {
             ++it;
@@ -81,7 +88,12 @@ int main()
     }
 
     cout << "\nDicionário final:" << endl; // Exibe o dicionário após as remoções
-    for (auto idd : pessoas) {
-        cout << idd.first << ", " << idd.second << endl;
+    if (pessoas.empty()) {
+        cout << "(Vazio)" << endl;
+    }
+    else {
+        for (auto idd : pessoas) {
+            cout << idd.first << ", " << idd.second << endl;
+        }
     }
 }
