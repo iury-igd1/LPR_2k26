@@ -125,7 +125,7 @@ Instale as ferramentas correspondentes à linguagem que deseja utilizar:
 | Linguagem | Ferramenta necessária |
 | :--- | :--- |
 | **C++** | Compilador `g++` com suporte a C++17 |
-| **C#** | SDK do .NET 9 — os projetos utilizam `net9.0` |
+| **C#** | SDK do .NET 9 - os projetos utilizam `net9.0` |
 | **Python** | Python 3 com o módulo `sqlite3` |
 
 O módulo `sqlite3` integra a biblioteca padrão do Python. Não é necessário instalar pacotes com `pip` nem configurar um servidor de banco de dados.
@@ -140,7 +140,7 @@ cd LPR_2k26
 ### 💻 Escolha uma linguagem
 
 <details open>
-<summary><strong>C++ — compilar e executar</strong></summary>
+<summary><strong>C++ - compilar e executar</strong></summary>
 
 <br>
 
@@ -158,7 +158,7 @@ Cada arquivo `.cpp` possui seu próprio programa principal. Compile **um exercí
 <br>
 
 <details>
-<summary><strong>C# — executar o projeto</strong></summary>
+<summary><strong>C# - executar o projeto</strong></summary>
 
 <br>
 
@@ -175,7 +175,7 @@ Para escolher outra atividade, altere a aula e o número do exercício no caminh
 <br>
 
 <details>
-<summary><strong>Python e SQLite — preparar o banco e executar</strong></summary>
+<summary><strong>Python e SQLite - preparar o banco e executar</strong></summary>
 
 <br>
 
@@ -199,7 +199,6 @@ python "Aula11/exercicio05.py"
 
 Os exercícios compartilham o mesmo banco. Alterações realizadas por um exercício permanecem disponíveis nas próximas execuções.
 
-> [!IMPORTANT]
 > Execute o script de criação somente uma vez para cada banco novo. Reexecutá-lo sobre um banco preenchido repete inserções e pode gerar duplicações e conflitos.
 
 Para recomeçar a prática com os dados iniciais, remova o arquivo local `Aula11/marvel.db` e execute novamente `criacao-db.py`.
